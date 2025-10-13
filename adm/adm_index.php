@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>        
+<html lang="pt-br"> 
+    <head>         
         <?php include '/componentes/adm_head.php'; ?>
         <link rel="stylesheet" href="recursos/css/adm_index.css" />
         <title>Painel Administrativo</title>
