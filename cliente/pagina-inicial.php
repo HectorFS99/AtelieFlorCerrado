@@ -33,6 +33,7 @@
 	<body>
 		<?php include '/componentes/header.php'; ?>
 		<main>
+			<!-- Início -->
 			<section id="section-inicio">
 				<div class="div_inicio">
 					<div class="div_inicio_infos">
@@ -48,6 +49,8 @@
 					<img width="400px" src="./recursos/imagens/produtos/sophie.png" alt="Bolsa artesanal feita com palha">
 				</div>
 			</section>
+
+			<!-- Novidades -->
 			<section class="secao">
 				<div class="secao-titulo-subtitulo">
 					<h2 class="titulo-secao">Novidades</h2>
@@ -60,27 +63,55 @@
 						<a href="detalhes-produto.php?id_produto=<?php echo $linha['id_produto']; ?>" class="card-produto">
 							<img src="<?php echo $linha['caminho_imagem']; ?>" class="card-produto_img" alt="..." />
 							<div class="card-produto_conteudo">
-								<p class="card-produto_titulo"><?php echo $linha['nome']; ?></p>
+								<h5><?php echo $linha['nome']; ?></h5>
 								<p>
-									<s class="text-muted">De: R$ <?php echo number_format($linha['preco_anterior'], 2, ',', '.'); ?></s><br>
-									<b>Por: <span style="font-size: 1.5rem;">R$ <?php echo number_format($linha['preco_atual'], 2, ',', '.'); ?></span></b>
+									R$ <?php echo number_format($linha['preco_atual'], 2, ',', '.'); ?> | <i class="fa-solid fa-star"></i> 4.9
 								</p>
-								<p class="text-success">
-									<b>à vista com pix, ou em 1x no Cartão de Crédito</b>
-								</p>
-								<p> ou em até 10x de R$ <?php echo number_format($linha['preco_atual'] / 10, 2, ',', '.'); ?> s/ juros </p>
 							</div>                            
 						</a>    
 					<?php } ?>
 				</div>
 			</section>
 
+			<!-- Próximo Lançamento -->
+			<section class="secao proximo-lancamento">
+				<img src="./recursos/imagens/produtos/bianca.png" alt="">
+				<div class="proximo-lancamento-info">
+					<div class="secao-titulo-subtitulo" style="align-items: start !important;">
+						<h2 class="titulo-secao">Próximo Lançamento</h2>
+						<h4 class="subtitulo-secao">
+							Uma nova coleção está florescendo...<br>
+							Fique de olho: em breve, novas peças exclusivas chegarão ao ateliê.
+						</h4>
+					</div>
+					<div>
+						<div class="contador-lancamento">
+							<div class="caixa-contador">
+								<h3>06</h3>
+								<p>Dias</p>
+							</div>
+							<div class="caixa-contador">
+								<h3>18</h3>
+								<p>Horas</p>
+							</div>
+							<div class="caixa-contador">
+								<h3>48</h3>
+								<p>Min.</p>
+							</div>
+						</div>
+
+						<a href="listagem-geral-produtos.php" class="btn btn-lg btn-gradiente">
+							SAIBA MAIS
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Dicas & Inspirações -->
 			<section class="secao custom-main">
 			</section>
 
-			<section class="secao custom-main">
-			</section>
-
+			<!-- Feedbacks -->
 			<section class="secao custom-main">
 			</section>
 		</main>

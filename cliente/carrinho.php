@@ -50,7 +50,7 @@
                             </div>
                             <div class="div-produto_opcoes">
                                 <div class="mt-3" style="max-width: 225px;">
-                                    <div class="input-group input-group-sm" style="background: rgba(128, 128, 128, 0.231); border-radius: 0.5rem;">
+                                    <div class="input-group input-group-sm" style="background: rgba(128, 128, 128, 0.231); border-radius: var(--borda-arredondada);">
                                         <span class="input-group-text" id="basic-addon3"><b>Quantidade</b></span>
                                         <button
                                             onclick="subtrairQtd('qtdProd<?= $item['id_produto']; ?>', 'lblValorProduto', 'lblQtdProduto', 'lblValorSubTotalPedido');"

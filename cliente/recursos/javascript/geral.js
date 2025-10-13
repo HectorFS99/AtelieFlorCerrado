@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
             </div>
             <div class="div-sobre">
-                <span>FUTUREMOB</span>
+                <span>Flor do Cerrado</span>
                 <a class="btn btn-sobre" href="sobre.php">Clique e conheça!</a>
             </div>
         </div>`;
