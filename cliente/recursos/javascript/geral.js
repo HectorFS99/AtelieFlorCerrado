@@ -1,35 +1,3 @@
-// Monta o header e o footer em todas as páginas que contêm a tag header e footer.
-document.addEventListener("DOMContentLoaded", function() {
-    var footer = document.getElementById('footer');
-    if (footer) {
-        footer.innerHTML = `
-        <hr />
-        <div class="d-flex justify-content-around flex-wrap">
-            <div class="formas_pagamento">
-                <h4>Formas de Pagamento</h4>
-                <div class="logos_footer bandeiras_pagamento">
-                    <img src="/cliente/recursos/imagens/logos/bandeiras_pagamento/visa.svg" alt="visa" />
-                    <img src="/cliente/recursos/imagens/logos/bandeiras_pagamento/mastercard.svg" alt="mastercard" />
-                    <img src="/cliente/recursos/imagens/logos/bandeiras_pagamento/american-express.svg" alt="american-express" />
-                    <img src="/cliente/recursos/imagens/logos/bandeiras_pagamento/hipercard.svg" alt="hipercard" />
-                    <img src="/cliente/recursos/imagens/logos/bandeiras_pagamento/pix.svg" alt="pix" />
-                </div>
-            </div>
-            <div class="app_futuremob">
-                <h4>Baixe o nosso aplicativo!</h4>
-                <div class="logos-footer disponivel_app">
-                    <img src="/cliente/recursos/imagens/icones/disponivel-google-play.svg" alt="disponivel-google-play">
-                    <img src="/cliente/recursos/imagens/icones/disponivel-app-store.svg" alt="disponivel-na-app-store">
-                </div>
-            </div>
-            <div class="div-sobre">
-                <span>Flor do Cerrado</span>
-                <a class="btn btn-sobre" href="sobre.php">Clique e conheça!</a>
-            </div>
-        </div>`;
-    }    
-});
-
 //#region ***** SweetAlert2. *****/
 // Popups
 const popupSwal = Swal.mixin({

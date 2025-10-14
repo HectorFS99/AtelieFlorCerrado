@@ -60,12 +60,12 @@ table {
     --borda-arredondada: .25rem;
 	--primary: #2980b9;
 	--warn: #ffa500;
-	--gold: #e6c356;    
+	--gold: #e6c356;
+    --sombra-leve: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .navbar {
     background: var(--cor-secundaria);
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,13 +85,25 @@ body {
     align-items: center;
 }
 
-.titulos, .titulo-secao {
+.secao {
+    max-width: 1100px !important;
+    margin: 5rem auto;
+}
+
+.secao-titulo-subtitulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.titulo, .titulo-secao {
     font-style: normal;
     color: var(--cor-principal);
     margin-bottom: 1rem;
 }
 
-.titulos {
+.titulo {
     font-family: "Playfair Display SC", serif;
     font-size: 86px;
     font-weight: 700;
@@ -103,12 +115,12 @@ body {
     font-weight: 600;
 }
 
-.subtitulos, .subtitulo-secao {
+.subtitulo, .subtitulo-secao {
     font-weight: 700;
     color: var(--cor-principal); 
 }
 
-.subtitulos {
+.subtitulo {
     font-size: 24px;
     line-height: 2;
 }
@@ -116,21 +128,23 @@ body {
 .subtitulo-secao {
     font-size: 18px;
     line-height: 1.5;
+    text-align: center;
 }
 
-.novidades {
+footer {
+    background-color: var(--cor-principal);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: start;
+    color: var(--cor-clarinha);
+    padding: 2rem;
+    margin-top: 4rem;
 }
 
 /***** Seção início *****/
-#section-inicio {
-    background-color: var(--cor-secundaria);
-    width: 100%;
-}
-
 .div_inicio {
+    background-color: var(--cor-secundaria);
     padding: 3rem !important;
     display: flex;
     justify-content: space-around;
@@ -146,18 +160,14 @@ body {
     align-items: start;   
 }
 
-.secao {
-    max-width: 1100px !important;
-    margin: 5rem auto;
-}
-
-.secao-titulo-subtitulo {
+/***** Seção Novidades *****/
+.novidades {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3rem;
 }
 
+/***** Seção Próximo Lançamento *****/
 .proximo-lancamento {
     background-color: var(--cor-clarinha);
     padding: 2rem;
@@ -199,6 +209,37 @@ body {
 
 .caixa-contador p {
     font-weight: 600;
+}
+
+/***** Seção Feedback *****/
+.container-avaliacoes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-avaliacao {
+    color: var(--cor-principal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    border-radius: var(--borda-arredondada);
+    background-color: white;
+    box-shadow: var(--sombra-leve);
+    padding: 1rem;
+    width: 400px;
+    height: 200px;
+}
+
+.card-avaliacao h4 {
+    font-family: "Roboto Slab", serif;
+}
+
+.card-avaliacao p {
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 /***** Tag "main" customizada *****/
@@ -850,7 +891,7 @@ body.swal2-shown>[aria-hidden="true"] {
     text-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.75);
 }
 
-.produtos_cards {
+.link-card {
     overflow-x: auto;
     display: flex;
     justify-content: center;
@@ -858,7 +899,7 @@ body.swal2-shown>[aria-hidden="true"] {
     margin: 0 1rem;
 }
 
-.card-produto {
+.card_conteudo {
     display: flex;
     flex-direction: column;
     min-width: 300px;
@@ -871,7 +912,7 @@ body.swal2-shown>[aria-hidden="true"] {
     color: var(--cor-principal);
 }
 
-.card-produto:hover {
+.card_conteudo:hover {
     transform: scale(.95);
 }
 
@@ -882,7 +923,7 @@ body.swal2-shown>[aria-hidden="true"] {
     object-fit: cover;
 }
 
-.card-produto_conteudo {
+.card_conteudo_texto {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -890,13 +931,15 @@ body.swal2-shown>[aria-hidden="true"] {
     padding: 1rem;
 }
 
-.card-produto_conteudo > p {
+.card_conteudo_texto > p {
     font-size: 1rem;
     padding-bottom: 0;
     font-weight: 600;
+    text-align: center !important;
+    line-height: 1.5;
 }
 
-.card-produto_conteudo > h5 {
+.card_conteudo_texto > h5 {
     font-weight: 700;
 }
 
@@ -912,14 +955,6 @@ p, h1, h2, h3, h4, h5, h6, span, small {
     display: flex;
     max-width: 1300px;
     margin: 0 auto 3rem auto;
-}
-
-.titulo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem;
-    height: 40px;
 }
 
 .menu-filtros {
@@ -1999,53 +2034,8 @@ p, span, small, h1, h2, h3, h4, h5, ul, li, div {
 /*#endregion */ 
 
 /*#region ***** ***** ***** footer.css ***** ***** *****/
-.logos_footer {
-    display: flex !important;
-    justify-content: space-around !important;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.logos_footer > img {
-    height: auto;
-    margin: 1rem !important;
-}
-
 .bandeiras_pagamento > img {
     width: 75px;
-}
-
-.disponivel_app > img {
-    width: 200px;
-    margin: 1rem !important;
-    cursor: pointer;
-}
-
-.formas_pagamento, .app_futuremob {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.formas_pagamento > h4, .app_futuremob > h4 {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.div-sobre {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    color: var(--cor-principal);
-    margin: 2rem 0;
-}
-
-.div-sobre > span {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
 }
 /*#endregion */ 
 
