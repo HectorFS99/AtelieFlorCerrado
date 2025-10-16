@@ -1,6 +1,6 @@
 <header>
     <nav class="custom-navbar">
         <a href="pagina-inicial.php"><i class="fa-solid fa-arrow-left"></i></a>
-        <span>FUTUREMOB</span>
+        <span>Flor do Cerrado</span>
     </nav>
 </header>

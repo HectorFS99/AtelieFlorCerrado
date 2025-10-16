@@ -362,6 +362,6 @@
                 </div>
             </div>
         </main>
-        <footer id="footer"></footer>
+        <?php include '/componentes/footer.php'; ?>
     </body>
 </html>

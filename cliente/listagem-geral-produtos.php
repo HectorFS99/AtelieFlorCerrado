@@ -90,7 +90,7 @@
         <main class="main-listagem">
             <!-- Menu de Filtros -->
             <div class="menu-filtros">
-                <div class="titulo mx-0">
+                <div class="titulo-secao d-flex justify-content-between align-items-center">
                     <h4>Filtros</h4>
                     <?php if ($filtro_aplicado) { ?>
                         <form method="GET" action="listagem-geral-produtos.php">
@@ -98,7 +98,7 @@
                                 <i class="fa-solid fa-filter-circle-xmark"></i> Limpar
                             </button>
                         </form>		
-					<?php } ?>                 
+					<?php } ?>                        
                 </div>
 
                 <!-- Categorias -->
@@ -150,14 +150,10 @@
             </div>
 
             <!-- Listagem de Produtos -->
-            <div class="d-flex flex-column justify-content-center w-100">
-                <div class="titulo">
+            <div class="listagem-produtos">
+                <div class="titulo-secao d-flex justify-content-between align-items-center">
                     <h4>Produtos<?php echo $filtro_selecionado; ?></h4>
                     <div class="d-flex justify-content-between">
-                        <!-- <div class="btn-group border mx-1">
-                            <button class="btn btn-light" onclick="visualizarGrid();"><i class="fa-solid fa-grip"></i></button>
-                            <button class="btn btn-light" onclick="visualizarLista();"><i class="fa-solid fa-list"></i></button>
-                        </div> -->
                         <form method="GET" action="listagem-geral-produtos.php">
                             <select name="filtrar" class="form-select" onchange="this.form.submit()">
                                 <option selected>Ordenar por</option>
@@ -168,45 +164,43 @@
                         </form>
                     </div>
                 </div>
+
                 <div class="grid-produtos">
                     <?php while($linha = mysql_fetch_assoc($sql_produtos)) { ?>
                         <div href="detalhes-produto.php?id_produto=<?php echo $linha['id_produto']; ?>" class="card-produto_listagem">
-                            <a href="detalhes-produto.php?id_produto=<?php echo $linha['id_produto']; ?>"><img class="card-produto_listagem_img" src="<?php echo $linha['caminho_imagem']; ?>"></a>
-                            <h6 class="mb-1"><?php echo $linha['nome']; ?></h6>
-                            <!-- <div class="avaliacao-estrelas mb-2">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <small><b>EM DESENVOLVIMENTO </></b></small>
-                            </div> -->
-                            <small><s>De: R$ <?php echo number_format($linha['preco_anterior'], 2, ',', '.'); ?></s></small>
-                            <p>Por: R$ <?php echo number_format($linha['preco_atual'], 2, ',', '.'); ?></p>
-                            <small>ou em até 10x de R$ <?php echo number_format($linha['preco_atual'] / 10, 2, ',', '.'); ?> s/ juros</small>
-                            
+                            <a href="detalhes-produto.php?id_produto=<?php echo $linha['id_produto']; ?>">
+                                <img class="card-produto_listagem_img" src="<?php echo $linha['caminho_imagem']; ?>">
+                            </a>
+                            <h5 class="col-produto_listagem">
+                                <?php echo $linha['nome']; ?>
+                                <span>R$ <?php echo number_format($linha['preco_atual'], 2, ',', '.'); ?></span>
+                            </h5>
                             <?php if (isset($_SESSION['autenticado']) && isset($_SESSION['id_usuario']) > 0) { ?>
-                                <div class="d-flex">
-                                    <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?php echo $linha['id_produto']; ?>&comprarAgora=true" class="btn btn-cor-principal mt-2 w-100">
-                                        <strong>Comprar</strong>
+                                <div class="col-produto_listagem opcoes-produto_listagem">
+                                    <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?php echo $linha['id_produto']; ?>&comprarAgora=true" class="btn btn-cor-principal flex-fill">
+                                        <strong>COMPRAR</strong>
                                     </a>
-                                    <a href="./acoes/favorito/favoritar.php?id_produto=<?php echo $linha['id_produto']; ?>" class="btn btn-danger mt-2 d-flex align-items-center" style="margin-left: 10px">
+                                    <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?php echo $linha['id_produto']; ?>&listagem=true" class="btn btn-outline-success h-100">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </a>
+                                    <a href="./acoes/favorito/favoritar.php?id_produto=<?php echo $linha['id_produto']; ?>" class="btn btn-outline-danger h-100">
                                         <i class="fa-regular fa-heart"></i>
-                                    </a>                                    
-                                </div>
-                                <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?php echo $linha['id_produto']; ?>&listagem=true" class="btn btn-light mt-2 w-100">
-                                    <strong>Adicionar ao Carrinho</strong>
-                                </a>                                
+                                    </a> 
+                                </div>                               
                             <?php } else { ?>
-                                <a href="login.php" class="btn btn-cor-principal mt-2">Comprar</a>                                
+                                <a href="login.php" class="btn btn-cor-principal mt-2">COMPRAR</a>                                
                             <?php } ?>
                         </div>
 					<?php } ?>
                 </div>            
             </div>
         </main>
-        <footer id="footer"></footer>
+		<?php include '/componentes/footer.php'; ?>
         <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                exibirFiltroAcc('acc-categorias');
+            });
+
             function exibirFiltroAcc(id_componente) {
                 var accordion = document.getElementById(id_componente);
                 accordion.style.display === "block" ? accordion.style.display = "none" : accordion.style.display = "block";

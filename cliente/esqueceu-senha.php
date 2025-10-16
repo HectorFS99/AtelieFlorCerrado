@@ -5,7 +5,7 @@
         <header>
             <nav class="custom-navbar">
                 <a href="pagina-inicial.php"><i class="fa-solid fa-arrow-left"></i></a>
-                <span style="font-weight: 400;">FUTUREMOB</span>
+                <span style="font-weight: 400;">Flor do Cerrado</span>
             </nav>
         </header>
         <main class="container">

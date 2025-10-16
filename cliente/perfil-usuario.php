@@ -275,10 +275,10 @@
 			</section>
 			<section class="section-tela" id="section-enderecos" style="display: none;">
 				<h4 class="mt-3"><i class="fa-solid fa-code mx-3"></i> Desculpe, essa tela está em fase de desenvolvimento.</h4>
-				<p class="mx-3 mt-3">A FutureMob agradece a compreensão.</p>
+				<p class="mx-3 mt-3">A Flor do Cerrado agradece a compreensão.</p>
 			</section>
 		</main>
-		<footer id="footer"></footer>
+		<?php include '/componentes/footer.php'; ?>
 		<script>
 			function exibirTela(id_tela, id_botao) {
 				var listaTelas = document.getElementsByClassName('section-tela');

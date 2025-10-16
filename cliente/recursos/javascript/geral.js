@@ -1,3 +1,5 @@
+
+
 //#region ***** SweetAlert2. *****/
 // Popups
 const popupSwal = Swal.mixin({
@@ -21,7 +23,7 @@ const toastSwal = Swal.mixin({
     timer: 7000,
     timerProgressBar: true,
 });
- 
+
 // Caso 'popup' seja passado como 'true', será exibido um POPUP. Caso 'false', será exibido um TOAST.
 function notificar(popup, titulo, mensagem, icone, caminho) {
     if (popup) {
@@ -488,24 +490,6 @@ function enviarCodigoRecuperacao(e) {
         default:
             notificar(false, 'Usuário não encontrado', '', 'error', '');
     }
-}
-//#endregion
-
-//#region ***** ***** ***** favoritos.js ***** ***** *****/
-function visualizarGrid() {
-    div_cards = document.getElementById('visualizacaoCards');
-    div_cards.style.display = 'flex';
-
-    div_lista = document.getElementById('visualizacaoLista');
-    div_lista.style.display = 'none';
-}
-
-function visualizarLista() {
-    div_cards = document.getElementById('visualizacaoCards');
-    div_cards.style.display = 'none';
-
-    div_lista = document.getElementById('visualizacaoLista');
-    div_lista.style.display = 'block';
 }
 //#endregion
 

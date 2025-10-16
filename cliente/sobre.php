@@ -7,7 +7,7 @@
         <div class="div-sobre_conteudo">
             <h2 class="sobre-titulo">SOBRE NÓS</h2>
             <p class="sobre-texto">
-                A <strong style="font-family: 'Josefin Sans', sans-serif; color: var(--cor-principal)">FUTUREMOB</strong> tem o desejo de promover elegância, conforto e tecnologia por meio de nossos produtos, oferecendo uma experiência exclusiva e 
+                A <strong style="font-family: 'Josefin Sans', sans-serif; color: var(--cor-principal)">Flor do Cerrado</strong> tem o desejo de promover elegância, conforto e tecnologia por meio de nossos produtos, oferecendo uma experiência exclusiva e 
                 diferenciada.
             </p>
         </div>
@@ -70,7 +70,7 @@
             </ul>
         </div>
     </main>
-    <footer id="footer"></footer>
+    <?php include '/componentes/footer.php'; ?>
 </body>
 
 </html>

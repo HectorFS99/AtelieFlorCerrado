@@ -6,9 +6,8 @@
 		<main class="container">
 			<form id="formLogin" class="formulario" name="logar" onsubmit="document.logar.action='./acoes/logar.php'" method="post">
 				<div class="logo_login">
-					<img src="recursos/imagens/logos/logo_futureMob.png">
+					<img src="recursos/imagens/logos/AtelieFlorDoCerrado.png">
 				</div>
-				<!-- <h3 class="mb-3">Acesse a sua conta</h1> -->
 				<div class="form-floating">
 					<input id="txtEmailLogin" type="email" class="form-control" placeholder="Email" name="txt_email" required>
 					<label for="txtEmailLogin">Email</label>

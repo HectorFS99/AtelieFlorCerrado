@@ -7,7 +7,7 @@
     /* * * * * * * * * * * * * * * * * * * * * * CONSULTA PARA ITENS DO CARRINHO * * * * * * * * * * * * * * * * * * * * * */
     include '/acoes/carrinho/selecionar_produtos.php';
 
-    /* * * * * * * * * * * * * * * * * * * * * * CONSULTA PARA LOJAS FUTUREMOB * * * * * * * * * * * * * * * * * * * * * */
+    /* * * * * * * * * * * * * * * * * * * * * * CONSULTA PARA LOJAS Flor do Cerrado * * * * * * * * * * * * * * * * * * * * * */
 	$sql_lojas = mysql_query(
         "SELECT 
             `id_loja`

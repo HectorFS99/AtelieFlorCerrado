@@ -24,14 +24,12 @@
 		WHERE
 			`ativo` = '1'";
 	
+	
 	// Consultas específicas para novidades
 	$sql_novidades = mysql_query($select_produtos . "ORDER BY `dt_cadastro` DESC LIMIT 3");
 ?>
 <html lang="pt-br">
-	<head>
-		<?php include '/componentes/head.php'; ?>
-		<title>Flor do Cerrado</title>
-	</head>
+	<?php include '/componentes/head.php'; ?>
 	<body>
 		<?php include '/componentes/header.php'; ?>
 		<main>
@@ -43,7 +41,6 @@
 							<h1 class="titulo">Flor do Cerrado</h1>
 							<h4 class="subtitulo">Sua bolsa artesanal feita com carinho, com um toque do Brasil.</h4>
 						</div>
-
 						<a href="sobre.php" class="btn btn-lg btn-gradiente">
 							NOS CONHEÇA!
 						</a>
@@ -69,8 +66,8 @@
 								<p>
 									R$ <?php echo number_format($linha['preco_atual'], 2, ',', '.'); ?> | <i class="fa-solid fa-star"></i> 4.9
 								</p>
-							</div>                            
-						</a>    
+							</div>
+						</a>
 					<?php } ?>
 				</div>
 			</section>

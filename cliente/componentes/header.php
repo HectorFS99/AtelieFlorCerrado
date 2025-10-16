@@ -16,7 +16,7 @@
 <header>
     <nav class="navbar">
         <a href="pagina-inicial.php" style="width: 70px;">
-            <img src="/cliente/recursos/imagens/logos/AtelieFlorDoCerrado.png" width="100px" />
+            <img src="/cliente/recursos/imagens/logos/AtelieFlorDoCerrado.png" width="70px" />
         </a>
         <div class="btns_barra_superior">
             <a href="pagina-inicial.php" class="btn-vertical">
