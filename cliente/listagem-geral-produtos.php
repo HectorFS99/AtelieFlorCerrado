@@ -90,19 +90,19 @@
         <main class="main-listagem">
             <!-- Menu de Filtros -->
             <div class="menu-filtros">
-                <div class="titulo-secao d-flex justify-content-between align-items-center">
-                    <h4>Filtros</h4>
+                <div class="titulo-secao-produtos">
+                    <h5>Filtrar por</h5>
                     <?php if ($filtro_aplicado) { ?>
                         <form method="GET" action="listagem-geral-produtos.php">
-                            <button class="btn btn-light border" type="submit" name="filtrar_categoria" value="">
-                                <i class="fa-solid fa-filter-circle-xmark"></i> Limpar
+                            <button class="btn-limpar-filtro" type="submit" name="filtrar_categoria" value="">
+                                <i class="fa-solid fa-filter-circle-xmark"></i>
                             </button>
                         </form>		
 					<?php } ?>                        
                 </div>
 
                 <!-- Categorias -->
-                <button onclick="exibirFiltroAcc('acc-categorias');" class="btn btn-filtros_accordion">Categorias</button>
+                <button onclick="exibirFiltroAcc('acc-categorias');" class="btn btn-filtros_accordion">Categoria</button>
                 <section id="acc-categorias" class="acc">
                     <form method="GET" action="listagem-geral-produtos.php">
                         <ul class="filtro-lista_categorias">
@@ -117,42 +117,12 @@
                         </ul>
                     </form>
                 </section>
-
-                <!-- Preço -->
-                <button onclick="exibirFiltroAcc('acc-preco');" class="btn btn-filtros_accordion">Preço</button>
-                <section id="acc-preco" class="acc">
-                    <form method="GET" action="listagem-geral-produtos.php">
-                        <div>
-                            <label>Mínimo:</label>
-                            <input type="number" name="preco_minimo" class="form-control" min="100" value="100" required>
-                        </div>
-                        <div class="my-2">
-                            <label>Máximo:</label>
-                            <input type="number" name="preco_maximo" class="form-control" min="100" max="20000" required>
-                        </div>
-                        <button type="submit" class="btn btn-cor-principal w-100">Aplicar</button>
-                    </form>
-                </section>
-                
-                <!-- Avaliações -->
-                <button onclick="exibirFiltroAcc('acc-avaliacao');" class="btn btn-filtros_accordion border-0">Avaliação</button>
-                <section id="acc-avaliacao" class="acc border-0 border-top">
-                    <div class="text-muted mb-2">
-                        <small>Desculpe, estamos desenvolvendo este filtro.</small>
-                    </div>
-                    <?php for($i = 1; $i <= 5; $i++) { ?>
-                        <div class="form-check">
-                            <input disabled class="form-check-input" type="checkbox" id="filtro-<?php echo $i; ?>estrelas">
-                            <label class="form-check-label" for="filtro-<?php echo $i; ?>estrelas"><?php echo $i; ?> estrelas</label>
-                        </div>
-                    <?php } ?>
-                </section>
             </div>
 
             <!-- Listagem de Produtos -->
-            <div class="listagem-produtos">
-                <div class="titulo-secao d-flex justify-content-between align-items-center">
-                    <h4>Produtos<?php echo $filtro_selecionado; ?></h4>
+            <div>
+                <div class="titulo-secao-produtos">
+                    <h4>Produtos<?php echo $filtro_selecionado; ?></h4>                    
                     <div class="d-flex justify-content-between">
                         <form method="GET" action="listagem-geral-produtos.php">
                             <select name="filtrar" class="form-select" onchange="this.form.submit()">
@@ -167,29 +137,33 @@
 
                 <div class="grid-produtos">
                     <?php while($linha = mysql_fetch_assoc($sql_produtos)) { ?>
-                        <div href="detalhes-produto.php?id_produto=<?php echo $linha['id_produto']; ?>" class="card-produto_listagem">
+                        <div href="detalhes-produto.php?id_produto=<?php echo $linha['id_produto']; ?>" class="card-produto">
                             <a href="detalhes-produto.php?id_produto=<?php echo $linha['id_produto']; ?>">
-                                <img class="card-produto_listagem_img" src="<?php echo $linha['caminho_imagem']; ?>">
+                                <img class="card_produto_img" src="<?php echo $linha['caminho_imagem']; ?>">
                             </a>
-                            <h5 class="col-produto_listagem">
-                                <?php echo $linha['nome']; ?>
-                                <span>R$ <?php echo number_format($linha['preco_atual'], 2, ',', '.'); ?></span>
-                            </h5>
-                            <?php if (isset($_SESSION['autenticado']) && isset($_SESSION['id_usuario']) > 0) { ?>
-                                <div class="col-produto_listagem opcoes-produto_listagem">
-                                    <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?php echo $linha['id_produto']; ?>&comprarAgora=true" class="btn btn-cor-principal flex-fill">
-                                        <strong>COMPRAR</strong>
-                                    </a>
-                                    <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?php echo $linha['id_produto']; ?>&listagem=true" class="btn btn-outline-success h-100">
-                                        <i class="fa-solid fa-cart-plus"></i>
-                                    </a>
-                                    <a href="./acoes/favorito/favoritar.php?id_produto=<?php echo $linha['id_produto']; ?>" class="btn btn-outline-danger h-100">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </a> 
-                                </div>                               
-                            <?php } else { ?>
-                                <a href="login.php" class="btn btn-cor-principal mt-2">COMPRAR</a>                                
-                            <?php } ?>
+                            <div class="card-produto_detalhe">
+                                <div class="detalhe-info">
+                                    <h6><?php echo $linha['nome']; ?></h6>
+                                    <small>R$ <?php echo number_format($linha['preco_atual'], 2, ',', '.'); ?></small>
+                                </div>
+                                <?php if (isset($_SESSION['autenticado']) && isset($_SESSION['id_usuario']) > 0) { ?>
+                                    <div class="detalhe-opcoes">
+                                        <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?php echo $linha['id_produto']; ?>&comprarAgora=true" class="btn-card-produto">
+                                            <i class="fa-solid fa-money-check-dollar"></i>
+                                        </a>
+                                        <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?php echo $linha['id_produto']; ?>&listagem=true" class="btn-card-produto">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </a>
+                                        <a href="./acoes/favorito/favoritar.php?id_produto=<?php echo $linha['id_produto']; ?>" class="btn-card-produto">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a> 
+                                    </div>                               
+                                <?php } else { ?>
+                                    <a href="login.php" class="btn-card-produto">
+                                        <i class="fa-solid fa-money-check-dollar"></i>
+                                    </a>                                
+                                <?php } ?>                                
+                            </div>
                         </div>
 					<?php } ?>
                 </div>            

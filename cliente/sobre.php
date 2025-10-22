@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <?php include '/componentes/head.php'; ?>
 <body>
 	<?php include '/componentes/header.php'; ?>
@@ -7,70 +7,50 @@
         <div class="div-sobre_conteudo">
             <h2 class="sobre-titulo">SOBRE NÓS</h2>
             <p class="sobre-texto">
-                A <strong style="font-family: 'Josefin Sans', sans-serif; color: var(--cor-principal)">Flor do Cerrado</strong> tem o desejo de promover elegância, conforto e tecnologia por meio de nossos produtos, oferecendo uma experiência exclusiva e 
-                diferenciada.
+                Somos uma marca artesanal criada por Ana Souza, dedicada à produção de bolsas e acessórios feitos à mão com amor, qualidade e consciência ambiental. Cada peça é única e carrega a essência do trabalho manual e da sustentabilidade.
             </p>
         </div>
         <div class="div-sobre_conteudo">
             <h3 class="sobre-titulo">HISTÓRIA</h3>
             <p class="sobre-texto">
-                Nosso percurso começou a desenhar-se em uma pequena oficina nos arredores de Mauá, no ano de 1987. Naquela época, seis jovens estudantes 
-                universitários, apaixonados por arte, design e tecnologia, encontraram inspiração nos icônicos designs de Oscar Niemeyer. 
-                O que começou como uma simples admiração se transformou em um desejo de levar essa inspiração para além dos prédios e das galerias, para dentro 
-                dos lares e dos corações das pessoas. A jornada começou com a paixão pelo design e pela estética, mas rapidamente evoluiu para incluir a 
-                tecnologia como um elemento central de sua visão. Esses visionários buscaram integrar tecnologia de forma inteligente e harmoniosa em seus móveis,
-                criando assim uma linha revolucionária de móveis tecnológicos. Movidos por essa visão ousada, nosso objetivo não era apenas criar produtos 
-                funcionais, mas sim peças que assim como o cerne da arte, despertassem emoções que transformassem espaços opacos em cenários de vida, 
-                repletos de personalidade e significado. Hoje, contemplando uma jornada marcada por inovação, paixão e comprometimento, 
-                olhamos para trás com orgulho. Nosso legado é mais do que uma simples linha do tempo; é uma tapeçaria de experiências, 
-                uma sinfonia de ideias, um testemunho vivo do poder transformador da arte e do design.
+                Desde pequena, Ana Souza se encantava com o som das tesouras, o toque dos tecidos e o brilho das cores. O que começou como um hobby — transformar retalhos em pequenas bolsas e acessórios — tornou-se sua paixão e, com o tempo, seu propósito de vida.
+                Unindo criatividade, técnica e consciência ambiental, Ana decidiu criar sua própria linha de bolsas e acessórios artesanais, feitos à mão com materiais sustentáveis e design autoral.
+                Após anos conquistando clientes fiéis em feiras e pelas redes sociais, Ana decidiu dar um novo passo: levar o encanto de seu trabalho para o mundo digital, alcançando pessoas que valorizam o feito à mão e o consumo responsável.
             </p>
         </div>
         <div class="div-sobre_conteudo">
             <h3 class="sobre-titulo">MISSÃO</h3>
             <p class="sobre-texto">
-                Nossa missão é transcender as fronteiras do comum, criando peças que não apenas preencham espaços, mas que inspirem e encantem, 
-                elevando a experiência humana em cada ambiente. Além disso, buscamos integrar tecnologia de forma que traga não só conforto e praticidade, 
-                mas também permita que nossos clientes contemplar a arte intrínseca em nossas criações. 
+                Criar bolsas e acessórios artesanais que unam beleza, funcionalidade e sustentabilidade, valorizando o trabalho manual e promovendo o consumo consciente.
             </p>
         </div>
         <div class="div-sobre_conteudo">
             <h3 class="sobre-titulo">VISÃO</h3>
             <p class="sobre-texto">
-                Nossa visão é sermos reconhecidos como líderes no mercado de móveis tecnológicos e inovadores. Enxergamos cada móvel não apenas como um objeto 
-                utilitário, mas como uma plataforma para a expressão criativa e a integração de tecnologia de ponta.
+                Ser reconhecida nacionalmente como uma marca de referência em moda artesanal sustentável, inspirando pessoas a valorizarem o feito à mão e a história por trás de cada peça.                
             </p>
         </div>
         <div class="div-sobre_conteudo">
             <h3 class="sobre-titulo">VALORES</h3>
             <ul class="lista-valores">
                 <li class="sobre-texto">
-                    Paixão pela criação: Nossa jornada é impulsionada pela paixão em criar móveis que inspiram o extraordinário. 
-                    Acreditamos que a verdadeira arte só pode ser alcançada quando se ama o que se faz.
+                    <strong>Artesanato Autêntico:</strong> Cada peça é única, feita com cuidado e dedicação.
                 </li>
                 <li class="sobre-texto">
-                    Autenticidade: Celebramos a autenticidade em todas as suas formas. Cada peça que criamos é uma extensão genuína de nossa identidade, 
-                    refletindo nossa personalidade, valores e experiências únicas.
+                    <strong>Sustentabilidade:</strong> Uso consciente de materiais e respeito ao meio ambiente.
                 </li>
                 <li class="sobre-texto">
-                    Compromisso com a excelência: Em um mundo onde o descartável muitas vezes prevalece sobre o duradouro, estamos comprometidos em criar 
-                    móveis de qualidade excepcional que resistam ao teste do tempo. Nosso compromisso é com a excelência em tudo o que fazemos, 
-                    desde o conceito inicial até a entrega final.
+                    <strong>Qualidade:</strong> Valorização dos detalhes e da durabilidade em cada criação.
                 </li>
                 <li class="sobre-texto">
-                    Inovação e tecnologia: Estamos comprometidos em integrar tecnologia de forma inteligente e harmoniosa em nossos móveis, 
-                    proporcionando experiências inovadoras e conectadas aos nossos clientes. Buscamos constantemente explorar novas fronteiras e adotar 
-                    soluções tecnológicas de ponta em nosso processo de criação.
+                    <strong>Empatia e Propósito:</strong> Relacionamentos humanos e verdadeiros com clientes e parceiros.
                 </li>
                 <li class="sobre-texto">
-                    Empatia e conexão: Valorizamos a conexão emocional entre as pessoas e seus espaços. Acreditamos que os móveis não são apenas objetos 
-                    inanimados, mas sim facilitadores de experiências humanas significativas. Buscamos criar móveis que promovam o bem-estar e a 
-                    harmonia em cada ambiente, incentivando conexões autênticas entre as pessoas.
+                    <strong>Criatividade:</strong> Inovação e expressão artística em cada coleção.
                 </li>
             </ul>
         </div>
     </main>
     <?php include '/componentes/footer.php'; ?>
 </body>
-
 </html>
