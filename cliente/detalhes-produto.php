@@ -119,7 +119,7 @@
                             <strong>COMPRAR</strong>
                         </a>
                         <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?= $id_produto ?>" class="btn btn-cor-principal">
-                            <strong><i class="fa-solid fa-cart-plus"></i> ADD. AO CARRINHO</strong>
+                            <strong><i class="fa-solid fa-cart-plus"></i> ADICIONAR AO CARRINHO</strong>
                         </a>
                     </div>
 
