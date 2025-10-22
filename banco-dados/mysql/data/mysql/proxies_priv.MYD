@@ -1,0 +1,31 @@
+ˇlocalhost                                                                                                                                                                           root                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       Q›èœ2018-05-11 19:49:19 7260 [Note] Event Scheduler: Loaded 0 events
+2018-05-11 19:49:19 7260 [Note] C:\Users\Etecsapopemba\Desktop\usbwebserver8.0/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.6.13'  socket: ''  port: 3307  MySQL Community Server (GPL)
+2024-04-24 15:09:54 880 [Note] Event Scheduler: Loaded 0 events
+2024-04-24 15:09:54 880 [Note] D:\DADOS\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.6.13'  socket: ''  port: 3307  MySQL Community Server (GPL)
+2025-06-15 20:19:51 20432 [Note] Event Scheduler: Loaded 0 events
+2025-06-15 20:19:51 20432 [Note] G:\Meu Drive\Ensino\Faculdade\FATEC\2_semestre\PROJETO_INTEGRADO\php_mySql\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.6.13'  socket: ''  port: 3307  MySQL Community Server (GPL)
+2025-06-17 18:57:04 32748 [Note] Event Scheduler: Loaded 0 events
+2025-06-17 18:57:04 32748 [Note] G:\Meu Drive\Ensino\Faculdade\FATEC\2_semestre\PROJETO_INTEGRADO\php_mySql\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.6.13'  socket: ''  port: 3307  MySQL Community Server (GPL)
+2025-06-17 18:58:14 32748 [Warning] InnoDB: Cannot open table folha_pagto/tb_funcionarios from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2025-06-17 18:58:14 32748 [Warning] InnoDB: Cannot open table folha_pagto/tb_usuarios from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2025-06-17 18:58:19 32748 [Warning] InnoDB: Cannot open table folha_pagto/tb_funcionarios from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2025-06-17 18:58:19 32748 [Warning] InnoDB: Cannot open table folha_pagto/tb_usuarios from the internal data dictionary of InnoDB though the .frm file for the table exists. See http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html for how you can resolve the problem.
+2025-06-17 18:58:25 5538  InnoDB: Error: table `folha_pagto`.`tb_usuarios` does not exist in the InnoDB internal
+InnoDB: data dictionary though MySQL is trying to drop it.
+InnoDB: Have you copied the .frm file of the table to the
+InnoDB: MySQL database directory from another database?
+InnoDB: You can look for further help from
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html
+2025-06-17 18:58:25 5538  InnoDB: Error: table `folha_pagto`.`tb_funcionarios` does not exist in the InnoDB internal
+InnoDB: data dictionary though MySQL is trying to drop it.
+InnoDB: Have you copied the .frm file of the table to the
+InnoDB: MySQL database directory from another database?
+InnoDB: You can look for further help from
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting.html
+2025-10-12 18:34:20 46708 [Note] Event Scheduler: Loaded 0 events
+2025-10-12 18:34:20 46708 [Note] C:\Projetos\php_mySql\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.6.13'  socket: ''  port: 3307  MySQL Community Server (GPL)

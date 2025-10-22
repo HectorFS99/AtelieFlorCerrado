@@ -84,7 +84,10 @@
     $sql_produtos = mysql_query($select_produtos);
 ?>
 <html lang="pt-br">
-    <?php include '/componentes/head.php'; ?>
+    <head>
+        <?php include '/componentes/head.php'; ?>
+        <link rel="stylesheet" href="/cliente/recursos/css/listagem-geral-produtos.css">
+    </head>
     <body>
         <?php include '/componentes/header.php'; ?>
         <main class="main-listagem">

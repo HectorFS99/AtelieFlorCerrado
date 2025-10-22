@@ -29,7 +29,10 @@
 	$sql_novidades = mysql_query($select_produtos . "ORDER BY `dt_cadastro` DESC LIMIT 3");
 ?>
 <html lang="pt-br">
-	<?php include '/componentes/head.php'; ?>
+	<head>
+		<?php include '/componentes/head.php'; ?>
+        <link rel="stylesheet" href="/cliente/recursos/css/pagina-inicial.css">
+	</head>	
 	<body>
 		<?php include '/componentes/header.php'; ?>
 		<main>
