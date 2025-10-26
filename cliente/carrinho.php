@@ -15,7 +15,10 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-    <?php include '/componentes/head.php'; ?>
+    <head>
+        <?php include '/componentes/head.php'; ?>
+        <link rel="stylesheet" href="/cliente/recursos/css/carrinho.css">
+    </head>
     <body>
    	    <?php include '/componentes/header_simples_2.php'; ?>     
         <main class="custom-main mb-4">

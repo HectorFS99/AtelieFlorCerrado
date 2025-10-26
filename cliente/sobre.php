@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<?php include '/componentes/head.php'; ?>
+<head>
+    <?php include '/componentes/head.php'; ?>
+    <link rel="stylesheet" href="/cliente/recursos/css/sobre.css">
+</head>
 <body>
 	<?php include '/componentes/header.php'; ?>
     <main class="main-sobre">
         <div class="div-sobre_conteudo">
-            <h2 class="sobre-titulo">SOBRE NÓS</h2>
+            <h3 class="sobre-titulo">SOBRE NÓS</h3>
             <p class="sobre-texto">
                 Somos uma marca artesanal criada por Ana Souza, dedicada à produção de bolsas e acessórios feitos à mão com amor, qualidade e consciência ambiental. Cada peça é única e carrega a essência do trabalho manual e da sustentabilidade.
             </p>
@@ -34,16 +37,16 @@
             <h3 class="sobre-titulo">VALORES</h3>
             <ul class="lista-valores">
                 <li class="sobre-texto">
-                    <strong>Artesanato Autêntico:</strong> Cada peça é única, feita com cuidado e dedicação.
+                    <strong>Artesanato Autêntico:</strong> Cada peça é única, feita com cuidado e dedicação;
                 </li>
                 <li class="sobre-texto">
-                    <strong>Sustentabilidade:</strong> Uso consciente de materiais e respeito ao meio ambiente.
+                    <strong>Sustentabilidade:</strong> Uso consciente de materiais e respeito ao meio ambiente;
                 </li>
                 <li class="sobre-texto">
-                    <strong>Qualidade:</strong> Valorização dos detalhes e da durabilidade em cada criação.
+                    <strong>Qualidade:</strong> Valorização dos detalhes e da durabilidade em cada criação;
                 </li>
                 <li class="sobre-texto">
-                    <strong>Empatia e Propósito:</strong> Relacionamentos humanos e verdadeiros com clientes e parceiros.
+                    <strong>Empatia e Propósito:</strong> Relacionamentos humanos e verdadeiros com clientes e parceiros;
                 </li>
                 <li class="sobre-texto">
                     <strong>Criatividade:</strong> Inovação e expressão artística em cada coleção.

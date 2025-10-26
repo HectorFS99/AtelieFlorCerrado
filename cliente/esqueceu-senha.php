@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <?php include '/componentes/head.php'; ?>
-    <body>
-        <header>
-            <nav class="custom-navbar">
-                <a href="pagina-inicial.php"><i class="fa-solid fa-arrow-left"></i></a>
-                <span style="font-weight: 400;">Flor do Cerrado</span>
-            </nav>
-        </header>
-        <main class="container">
-            <form class="formulario" onsubmit="enviarCodigoRecuperacao(event);">
-                <h4 class="mb-4">Iremos te enviar um link de segurança no e-mail informado.</h4>
-                <div class="form-floating">
-                    <input id="txtEmailLogin" type="email" class="form-control" placeholder="Email" required>
-                    <label for="txtEmailLogin">Email</label>
-                </div>
-                <div class="btn-group-vertical w-100 mt-2">
-                    <button class="btn btn-lg btn-cor-principal" type="submit">Confirmar</button>
-                </div>
-            </form>
-        </main>
-    </body>
+	<head>
+		<?php include '/componentes/head.php'; ?>
+		<link rel="stylesheet" href="/cliente/recursos/css/autenticacao.css">
+	</head>
+	<body>
+		<main class="container-autenticacao">
+			<div class="logo_login">
+				<img src="recursos/imagens/logos/AtelieFlorDoCerrado.png">
+			</div>			
+			<form class="form-auth fundo-blur" onsubmit="enviarCodigoRecuperacao(event);">
+				<div class="form-auth-titulo">
+					<h3>Recuperar</h3>
+					<a class="btn-voltar-autenticacao" href="login.php">
+						<i class="fa-solid fa-arrow-left"></i> Voltar
+					</a>					
+				</div>	
+
+				<h6 class="mb-4">Iremos enviar um link de segurança no e-mail informado.</h6>
+				<div class="campo-flutuante">
+					<input id="txtEmailLogin" type="email" placeholder=" " name="txt_email" required>
+					<label for="txtEmailLogin">E-mail</label>
+				</div>
+
+				<button id="btnEntrar" class="btn-confirmar" type="submit">
+					Confirmar <i class="fa-solid fa-arrow-right mx-1"></i>
+				</button>
+			</form>
+		</main>
+	</body>
 </html>

@@ -1,0 +1,24 @@
+p {
+    margin: 0
+}
+
+.cabecalho-favoritos {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 1rem;
+}
+
+.cabecalho-favoritos > h3 {
+    margin: 0;
+}
+
+.cabecalho-favoritos > h3 > i {
+    color: var(--cor-principal);
+    margin-right: .5rem;
+}
+
+.grid-produtos_favoritos {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+}

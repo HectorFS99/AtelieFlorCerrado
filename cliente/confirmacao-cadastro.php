@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php include '/componentes/head.php'; ?>
+    <head>
+        <?php include '/componentes/head.php'; ?>
+        <link rel="stylesheet" href="/cliente/recursos/css/confirmacao-cadastro.css">
+    </head>
     <body>
 	    <?php include '/componentes/header_simples.php'; ?>
         <main class="container vh-100 mt-0 flex-column">

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <?php include '/componentes/head.php'; ?>
+    <head>
+        <?php include '/componentes/head.php'; ?>
+        <link rel="stylesheet" href="/cliente/recursos/css/favoritos.css">
+    </head>
     <body>
         <?php
             include '/componentes/header.php'; 

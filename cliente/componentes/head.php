@@ -9,8 +9,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
 <!-- Sweet Alert 2 -->
-<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="/cliente/recursos/css/sweetAlert2.css">
+<script src="/cliente/recursos/javascript/sweetAlert2.js"></script>
 
 <!-- Fontes da Google -->
 <!-- Playfair Display SC -->
@@ -34,5 +35,5 @@
 
 <!-- Estilos e scripts -->
 <link rel="stylesheet" href="/cliente/recursos/css/geral.css">
-<script type="module" src="/cliente/recursos/javascript/geral.js"></script>
+<script src="/cliente/recursos/javascript/geral.js"></script>
 <title>Flor do Cerrado</title>

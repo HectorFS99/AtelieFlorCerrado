@@ -1,49 +1,3 @@
-
-
-//#region ***** SweetAlert2. *****/
-// Popups
-const popupSwal = Swal.mixin({
-    customClass: {
-        confirmButton: 'btn btn-lg btn-light custom-button-popup',
-        cancelButton: 'btn btn-lg btn-danger custom-button-popup',
-        popup: 'custom-popup'
-    },
-    buttonsStyling: false
-});
- 
-// Toasts
-const toastSwal = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    iconColor: 'white',
-    customClass: {
-        popup: 'colored-toast',
-    },
-    showConfirmButton: false,
-    timer: 7000,
-    timerProgressBar: true,
-});
-
-// Caso 'popup' seja passado como 'true', será exibido um POPUP. Caso 'false', será exibido um TOAST.
-function notificar(popup, titulo, mensagem, icone, caminho) {
-    if (popup) {
-        popupSwal.fire({ 
-            title: `${titulo}`
-            , text: `${mensagem}`
-            , icon: `${icone}` 
-        }).then(() => { 
-            if (caminho) { window.location.href = `${caminho}`; }            
-        }) 
-    } else {
-        toastSwal.fire({
-            title: `${titulo}`
-            , text: `${mensagem}`
-            , icon: `${icone}` 
-        });
-    }
-}
-//#endregion
-
 //#region ***** Máscaras para campos (pode ser usada em outras telas) *****/
 function aplicarMascaraCPF(campo) {
     campo.value = campo.value.replace(/[^0-9.-]/g, ''); // Remove letras e mantém apenas números, ponto (.) e hífen (-).
@@ -460,32 +414,32 @@ function enviarCodigoRecuperacao(e) {
 
     switch (txtEmail) {
         case 'hector.silva5@fatec.sp.gov.br':
-            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', 'login.html');
+            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', '');
             break;
         case 'diogo.martins5@fatec.sp.gov.br':
-            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', 'login.html');
+            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', '');
             break;
         case 'ellen.oliveira12@fatec.sp.gov.br':
-            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', 'login.html');
+            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', '');
             break;
         case 'enzo.silva9@fatec.sp.gov.br':
-            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', 'login.html');
+            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', '');
             break;
         case 'joao.garcia27@fatec.sp.gov.br':
-            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', 'login.html');
+            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', '');
             break;
         case 'henrique.cordeiro2@fatec.sp.gov.br':
-            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', 'login.html');
+            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', '');
             break;
         // Professores
         case 'humberto.toledo01@fatec.sp.gov.br':
-            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', 'login.html');
+            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', '');
             break;
         case 'joao.souza73@fatec.sp.gov.br':
-            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', 'login.html');
+            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', '');
             break;
         case 'rennan.araujo01@fatec.sp.gov.br':
-            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', 'login.html');
+            notificar(true, 'Enviamos o link para o e-mail informado!', 'Ao acessar o link, você será redirecionado para uma página onde poderá redefinir a sua senha.', 'success', '');
             break;
         default:
             notificar(false, 'Usuário não encontrado', '', 'error', '');

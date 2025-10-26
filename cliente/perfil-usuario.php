@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<?php include '/componentes/head.php'; ?>
+    <head>
+        <?php include '/componentes/head.php'; ?>
+        <link rel="stylesheet" href="/cliente/recursos/css/perfil-usuario.css">
+    </head>
 	<body>
 		<?php 
 			date_default_timezone_set('America/Sao_Paulo'); // Define o fuso horário para o Brasil
