@@ -9,16 +9,7 @@
 			date_default_timezone_set('America/Sao_Paulo'); // Define o fuso horário para o Brasil
 
 			include '/componentes/header.php';
-			
-			if (!isset($_SESSION['id_usuario'])) {
-				echo 
-					"<script>
-						alert('Usuário não autenticado. Você será redirecionado para a página inicial.')
-						window.location.href = '../pagina-inicial.php';
-					</script>";        
-			}
-		
-			$id_usuario = $_SESSION['id_usuario'];
+			include '/acoes/selecionar_usuario.php';
 
 			/* * * * * * * * * * * * * * * * * * * * * * CONSULTA PARA OS PEDIDOS DO USUÁRIO * * * * * * * * * * * * * * * * * * * * * */
 			$sql_pedidos = mysql_query(
@@ -58,24 +49,6 @@
 			if (mysql_num_rows($sql_pedidos) == 0) {
 				$temPedidos = false;
 			}
-			
-			$sql_usuario = mysql_query(
-				"SELECT 
-					nome_completo
-					, cpf
-					, rg
-					, dt_nascimento
-					, sexo	
-					, telefone_celular	
-					, email	
-					, caminho_img_perfil
-					, admin
-				FROM
-					usuarios
-				WHERE 
-					id_usuario = $id_usuario");
-
-			$usuario = mysql_fetch_assoc($sql_usuario);
 		?>
 		<main class="main-usuario">
 			<div class="menu-lateral rounded-bottom">

@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="/cliente/recursos/css/confirmacao-cadastro.css">
     </head>
     <body>
-	    <?php include '/componentes/header_simples.php'; ?>
+	    <?php include '/componentes/header.php'; ?>
         <main class="container vh-100 mt-0 flex-column">
             <span id="icone-confirmacao" class="fa-regular fa-circle-check" style="display: none;"></span>
             <span id="icone-carregamento" class="loader"></span>

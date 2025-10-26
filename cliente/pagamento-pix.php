@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <?php include '/componentes/head.php'; ?>
     <body>
-   	    <?php include '/componentes/header_simples_2.php'; ?>     
+   	    <?php include '/componentes/header.php'; ?>     
         <main class="custom-main mb-4">
             <div class="coluna-1 col-1_pagamento">
                 <div class="info-container d-flex align-items-center justify-content-between">

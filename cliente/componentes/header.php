@@ -30,14 +30,23 @@
             </a>
             <a href="sobre.php" class="btn-vertical">
                 <span>SOBRE NÓS</span>
-            </a>
+            </a>            
             <a id="btnCarrinho" href="carrinho.php" class="btn btn-contorno">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span id="contador-carrinho" style="margin-left: 1rem;"><?php echo $quantidade_itens; ?></span>
             </a>
         </div>
-        <a href="login.php" class="btn-vertical btn-contorno">
-            <span>LOGIN</span>
-        </a> 
+
+        <?php if (isset($_SESSION['autenticado']) && isset($_SESSION['id_usuario']) > 0) { 
+            include '/acoes/selecionar_usuario.php';
+        ?>
+            <a href="#" onclick="window.location.href='./acoes/verifica_login.php'; return false;" class="btn-minha-conta">
+                <img src="<?php echo $usuario['caminho_img_perfil']; ?>">         
+            </a>                     
+        <?php } else { ?>
+            <a href="login.php" class="btn-vertical btn-contorno">
+                <span>LOGIN</span>
+            </a>                               
+        <?php } ?>        
     </nav>
 </header>

@@ -5,8 +5,9 @@
         <link rel="stylesheet" href="/cliente/recursos/css/detalhes-produto.css">
     </head>
     <body>
-        <?php include '/componentes/header.php'; ?>
-        <?php
+        <?php 
+            include '/componentes/header.php'; 
+            
             if (isset($_GET['id_produto'])) {
                 $id_produto = $_GET['id_produto'];
                 $select_produtos = "
@@ -36,8 +37,7 @@
             } else {
                 echo "ID do produto não fornecido.";
             }
-        ?>
-        <?php
+
             if (isset($_GET['id_produto'])) {
                 $id_produto = $_GET['id_produto'];
 
@@ -110,7 +110,7 @@
                             <button onclick="subtrairQtd('qtdProd2', 'lblValorProduto', 'lblQtdProduto', 'lblValorSubTotalPedido');" class="btn btn-success">
                                 <i class="fa-solid fa-minus"></i>
                             </button>
-                            <input id="qtdProd2" name="lblQtdProduto" class="form-control" type="number" value="1"/>
+                            <span class="input-group-text w-100" id="qtdProd2" name="lblQtdProduto" class="mx-3">1</span>
                             <button onclick="adicionarQtd('qtdProd2','lblValorProduto', 'lblQtdProduto', 'lblValorSubTotalPedido');" class="btn btn-success">
                                 <i class="fa-solid fa-plus"></i>
                             </button>
@@ -168,7 +168,9 @@
                 <div class="avaliacao-usuario">
                     <div class="avaliacao-usuario_cabecalho">
                         <div class="avaliacao-usuario_info">
-                            <img src="recursos/imagens/usuarios/user_sample.png">
+                            <a href="#" onclick="window.location.href='./acoes/verifica_login.php'; return false;" class="btn-minha-conta">
+                                <img src="<?php echo $usuario['caminho_img_perfil']; ?>">         
+                            </a>
                             <div>
                                 <h6 class="m-0">Você</h6>
                                 <b><small class="text-success"><i class="fa-solid fa-circle-check"></i> Avalie este produto.</small></b>

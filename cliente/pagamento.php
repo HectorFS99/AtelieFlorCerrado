@@ -82,7 +82,7 @@
 <html lang="pt-br">
     <?php include '/componentes/head.php'; ?>
     <body>
-   	    <?php include '/componentes/header_simples_2.php'; ?>     
+   	    <?php include '/componentes/header.php'; ?>     
         <main class="custom-main mb-4">
             <?php if (count($itens_carrinho) > 0) { ?>
                 <div class="coluna-1">

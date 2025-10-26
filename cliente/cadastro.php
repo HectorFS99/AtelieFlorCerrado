@@ -3,6 +3,7 @@
     <head>
         <?php include '/componentes/head.php'; ?>
         <link rel="stylesheet" href="/cliente/recursos/css/autenticacao.css">
+		<script src="/cliente/recursos/javascript/autenticacao.js"></script>
     </head>
 	<body>
 		<main class="container-autenticacao">
