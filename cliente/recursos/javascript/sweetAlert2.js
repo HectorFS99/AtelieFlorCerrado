@@ -13,7 +13,7 @@ const toastSwal = Swal.mixin({
     position: 'top-end',
     iconColor: 'white',
     customClass: {
-        popup: 'colored-toast',
+        popup: 'colored-toast tooltip-customizada',
     },
     showConfirmButton: false,
     timer: 7000,

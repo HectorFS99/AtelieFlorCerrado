@@ -3,6 +3,11 @@
     background: #e17800;
     color: white;
     font-weight: 600;
+    margin: 1rem;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: start !important;
 }
 
 .colored-toast {
@@ -20,6 +25,20 @@
 
 .colored-toast.swal2-icon-warning {
     background-color: #f77e1b !important;
+}
+
+.swal2-container {
+    overflow: visible !important;
+}
+
+.swal2-container .tooltip-customizada {
+    background: #e17800;
+    color: white;
+    font-weight: 600;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: start !important;
 }
 /*#endregion*/
 

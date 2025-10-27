@@ -103,6 +103,11 @@ h2, h3, h4, h5, h6 {
 }
 
 /*#region ***** ***** ***** geral.css ***** ***** *****/ 
+.main-centralizada {
+    margin: 2rem auto;
+    width: 1100px;
+}
+
 .navbar {
     background: var(--cor-secundaria);
     display: flex;
@@ -244,6 +249,19 @@ h2, h3, h4, h5, h6 {
 }
 
 /*#region ***** Botões *****/ 
+.btn {
+    transition: all .125s !important;
+}
+
+.btn:hover {
+    font-weight: 600;
+}
+
+.btn:active {
+    font-weight: 700;
+    transform: scale(0.95);
+}
+
 .btn-vertical {
     color: black;
     font-weight: 700;
@@ -586,26 +604,39 @@ h2, h3, h4, h5, h6 {
     }
 
 .btn-contorno {
-    padding: .5rem .75rem;
     border: 2px solid var(--cor-principal);
     border-radius: var(--borda-arredondada);
     background-color: transparent;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-principal);
+    gap: .5rem;
 }
 
 .btn-contorno:hover {
     background-color: var(--cor-principal);
     border: 2px solid var(--cor-principal);
+    padding-top: 0.6rem;
     color: white;
+}
+
+.btn-contorno:active {
+    background-color: var(--cor-principal) !important;
+    border: 2px solid var(--cor-secundaria);
+    color: var(--cor-secundaria) !important;
 }
 
 .btns_barra_superior {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .btns_barra_superior > a {
-    margin: 0 2rem;
+    /* margin: 0 2rem; */
     font-size: 1rem;
     color: var(--cor-principal);
 }
@@ -1093,3 +1124,9 @@ footer {
     font-weight: 600;
     color: var(--cor-principal);
 }
+
+.invalid-feedback {
+    height: 25px;
+    line-height: 1.25rem;
+}
+/*#endregion*/

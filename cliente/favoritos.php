@@ -3,6 +3,7 @@
     <head>
         <?php include '/componentes/head.php'; ?>
         <link rel="stylesheet" href="/cliente/recursos/css/favoritos.css">
+        <link rel="stylesheet" href="/cliente/recursos/css/listagem-geral-produtos.css">
     </head>
     <body>
         <?php
@@ -39,33 +40,37 @@
                 }
             }
         ?>
-        <main style="margin: 1rem;">
+        <main class="main-centralizada">
             <?php if (count($itens_favoritos) > 0) { ?>
                 <div class="cabecalho-favoritos">
                     <h3><i class="fa-solid fa-heart"></i> Seus Favoritos</h3>
                 </div>
 
-                <div class="grid-produtos_favoritos">
+                <div class="grid-produtos">
                     <?php foreach ($itens_favoritos as $item): ?>
-                        <div href="detalhes-produto.php?id_produto=<?= $item['id_produto']; ?>" class="card-produto_listagem">
-                            <a href="detalhes-produto.php?id_produto=<?= $item['id_produto']; ?>">
-                                <img class="card-produto_listagem_img" src="<?= $item['caminho_imagem']; ?>">
+                        <div class="card-produto">
+                            <a href="detalhes-produto.php?id_produto=<?php echo $item['id_produto']; ?>" class="card_produto_img" >
+                                <img src="<?php echo $item['caminho_imagem']; ?>">
                             </a>
-                            <h5 class="col-produto_listagem">
-                                <?= $item['nome']; ?>
-                                <span>R$ <?= number_format($item['preco_atual'], 2, ',', '.'); ?></span>
-                            </h5>
-                            <div class="col-produto_listagem opcoes-produto_listagem">
-                                <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?= $item['id_produto']; ?>&comprarAgora=true" class="btn btn-cor-principal flex-fill">
-                                    <strong>COMPRAR</strong>
-                                </a>
-                                <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?= $item['id_produto']; ?>&listagem=true" class="btn btn-outline-success h-100">
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                </a>
-                                <a href="./acoes/favorito/desfavoritar.php?id_produto=<?= $item['id_produto']; ?>&id_usuario=<?= $_SESSION['id_usuario']; ?>"
-                                    class="btn btn-danger border-0">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </a>
+                            <div class="card-produto_detalhe">
+                                <div class="detalhe-info">
+                                    <h6><?php echo $item['nome']; ?></h6>
+                                    <small>R$ <?php echo number_format($item['preco_atual'], 2, ',', '.'); ?></small>
+                                </div>
+                                <?php if (isset($_SESSION['autenticado']) && isset($_SESSION['id_usuario']) > 0) { ?>
+                                    <div class="detalhe-opcoes">
+                                        <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?php echo $item['id_produto']; ?>&comprarAgora=true" class="btn-card-produto">
+                                            <i class="fa-solid fa-money-check-dollar"></i>
+                                        </a>
+                                        <a href="./acoes/carrinho/adicionar_produto.php?id_produto=<?php echo $item['id_produto']; ?>&favoritos=true" class="btn-card-produto">
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                        </a>
+                                    </div>                               
+                                <?php } else { ?>
+                                    <a href="login.php" class="btn-card-produto">
+                                        <i class="fa-solid fa-money-check-dollar"></i>
+                                    </a>                                
+                                <?php } ?>                                
                             </div>
                         </div>
                     <?php endforeach; ?>

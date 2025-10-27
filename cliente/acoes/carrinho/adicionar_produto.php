@@ -62,6 +62,7 @@
 			)"
 		);
 	}
+
 	if ($comprarAgora) {
 		header("Location: ../../pagamento.php");
 	} else if ($listagem) {

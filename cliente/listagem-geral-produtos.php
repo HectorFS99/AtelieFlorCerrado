@@ -125,7 +125,7 @@
             <!-- Listagem de Produtos -->
             <div>
                 <div class="titulo-secao-produtos">
-                    <h4>Produtos<?php echo $filtro_selecionado; ?></h4>                    
+                    <h4 class="m-0">Produtos<?php echo $filtro_selecionado; ?></h4>                    
                     <div class="d-flex justify-content-between">
                         <form method="GET" action="listagem-geral-produtos.php">
                             <select name="filtrar" class="form-select" onchange="this.form.submit()">
@@ -140,7 +140,7 @@
 
                 <div class="grid-produtos">
                     <?php while($linha = mysql_fetch_assoc($sql_produtos)) { ?>
-                        <div href="detalhes-produto.php?id_produto=<?php echo $linha['id_produto']; ?>" class="card-produto">
+                        <div class="card-produto">
                             <a href="detalhes-produto.php?id_produto=<?php echo $linha['id_produto']; ?>">
                                 <img class="card_produto_img" src="<?php echo $linha['caminho_imagem']; ?>">
                             </a>

@@ -4,12 +4,44 @@
 
     include '/acoes/conexao.php';
     session_start();
-        
-    $sql_quantidade_itens_carrinho = mysql_query("SELECT COUNT(DISTINCT `id_produto`) AS quantidade_itens_unicos FROM `carrinho`");
-    
-    $quantidade_itens = 0; 
-    if ($row = mysql_fetch_assoc($sql_quantidade_itens_carrinho)) {
-        $quantidade_itens = $row['quantidade_itens_unicos'];
+
+    $qtd_carr = null; 
+    $qtd_fav = null;
+
+    if (isset($_SESSION['id_usuario'])) {
+        $id_usuario = $_SESSION['id_usuario'];
+
+        $sql_usuario = mysql_query(
+            "SELECT 
+                nome_completo
+                , cpf
+                , rg
+                , dt_nascimento
+                , sexo	
+                , telefone_celular	
+                , email	
+                , caminho_img_perfil
+                , admin
+            FROM
+                usuarios
+            WHERE 
+                id_usuario = $id_usuario");
+
+        $usuario = mysql_fetch_assoc($sql_usuario);        
+
+        $sql_qtd_carr = mysql_query("SELECT COUNT(DISTINCT `id_produto`) AS sql_qtd_carr FROM `carrinho` WHERE `id_usuario` = $id_usuario");
+        $sql_qtd_fav = mysql_query("SELECT COUNT(DISTINCT `id_produto`) AS sql_qtd_fav FROM `favoritos` WHERE `id_usuario` = $id_usuario");
+
+        if ($row = mysql_fetch_assoc($sql_qtd_carr)) {
+            $qtd_carr = $row['sql_qtd_carr'];
+        }
+
+        if ($row = mysql_fetch_assoc($sql_qtd_fav)) {
+            $qtd_fav = $row['sql_qtd_fav'];
+        }
+    } else {
+        $qtd_carr = 0; 
+        $qtd_fav = 0;
     }
 ?>
 
@@ -30,10 +62,14 @@
             </a>
             <a href="sobre.php" class="btn-vertical">
                 <span>SOBRE NÓS</span>
-            </a>            
-            <a id="btnCarrinho" href="carrinho.php" class="btn btn-contorno">
+            </a>
+            <a href="carrinho.php" class="btn btn-contorno">
                 <i class="fa-solid fa-cart-shopping"></i>
-                <span id="contador-carrinho" style="margin-left: 1rem;"><?php echo $quantidade_itens; ?></span>
+                <?php if ($qtd_carr != null) { echo "<span id=\"contador-obj\">$qtd_carr</span>"; } ?>
+            </a>            
+            <a href="favoritos.php" class="btn btn-contorno">
+                <i class="fa-solid fa-heart"></i>
+                <?php if ($qtd_fav != null) { echo "<span id=\"contador-obj\">$qtd_fav</span>"; } ?>
             </a>
         </div>
 

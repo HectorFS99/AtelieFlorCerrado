@@ -6,7 +6,7 @@
 </head>
 <body>
 	<?php include '/componentes/header.php'; ?>
-    <main class="main-sobre">
+    <main class="main-centralizada">
         <div class="div-sobre_conteudo">
             <h3 class="sobre-titulo">SOBRE NÓS</h3>
             <p class="sobre-texto">

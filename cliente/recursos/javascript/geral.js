@@ -162,7 +162,7 @@ function exibirFeedback(campo, div_feedback, mensagem) {
 
 function limparFeedback(div_feedback) {
     div_feedback.innerHTML = '';
-    div_feedback.style.display = 'none';
+    //div_feedback.style.display = 'none';
 }
 
 function verificarFeedbackInvalido(id_form) {
@@ -306,12 +306,12 @@ function adicionarAoCarrinho() {
     var contador;
     var quantidade = parseInt(document.getElementById('qtdProd2').innerHTML);
     if (quantidade > 1) {
-        contador = parseInt(document.getElementById('contador-carrinho').innerHTML) + quantidade;
+        contador = parseInt(document.getElementById('contador-obj').innerHTML) + quantidade;
     } else {
-        contador = parseInt(document.getElementById('contador-carrinho').innerHTML) + 1;
+        contador = parseInt(document.getElementById('contador-obj').innerHTML) + 1;
     }
 
-    document.getElementById('contador-carrinho').innerHTML = contador;
+    document.getElementById('contador-obj').innerHTML = contador;
 }
 
 function indisponivel() {

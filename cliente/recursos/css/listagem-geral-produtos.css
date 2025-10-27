@@ -1,4 +1,4 @@
-/*#region ***** ***** ***** listagem-geral-produtos.css ***** ***** *****/
+/*#region ***** Padrão *****/
 .main-listagem {
     display: flex;
     justify-content: space-between;
@@ -40,18 +40,21 @@
 }
 
 .grid-produtos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1rem;
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1100px;
+  margin: 1rem 0;
 }
 
 .card-produto {
     display: flex;
     flex-direction: column;
     min-width: 250px;
-    width: 250px;
+    width: 100%;
     background: white;
     border-radius: var(--borda-arredondada);
     text-decoration: none;
@@ -66,8 +69,12 @@
 }
 
 .card_produto_img {
+    height: 325px;
+}
+
+.card_produto_img img {
     width: 100%;
-    height: 250px;
+    height: 325px;
     border-radius: var(--borda-arredondada);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -76,11 +83,16 @@
 
 .card-produto_detalhe {
     display: flex;
-    height: 100%;
     align-items: center;
+    height: 60px;
 }
 
 .detalhe-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    height: 100%;
     padding: .5rem .75rem;
     width: 50%;
 }
@@ -98,6 +110,9 @@
 
 .detalhe-opcoes {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     width: 50%;
     height: 100%;
 }
@@ -124,5 +139,28 @@
 .btn-card-produto:last-child {
     border-right: none;
     border-bottom-right-radius: var(--borda-arredondada);
+}
+/*#endregion */
+
+/*#region ***** Responsividade *****/
+@media (max-width: 480px) {
+  .grid-produtos_favoritos {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .grid-produtos_favoritos {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-produtos_favoritos {
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 1rem;
+  }
 }
 /*#endregion */

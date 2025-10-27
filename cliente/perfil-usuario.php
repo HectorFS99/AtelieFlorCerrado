@@ -64,7 +64,7 @@
 					<i class="fa-solid fa-map-location-dot"></i>
 					<p>Endereços</p>
 				</button>
-				<a class="btn menu-lateral_opcao rounded-bottom" href="#" onclick="window.location.href='deslogar.php'; return false;">
+				<a class="btn menu-lateral_opcao rounded-bottom" href="#" onclick="window.location.href='./acoes/deslogar.php'; return false;">
 					<i class="fa-solid fa-person-walking-arrow-loop-left"></i>
 					<p>Sair</p>
 				</a>
