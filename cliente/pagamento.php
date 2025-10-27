@@ -76,22 +76,49 @@
     if (mysql_num_rows($sql_cartoes_pagamento) == 0 && mysql_num_rows($sql_cartoes_pagamento_principal) == 0) {
         $temCartoesPagamentoCadastrados = false;
     }
+
+    include '/acoes/selecionar_usuario.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-    <?php include '/componentes/head.php'; ?>
+    <head>
+        <?php include '/componentes/head.php'; ?>
+        <link rel="stylesheet" href="/cliente/recursos/css/carrinho-pagamento.css">
+    </head>
     <body>
-   	    <?php include '/componentes/header.php'; ?>     
+        <header>
+            <nav class="navbar">
+                <a href="pagina-inicial.php" style="width: 70px;">
+                    <img src="/cliente/recursos/imagens/logos/AtelieFlorDoCerrado.png" width="70px" />
+                </a>
+                <div class="btns_barra_superior">
+                    <a href="listagem-geral-produtos.php" class="btn-vertical" title="Voltar">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>                    
+                    <a href="listagem-geral-produtos.php" class="btn-vertical btn-contorno">
+                        <span>ESCOLHER MAIS PRODUTOS</span>
+                    </a>
+                    <a href="pagina-inicial.php" class="btn-vertical" title="Página Inicial">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </a>
+                </div>
+            
+                <a href="#" onclick="window.location.href='./acoes/verifica_login.php'; return false;" class="btn-minha-conta">
+                    <img src="<?php echo $usuario['caminho_img_perfil']; ?>">         
+                </a>       
+            </nav>
+        </header>
+
         <main class="custom-main mb-4">
             <?php if (count($itens_carrinho) > 0) { ?>
                 <div class="coluna-1">
                     <!-- Endereços -->
                     <div class="info-container">
-                        <div class="div-endereco_titulo">
-                            <h5><i class="fa-solid fa-truck-ramp-box"></i> Endereço de Entrega</h5>
-                        </div>
-                        <div class="div-endereco_cep">                        
+                        <h5 class="col-secao-titulo">
+                            <i class="fa-solid fa-truck-ramp-box"></i> Endereço de entrega
+                        </h5>
+                        <div class="div-endereco_cep">
                             <div class="componente-accordion acc-entrega" id="secao-opcoes_entrega">
                                 <!-- Entrega Normal -->
                                 <section class="border-bottom w-100">
@@ -106,18 +133,12 @@
                                             <!-- Endereço principal -->
                                             <?php if ($temEnderecosCadastrados) {
                                                 while($linha = mysql_fetch_assoc($sql_enderecoPrincipal)) { ?>
-                                                    <div class="form-check mb-3">
+                                                    <div class="form-check d-flex align-items-start gap-3">
                                                         <input class="form-check-input" type="radio" name="opcao-entrega" id="rdbEndereco_principal" value="endereco_<?php echo $linha['id_endereco']; ?>">
                                                         <label class="form-check-label" for="rdbEndereco_principal">
-                                                            <strong>
-                                                                Endereço Principal - <?php echo $linha['nome_endereco']; ?>
-                                                            </strong>
-                                                            <p>
-                                                                <?php echo $linha['logradouro']; ?>, <?php echo $linha['numero']; ?> - <?php echo $linha['complemento']; ?>
-                                                            </p> 
-                                                            <p>
-                                                                <?php echo $linha['cep']; ?> - <?php echo $linha['bairro']; ?>, <?php echo $linha['cidade']; ?> - <?php echo $linha['uf']; ?>
-                                                            </p> 
+                                                            <strong>Endereço Principal - <?php echo $linha['nome_endereco']; ?></strong>
+                                                            <p><?php echo $linha['logradouro']; ?>, <?php echo $linha['numero']; ?> - <?php echo $linha['complemento']; ?></p> 
+                                                            <p><?php echo $linha['cep']; ?> - <?php echo $linha['bairro']; ?>, <?php echo $linha['cidade']; ?> - <?php echo $linha['uf']; ?></p> 
                                                         </label>
                                                     </div>
                                                 <?php }?>                                   
@@ -141,20 +162,14 @@
                                                             </button>
                                                         </h2>
                                                         <?php if (mysql_num_rows($sql_enderecos) > 0) { ?>
-                                                            <div id="collapseOutrosEnderecos" class="accordion-collapse collapse m-3" data-bs-parent="#accordionEnderecosOpcoes">
+                                                            <div id="collapseOutrosEnderecos" class="accordion-collapse collapse conteudo-accordion" data-bs-parent="#accordionEnderecosOpcoes">
                                                                 <?php while($linha = mysql_fetch_assoc($sql_enderecos)) { ?>
-                                                                    <div class="form-check mb-3">
+                                                                    <div class="form-check">
                                                                         <input class="form-check-input" type="radio" name="opcao-entrega" id="rdbEndereco_<?php echo $linha["id_endereco"]; ?>" value="endereco_<?php echo $linha['id_endereco']; ?>">
                                                                         <label class="form-check-label" for="rdbEndereco_<?php echo $linha["id_endereco"]; ?>">
-                                                                            <strong>
-                                                                                <?php echo $linha['nome_endereco']; ?>
-                                                                            </strong>
-                                                                            <p>
-                                                                                <?php echo $linha['logradouro']; ?>, <?php echo $linha['numero']; ?> - <?php echo $linha['complemento']; ?>
-                                                                            </p> 
-                                                                            <p>
-                                                                                <?php echo $linha['cep']; ?> - <?php echo $linha['bairro']; ?>, <?php echo $linha['cidade']; ?> - <?php echo $linha['uf']; ?>
-                                                                            </p> 
+                                                                            <strong><?php echo $linha['nome_endereco']; ?></strong>
+                                                                            <p><?php echo $linha['logradouro']; ?>, <?php echo $linha['numero']; ?> - <?php echo $linha['complemento']; ?></p> 
+                                                                            <p><?php echo $linha['cep']; ?> - <?php echo $linha['bairro']; ?>, <?php echo $linha['cidade']; ?> - <?php echo $linha['uf']; ?></p> 
                                                                         </label>
                                                                     </div>                                            
                                                                 <?php }?> 
@@ -192,13 +207,13 @@
                                                             </div>
 
                                                             <!-- CEP -->
-                                                            <div class="form-floating mt-0">
-                                                                <input id="txtCep" name="txtCep" type="text" class="form-control" placeholder="Informe o CEP"
+                                                            <div class="form-floating">
+                                                                <input id="txtCep" name="txtCep" type="text" class="form-control mb-2" placeholder="Informe o CEP"
                                                                     onfocusout="pesquisaCep('txtCep');"
                                                                     maxlength="8" required>
 
                                                                 <label for="txtCep">CEP</label>
-                                                                <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" class="link-correios m-0">Não sei o meu CEP</a>
+                                                                <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" class="link-correios mx-0">Não sei o meu CEP</a>
                                                                 <div id="txtCepErro" class="invalid-feedback">
                                                                 </div>
                                                             </div>
@@ -254,7 +269,7 @@
                                                             </div>
 
                                                             <!-- Endereço principal e botão de confirmação --> 
-                                                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                                            <div class="d-flex justify-content-between align-items-center">
                                                                 <div class="form-check">
                                                                     <input name="chkEnderecoPrincipal" class="form-check-input" type="checkbox">
                                                                     <label class="form-check-label" for="chkEnderecoPrincipal">Marcar como Endereço Principal</label>
@@ -282,15 +297,11 @@
                                     <div id="entrega_retirar" class="container-accordion" style="display: none;">
                                         <div class="conteudo-accordion">
                                             <?php while($linha = mysql_fetch_assoc($sql_lojas)) { ?>
-                                                <div class="form-check mb-3">
+                                                <div class="form-check">
                                                     <input id="rdbLoja_<?php echo $linha['id_loja']; ?>" class="form-check-input" type="radio" name="opcao-entrega" value="loja_<?php echo $linha['id_loja']; ?>">
                                                     <label class="form-check-label" for="rdbLoja_<?php echo $linha['id_loja']; ?>">
-                                                        <strong>
-                                                            <?php echo $linha['nome']; ?>
-                                                        </strong>
-                                                        <p>
-                                                            <?php echo $linha['endereco_completo']; ?>
-                                                        </p>
+                                                        <strong><?php echo $linha['nome']; ?></strong>
+                                                        <p><?php echo $linha['endereco_completo']; ?></p>
                                                     </label>
                                                 </div>
                                             <?php } ?>
@@ -303,6 +314,9 @@
 
                     <!-- Pagamentos -->
                     <div class="componente-accordion acc-pagamento" id="secao-formas_pagamento">
+                        <h5 class="col-secao-titulo">
+                            <i class="fa-solid fa-money-check-dollar"></i> Forma de pagamento
+                        </h5>
                         <!-- Pix -->
                         <section class="border-bottom w-100">
                             <div onclick="document.getElementById('forma-pagamento_pix').click();" class="btn-accordion">
@@ -318,7 +332,7 @@
                                         <h5 class="mb-2">Total a Pagar:</h5>
                                         <h5 class="text-success"><b>R$ <span name="lblValorTotalPedido"></span></b></h5>
                                     </div>
-                                    <div class="pix-instrucoes">
+                                    <div class="pix-instrucoes pb-2">
                                         <h5 class="mb-3">Veja como é fácil pagar com <strong style="color: #32BCAD;">pix</strong>!</h5>
                                         <ul>
                                             <li class="pix-passo">
@@ -349,18 +363,12 @@
                                     <!-- Pagamento principal -->
                                     <?php if ($temCartoesPagamentoCadastrados) {
                                         while($linha = mysql_fetch_assoc($sql_cartoes_pagamento_principal)) { ?>
-                                            <div class="form-check mb-3">
+                                            <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="forma-pagamento" id="chkPagamento_principal" value="<?php echo $linha['id_cartao_pagamento']; ?>">
                                                 <label class="form-check-label" for="chkPagamento_principal">
-                                                    <strong>
-                                                        Cartão Principal - <?php echo $linha['apelido']; ?>
-                                                    </strong>
-                                                    <p>
-                                                        <?php echo $linha['nome_impresso']; ?>, terminado em <?php echo $linha['numero_cartao']; ?> - <?php echo $linha['bandeira']; ?>
-                                                    </p> 
-                                                    <p>
-                                                        Vencimento: <?php echo $linha['dt_expiracao']; ?>
-                                                    </p> 
+                                                    <strong>Cartão Principal - <?php echo $linha['apelido']; ?></strong>
+                                                    <p><?php echo $linha['nome_impresso']; ?>, terminado em <?php echo $linha['numero_cartao']; ?> - <?php echo $linha['bandeira']; ?></p> 
+                                                    <p>Vencimento: <?php echo $linha['dt_expiracao']; ?></p> 
                                                 </label>
                                             </div>
                                         <?php }?>
@@ -384,9 +392,9 @@
                                                     </button>
                                                 </h2>
                                                 <?php if (mysql_num_rows($sql_cartoes_pagamento) > 0) { ?>
-                                                    <div id="collapseOutrosPagamentos" class="accordion-collapse collapse m-3" data-bs-parent="#accordionCartoesPagamentoOpcoes">
+                                                    <div id="collapseOutrosPagamentos" class="accordion-collapse collapse conteudo-accordion mt-3" data-bs-parent="#accordionCartoesPagamentoOpcoes">
                                                         <?php while($linha = mysql_fetch_assoc($sql_cartoes_pagamento)) { ?>
-                                                            <div class="form-check mb-3">
+                                                            <div class="form-check">
                                                                 <input class="form-check-input" type="radio" name="forma-pagamento" id="chkPagamento_<?php echo $linha["id_cartao_pagamento"]; ?>" value="<?php echo $linha['id_cartao_pagamento']; ?>">
                                                                 <label class="form-check-label" for="chkPagamento_<?php echo $linha["id_cartao_pagamento"]; ?>">
                                                                     <strong>
@@ -478,16 +486,16 @@
                                                     </div>
 
                                                     <!-- Crédito ou Débito, Cartão Principal -->
-                                                    <div class="d-flex align-items-start justify-content-between m-0">
+                                                    <div class="d-flex align-items-center justify-content-between m-0">
                                                         <!-- Crédito ou Débito -->
                                                         <div>
-                                                            <div class="form-check d-flex align-items-center">
+                                                            <div class="form-check">
                                                                 <input id="rdbCredito" class="form-check-input" type="radio" value="credito" name="rdbCreditoDebito">
-                                                                <label class="form-check-label mx-2" for="rdbCredito">Crédito</label>
+                                                                <label class="form-check-label" for="rdbCredito">Crédito</label>
                                                             </div>
-                                                            <div class="form-check d-flex align-items-center">
+                                                            <div class="form-check">
                                                                 <input id="rdbDebito" class="form-check-input" type="radio" value="debito" name="rdbCreditoDebito" checked>
-                                                                <label class="form-check-label mx-2" for="rdbDebito">Débito</label>
+                                                                <label class="form-check-label" for="rdbDebito">Débito</label>
                                                             </div>
                                                         </div>
                                                         
@@ -505,7 +513,7 @@
                                                             <img src="recursos/imagens/logos/bandeiras_pagamento/american-express.svg" alt="american-express" />
                                                             <img src="recursos/imagens/logos/bandeiras_pagamento/hipercard.svg" alt="hipercard" />
                                                         </div>
-                                                        <button type="submit" class="btn btn-cartao">
+                                                        <button type="submit" class="btn btn-cor-principal">
                                                             <strong>Confirmar</strong>
                                                         </button>
                                                     </div>
@@ -515,13 +523,13 @@
                                     </div>
 
                                     <?php if ($temCartoesPagamentoCadastrados) { ?>
-                                        <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <div class="d-flex justify-content-between align-items-center">
                                             <div class="d-flex justify-content-between align-items-center"> 
                                                 <!-- Quantidade de parcelas -->
                                                 <div class="form-floating">
                                                     <select id="cboParcelas" name="cboParcelas" class="form-select">
                                                     </select>
-                                                    <label for="cboParcelas">Quantidade de parcelas</label>
+                                                    <label for="cboParcelas">Qtd. de parcelas</label>
                                                 </div>
 
                                                 <!-- Crédito ou Débito -->
@@ -546,7 +554,7 @@
 
                 <!-- Resumo e finalização do pedido -->
                 <div class="coluna-2">
-                    <form name="frmFinalizarPedido" id="frmFinalizarPedido" method="post" onsubmit="finalizarPedido(event);" class="info-container">      
+                    <form name="frmFinalizarPedido" id="frmFinalizarPedido" method="post" onsubmit="finalizarPedido(event);" class="info-container">
                         <input type="hidden" id="txtValorSubTotalPedido" name="txtValorSubTotalPedido" value="">
                         <input type="hidden" id="txtValorFrete" name="txtValorFrete" value="">
                         <input type="hidden" id="txtValorDesconto" name="txtValorDesconto" value="">
@@ -556,7 +564,9 @@
                         <input type="hidden" id="txtParcelas" name="txtParcelas" value="">
                         <input type="hidden" id="txtOpcaoEntrega" name="txtOpcaoEntrega" value="">
 
-                        <h5 class="div-valor_titulo"><i class="fa-solid fa-bag-shopping"></i> Resumo do Pedido</h5>
+                        <h5 class="col-secao-titulo resumo-pedido-titulo">
+                            <i class="fa-solid fa-bag-shopping"></i> Resumo do Pedido
+                        </h5>
                         <div class="div-valor_info resumo-pedido">
                             <p>Subtotal:</p>
                             <p>R$ <span id="lblValorSubTotalPedido"></span></p>
@@ -574,34 +584,25 @@
                             <h4 class="text-success">R$ <span id="lblValorTotalPedido" name="lblValorTotalPedido"></span></h4>
                         </div>
                         <div class="d-flex"> 
-                            <a href="listagem-geral-produtos.php" class="btn btn-resumoPedido btn-escolherMaisProdutos">Escolher mais produtos</a>                         
                             <button type="submit" class="btn btn-resumoPedido btn-finalizar">Finalizar Pedido</button> 
                         </div>
                     </form>
                     <?php foreach ($itens_carrinho as $item): ?>
                         <div class="info-container p-3">
                             <div class="div-produto_info">
-                                <a href="detalhes-produto.php?id_produto=<?php echo $item['id_produto']; ?>" class="div-produto_info_img"><img src="<?php echo $item['caminho_imagem']; ?>" /></a>
-                                <div class="mb-2">
+                                <a href="detalhes-produto.php?id_produto=<?php echo $item['id_produto']; ?>" class="div-produto_info_img">
+                                    <img src="<?php echo $item['caminho_imagem']; ?>" />
+                                </a>
+                                <div>
                                     <h5 class="mb-1"><?php echo $item['nome']; ?></h5>
-                                    <!-- <div class="avaliacao-estrelas mb-2">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <b>(4.9)</b>
-                                    </div> -->
-                                    <p>
-                                        <s class="text-muted">De: R$ <?php echo number_format($item['preco_anterior'], 2, ',', '.'); ?></s><br>
-                                        <b>Por: R$ <span name="lblValorProduto"><?php echo number_format($item['preco_atual'], 2, ',', '.'); ?></span></b>
+                                    <p class="my-2">
+                                        <b>R$ <span name="lblValorProduto"><?php echo number_format($item['preco_atual'], 2, ',', '.'); ?></span></b> -
+                                        Em até 10x de <?php echo number_format($item['preco_atual'] / 10, 2, ',', '.'); ?> s/ juros                                    
                                     </p>
-                                    <p><b>à vista com pix, ou em 1x no Cartão de Crédito</b></p>
-                                    <p>ou em até 10x de <?php echo number_format($item['preco_atual'] / 10, 2, ',', '.'); ?> s/ juros</p>
+                                    <b class="text-muted mt-2">
+                                        <span name="lblQtdProduto">1</span> item(ns)
+                                    </b>
                                 </div>
-                            </div>
-                            <div class="div-produto_opcoes">
-                                <span class="text-muted mt-2"><span name="lblQtdProduto">1</span> item(ns)</span>
                             </div>
                         </div>
                     <?php endforeach; ?>

@@ -4,7 +4,7 @@
 <html lang="pt-br">
     <head>
         <?php include '/componentes/head.php'; ?>
-        <link rel="stylesheet" href="/cliente/recursos/css/carrinho.css">
+        <link rel="stylesheet" href="/cliente/recursos/css/carrinho-pagamento.css">
     </head>
     <body>
    	    <?php

@@ -57,7 +57,7 @@
             </div>
             <div class="coluna-2 col-2_pagamento">
                 <div class="info-container">
-                    <div class="div-endereco_titulo">
+                    <div class="col-secao-titulo">
                         <h5><i class="fa-solid fa-truck-ramp-box"></i> Endereço de Entrega</h5>
                     </div>
                     <div class="div-endereco_atual">
