@@ -57,7 +57,7 @@
             <a href="listagem-geral-produtos.php" class="btn-vertical">
                 <span>PRODUTOS</span>
             </a>
-            <a href="#" class="btn-vertical">
+            <a href="galeria.html" class="btn-vertical">
                 <span>GALERIA</span>
             </a>
             <a href="sobre.php" class="btn-vertical">
