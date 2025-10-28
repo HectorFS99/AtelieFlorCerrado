@@ -63,6 +63,9 @@
             <a href="sobre.php" class="btn-vertical">
                 <span>SOBRE NÓS</span>
             </a>
+            <a href="blog.php" target="_blank" class="btn-vertical">
+                <span>BLOG</span>
+            </a>
             <a href="carrinho.php" class="btn btn-contorno">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <?php if ($qtd_carr != null) { echo "<span id=\"contador-obj\">$qtd_carr</span>"; } ?>
