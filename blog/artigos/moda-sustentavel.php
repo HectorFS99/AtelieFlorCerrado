@@ -25,11 +25,15 @@
                 <p class="subtitulo">O Caminho da Consciência no Seu Guarda-Roupa</p>
                 <p class="data-artigo">Publicado em 10 de junho de 2024</p>
                 
-                <img src="../recursos/imagens/modelos/mulher-vermelho.png"  
-                     alt="Mulher usando vestido vermelho e bolsa artesanal" 
-                     class="imagem-artigo">
+                <img src="../recursos/imagens/artigos/moda-artesanal.jpg"  
+                     alt="Linhas de crochê e fibras naturais usadas na confecção de bolsas artesanais" 
+                     class="imagem-artigo"
+                     width="600" height="400"
+                     style="display:block; margin:auto;"
+                     >
 
                 <section class="fade-in">
+                    <p></p>
                     <p>A moda não é mais apenas sobre o que vestimos, mas sobre como consumimos. No universo das tendências passageiras e da produção em massa, as peças artesanais surgem como um farol de sustentabilidade, ética e significado. Se você busca um estilo que reflete seus valores, a escolha é clara: abrace o artesanato!</p>
                 </section>
 
