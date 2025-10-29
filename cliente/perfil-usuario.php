@@ -50,7 +50,7 @@
 				$temPedidos = false;
 			}
 		?>
-		<main class="main-usuario">
+		<main class="main-centralizada d-flex">
 			<div class="menu-lateral rounded-bottom">
 				<button id="btnPedidos" onclick="exibirTela('section-meus-pedidos', this.id);" class="btn menu-lateral_opcao mt-3 btn-opcaoMenu_selecionado">
 					<i class="fa-solid fa-boxes-stacked"></i>
@@ -75,7 +75,7 @@
 						<div class="container-informacoes">
 							<div class="container-informacoes_componentes container-informacoes_cabecalho">
 								<!-- Endereço de entrega ou retirada-->
-								<div class="container-informacoes_cabecalho-info">
+								<div class="container-informacoes_info">
 									<?php if ($pedido['id_endereco'] !== null) { ?>
 										<strong>Enviar para <?php echo $pedido['nome_endereco']; ?></strong>
 										<p><?php echo $pedido['logradouro']; ?>, <?php echo $pedido['numero']; ?> - <?php echo $pedido['complemento']; ?></p> 
@@ -88,19 +88,19 @@
 								</div>
 
 								<!-- Data do Pedido -->					
-								<div class="container-informacoes_cabecalho-info">
+								<div class="container-informacoes_info">
 									<p class="titulo-informacao">REALIZADO EM</p>
 									<p><?php echo date('d/m/Y H:i:s', strtotime($pedido['dt_pedido'])); ?></p>
 								</div>
 								
 								<!-- Total do Pedido-->
-								<div class="container-informacoes_cabecalho-info">
+								<div class="container-informacoes_info">
 									<p class="titulo-informacao">TOTAL</p>
 									<p>R$ <?php echo $pedido['total']; ?></p>
 								</div>
 
 								<!-- Número do pedido -->
-								<div class="container-informacoes_cabecalho-info">
+								<div class="container-informacoes_info">
 									<p class="titulo-informacao">NÚM. DO PEDIDO</p>
 									<?php echo $pedido['id_pedido']; ?>
 								</div>									
@@ -118,8 +118,7 @@
 											pedidos_produtos AS PP
 											INNER JOIN produtos AS PRD ON PRD.id_produto = PP.id_produto
 										WHERE
-											PP.id_pedido = "
-										;
+											PP.id_pedido = ";
 
 									$sql_produtos_pedidos = mysql_query($select_produtos_pedidos . $pedido['id_pedido']);
 
@@ -130,17 +129,8 @@
 											</div>
 											<div class="mb-2">
 												<h5 class="mb-1"><?php echo $produto['nome']; ?></h5>
-												<div class="avaliacao-estrelas mb-2">
-													<i class="fa-solid fa-star"></i>
-													<i class="fa-solid fa-star"></i>
-													<i class="fa-solid fa-star"></i>
-													<i class="fa-solid fa-star"></i>
-													<i class="fa-solid fa-star"></i>
-													<b>(4.9)</b>
-												</div>
 												<p>
-													<s class="titulo-informacao">De: R$ <?php echo number_format($produto['preco_anterior'], 2, ',', '.'); ?></s><br>
-													<b>Por: R$ <span name="lblValorProduto"><?php echo number_format($produto['preco_atual'], 2, ',', '.'); ?></span></b>
+													<b>R$ <span name="lblValorProduto"><?php echo number_format($produto['preco_atual'], 2, ',', '.'); ?></span></b>
 												</p>
 											</div>
 										</a>
@@ -148,7 +138,7 @@
 							</div>
 							<div class="container-informacoes_componentes container-informacoes_rodape">
 								<!-- Status -->
-								<div>
+								<div class="container-informacoes_info">
 									<p class="titulo-informacao">STATUS</p>
 									<p><?php echo $pedido['nome_status']; ?></p>									
 								</div>
@@ -197,10 +187,10 @@
 			</section>
 			<section class="section-tela" id="section-seus-dados" style="display: none;">
 				<div class="container-informacoes">
-					<h2 class="container-informacoes_cabecalho">
+					<h4 class="d-flex justify-content-start align-items-center p-2 gap-3">
 						<img class="img-perfil" src="<?php echo $usuario['caminho_img_perfil']; ?>">
 						<?php echo $usuario['nome_completo']; ?>
-					</h2>
+					</h4>
 					<div class="container-informacoes_corpo container-dados_corpo">
 						<div class="grupo-info">
 							<div>
@@ -235,10 +225,10 @@
 					</div>
 					<div class="container-informacoes_componentes container-informacoes_rodape">
 						<!-- Perfil -->
-						<div>
+						<div class="container-informacoes_info">
 							<p class="titulo-informacao">PERFIL</p>
 							<p><?php if ($usuario['admin'] == 1) { echo 'Administrador'; } else { echo 'Cliente'; } ?></p>
-							</div>
+						</div>
 
 						<!-- Ações -->
 						<div class="container-pedidos-acoes">

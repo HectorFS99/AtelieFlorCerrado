@@ -70,11 +70,14 @@ if (isset($_SESSION['id_usuario'])) {
             <a href="listagem-geral-produtos.php" class="btn-vertical">
                 <span>PRODUTOS</span>
             </a>
-            <a href="#" class="btn-vertical">
+            <a href="galeria.html" class="btn-vertical">
                 <span>GALERIA</span>
             </a>
             <a href="sobre.php" class="btn-vertical">
                 <span>SOBRE NÓS</span>
+            </a>
+            <a href="../blog/home.php" target="_blank" class="btn-vertical">
+                <span>BLOG</span>
             </a>
         </div>
         

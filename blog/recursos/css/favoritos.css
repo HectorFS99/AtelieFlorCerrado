@@ -1,0 +1,18 @@
+p {
+    margin: 0
+}
+
+.cabecalho-favoritos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.cabecalho-favoritos > h3 {
+    margin: 0;
+}
+
+.cabecalho-favoritos > h3 > i {
+    color: var(--cor-principal);
+    margin-right: .5rem;
+}

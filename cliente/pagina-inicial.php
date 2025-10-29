@@ -118,22 +118,22 @@
 					</h4>
 				</div>
 				<div class="link-card">
-					<a href="#" class="card_conteudo">
-						<img src="./recursos/imagens/modelos/mulher-vermelho.png" class="card-produto_img" alt="..." />
+					<a href="../blog/artigos/moda-sustentavel.php" class="card_conteudo">
+						<img src="../blog/recursos/imagens/artigos/moda-artesanal.jpg" class="card-produto_img" alt="Linhas de crochê e fibras naturais usadas na confecção de bolsas artesanais" />
 						<div class="card_conteudo_texto">
-							<h5>Outerwear</h5>
-							<p>Moda sustentável: por que escolher peças artesanais?</p>
+							<h5>Moda sustentável</h5>
+							<p>Por que escolher peças artesanais?</p>
 						</div>
 					</a>
-					<a href="#" class="card_conteudo">
-						<img src="./recursos/imagens/modelos/mulher-chapeu-palha.png" class="card-produto_img" alt="..." />
+					<a href="../blog/artigos/estilo.php" class="card_conteudo">
+						<img src="./recursos/imagens/modelos/mulher-chapeu-palha.png" class="card-produto_img" alt="Mulher usando bolsa artesanal com look urbano"/>
 						<div class="card_conteudo_texto">
 							<h5>Estilo</h5>
 							<p>Como combinar bolsas artesanais com diferentes estilos</p>
 						</div>
 					</a>
-					<a href="#" class="card_conteudo">
-						<img src="./recursos/imagens/modelos/mulher-jaqueta-couro.jpg" class="card-produto_img" alt="..." />
+					<a href="../blog/artigos/cuidados.php" class="card_conteudo">
+						<img src="../blog/recursos/imagens/artigos/cuidados-home.avif" class="card-produto_img" alt="Bolsas artesanais feita de fibras naturais e/ou linha de algodão" />
 						<div class="card_conteudo_texto">
 							<h5>Cuidados</h5>
 							<p>5 dicas para cuidar da sua bolsa de fibras naturais</p>
