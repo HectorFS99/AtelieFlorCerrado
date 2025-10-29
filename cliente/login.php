@@ -14,7 +14,8 @@
 				<div class="form-auth-titulo">
 					<h3>Bem-vindo(a)!</h3>
 					<a class="btn-voltar-autenticacao" href="pagina-inicial.php">
-						<i class="fa-solid fa-arrow-left"></i> Voltar
+						<i class="fa-solid fa-arrow-left"></i> 
+						<span>Voltar</span>
 					</a>					
 				</div>
 					
@@ -29,13 +30,15 @@
 					<i onclick="visualizarSenha('txtSenhaLogin');" class="fa-solid fa-eye-slash olho-senha"></i>
 				</div>
 
-				<a class="link-autenticacao" href="esqueceu-senha.php">Esqueceu a senha?</a>
-				<button id="btnEntrar" class="btn-confirmar" type="submit">
-					Entrar <i class="fa-solid fa-arrow-right mx-1"></i>
-				</button>
-				<a href="cadastro.php" class="link-autenticacao">
-					Não tem uma conta? <b>Crie uma agora mesmo!</b>
-				</a>
+				<div class="acoes-login">						
+					<a class="link-autenticacao" href="esqueceu-senha.php">Esqueceu a senha?</a>
+					<button id="btnEntrar" class="btn-confirmar" type="submit">
+						Entrar <i class="fa-solid fa-arrow-right mx-1"></i>
+					</button>
+					<a href="cadastro.php" class="link-autenticacao border-0">
+						Não tem uma conta? <b>Crie uma agora mesmo!</b>
+					</a>
+				</div>
 			</form>
 		</main>
 	</body>

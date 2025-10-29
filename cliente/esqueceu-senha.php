@@ -14,11 +14,12 @@
 				<div class="form-auth-titulo">
 					<h3>Recuperar</h3>
 					<a class="btn-voltar-autenticacao" href="login.php">
-						<i class="fa-solid fa-arrow-left"></i> Voltar
+						<i class="fa-solid fa-arrow-left"></i> 
+						<span>Voltar</span>
 					</a>					
 				</div>	
 
-				<h6 class="mb-4">Iremos enviar um link de segurança no e-mail informado.</h6>
+				<h6 class="texto-info-recuperacao mb-4 text-center">Iremos enviar um link de segurança no e-mail informado.</h6>
 				<div class="campo-flutuante">
 					<input id="txtEmailLogin" type="email" placeholder=" " name="txt_email" required>
 					<label for="txtEmailLogin">E-mail</label>

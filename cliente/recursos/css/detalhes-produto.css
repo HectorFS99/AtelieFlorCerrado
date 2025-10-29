@@ -149,3 +149,21 @@
     color: rgb(128, 0, 0);
 }
 /*#endregion */
+
+/*#region Responsividade*/
+@media (max-width: 1024px) {
+    .main-detalhes {
+        max-width: fit-content;
+        margin: 0 1rem;
+    }
+
+    .detalhes {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #spanTextoAddCarrinho {
+        display: none;
+    }    
+}
+/*#endregion*/

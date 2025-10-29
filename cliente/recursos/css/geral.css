@@ -902,6 +902,10 @@ h2, h3, h4, h5, h6 {
 }
 
 /*#region Responsividade */
+@media (max-width: 1024px) {
+    .swal2-modal { margin: 1.5rem !important; }
+}
+
 .titulo {
     font-size: 3.5rem;
     font-weight: 700;
