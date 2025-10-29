@@ -48,7 +48,7 @@
 							NOS CONHEÇA!
 						</a>
 					</div>
-					<img width="400px" src="./recursos/imagens/produtos/sophie.png" alt="Bolsa artesanal feita com palha">
+					<img class="inicio-img" src="./recursos/imagens/produtos/sophie.png" alt="Bolsa artesanal feita com palha">
 				</div>
 			</section>
 
@@ -77,13 +77,13 @@
 
 			<!-- Próximo Lançamento -->
 			<section class="secao proximo-lancamento">
-				<img src="./recursos/imagens/produtos/bianca.png" alt="">
+				<img class="lancamento-img" src="./recursos/imagens/produtos/bianca.png" alt="">
 				<div class="proximo-lancamento-info">
-					<div class="secao-titulo-subtitulo" style="align-items: start;">
+					<div class="secao-titulo-subtitulo">
 						<h2 class="titulo-secao">Próximo Lançamento</h2>
-						<h4 class="subtitulo-secao" style="text-align: start;">
-							Uma nova coleção está florescendo...<br>
-							Fique de olho: em breve, novas peças exclusivas chegarão ao ateliê.
+						<h4 class="subtitulo-secao">
+							Uma nova coleção está florescendo...<br><br>
+							<strong>Fique  de olho:</strong> em breve, novas peças exclusivas chegarão ao ateliê.
 						</h4>
 					</div>
 					<div>

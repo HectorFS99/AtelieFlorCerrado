@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('btnHamburguer');
+    const menu = document.getElementById('menu-superior');
+
+    btn.addEventListener('click', function () {
+        const aberto = menu.classList.toggle('aberto');
+        btn.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+    });
+
+    // fecha ao clicar em um link do menu
+    menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+            menu.classList.remove('aberto');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // garante estado correto ao redimensionar
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 992) {
+            menu.classList.remove('aberto');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
+
 //#region ***** Máscaras para campos (pode ser usada em outras telas) *****/
 function aplicarMascaraCPF(campo) {
     campo.value = campo.value.replace(/[^0-9.-]/g, ''); // Remove letras e mantém apenas números, ponto (.) e hífen (-).
@@ -363,42 +389,6 @@ function avisarQuandoChegar() {
             }        
         }
     });
-}
-//#endregion
-
-//#region ***** ***** ***** pagamento.js ***** ***** *****/
-document.addEventListener("DOMContentLoaded", function() {
-    var valorFreteTexto = document.getElementById('lblValorFrete').innerHTML;
-    var valorFrete = parseFloat(valorFreteTexto.replace(/\./g, '').replace(',', '.')); 
-
-    var valorDescontoTexto = document.getElementById('lblValorDesconto').innerHTML;
-    var valorDesconto = parseFloat(valorDescontoTexto.replace(/\./g, '').replace(',', '.')); 
-
-    var listaTotaisLbl = document.querySelectorAll('[name="lblValorTotalPedido"]');
-
-    var total = (valorFrete + calcularSubtotal('lblValorProduto', 'lblQtdProduto', 'lblValorSubTotalPedido')) - valorDesconto;
-    listaTotaisLbl.forEach(function(elemento) {
-        elemento.innerHTML = `${formatarValor(total)}`;
-    });
-    
-    var comboParcelas = document.getElementById('cboParcelas');
-    for (let i = 1; i < 11; i++) {
-        var htmlOption = `<option value=\"${i}\" ${i == 1 ? 'selected' : ''}>${i}x de R$ ${formatarValor(total/i)}</option>`;
-        comboParcelas.innerHTML += htmlOption;
-    }
-});
-
-function exibirAccordion(id_accordion, id_componente) {
-    let componente = document.getElementById(id_componente);
-    let listaAccordions = componente.getElementsByClassName('container-accordion');
-    
-    for (let i = 0; i < listaAccordions.length; i++) {
-        listaAccordions[i].style.display = "none";
-    }
-
-    accordion = document.getElementById(id_accordion);
-    accordion.style.display = "block";
-
 }
 //#endregion
 

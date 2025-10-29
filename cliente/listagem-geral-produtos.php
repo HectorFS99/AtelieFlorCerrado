@@ -92,12 +92,15 @@
         <?php include '/componentes/header.php'; ?>
         <main class="main-listagem">
             <!-- Menu de Filtros -->
-            <div class="menu-filtros">
+            <div id="menuFiltros" class="menu-filtros">
                 <div class="titulo-secao-produtos">
                     <h5>Filtrar por</h5>
+                    <button id="btnFecharFiltro" class="btn-cabecalho" onclick="menuFiltro(false, 'menuFiltros');">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                     <?php if ($filtro_aplicado) { ?>
                         <form method="GET" action="listagem-geral-produtos.php">
-                            <button class="btn-limpar-filtro" type="submit" name="filtrar_categoria" value="">
+                            <button class="btn-cabecalho" type="submit" name="filtrar_categoria" value="">
                                 <i class="fa-solid fa-filter-circle-xmark"></i>
                             </button>
                         </form>		
@@ -123,19 +126,26 @@
             </div>
 
             <!-- Listagem de Produtos -->
-            <div>
+            <div class="div-listagem">
                 <div class="titulo-secao-produtos">
-                    <h4 class="m-0">Produtos<?php echo $filtro_selecionado; ?></h4>                    
-                    <div class="d-flex justify-content-between">
-                        <form method="GET" action="listagem-geral-produtos.php">
-                            <select name="filtrar" class="form-select" onchange="this.form.submit()">
-                                <option selected>Ordenar por</option>
-                                <option value="lancamento">Lançamento</option>
-                                <option value="menor_preco">Menor preço</option>
-                                <option value="maior_preco">Maior preço</option>
-                            </select>
-                        </form>
-                    </div>
+                    <h4 class="m-0">
+                        Produtos<?php echo $filtro_selecionado; ?>
+                    </h4>
+                    <div class="d-flex gap-2">
+                        <button id="btnFiltro" class="btn-cabecalho" onclick="menuFiltro(true, 'menuFiltros');">
+                            <i class="fa-solid fa-filter"></i>
+                        </button>                  
+                        <div class="d-flex justify-content-between">
+                            <form method="GET" action="listagem-geral-produtos.php">
+                                <select name="filtrar" class="form-select" onchange="this.form.submit()">
+                                    <option selected>Ordenar por</option>
+                                    <option value="lancamento">Lançamento</option>
+                                    <option value="menor_preco">Menor preço</option>
+                                    <option value="maior_preco">Maior preço</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>                    
                 </div>
 
                 <div class="grid-produtos">
@@ -174,14 +184,15 @@
         </main>
 		<?php include '/componentes/footer.php'; ?>
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                exibirFiltroAcc('acc-categorias');
-            });
-
             function exibirFiltroAcc(id_componente) {
                 var accordion = document.getElementById(id_componente);
                 accordion.style.display === "block" ? accordion.style.display = "none" : accordion.style.display = "block";
                 accordion.classList.toggle("acc-aberto");
+            }
+
+            function menuFiltro(exibir, idMenuFiltro) {                
+                const menu = document.getElementById(idMenuFiltro);
+                menu.style.display = exibir ? "block" : "none";
             }
         </script>
     </body>

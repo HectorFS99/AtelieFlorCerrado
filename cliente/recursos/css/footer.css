@@ -1,0 +1,97 @@
+
+footer {
+    background-color: var(--cor-principal);
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: start;
+    color: var(--cor-clarinha);
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--cor-clarinha);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.titulo-footer {  
+    color: var(--cor-clarinha);
+    font-family: "Roboto Slab", serif;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.bandeiras_pagamento > img {
+    width: 75px;
+}
+
+.redes-sociais {
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    gap: 1.5rem;
+    display: flex;
+}
+
+.redes-sociais a {
+    color: var(--cor-clarinha);
+}
+
+.grupo-inputs {
+    display: flex;
+    align-items: center;
+} 
+
+.grupo-inputs button, .grupo-inputs input {
+    padding: 1rem;
+    color: var(--cor-principal);
+    font-weight: 600;
+    border-radius: var(--borda-arredondada); 
+    outline: 0; 
+}
+
+.grupo-inputs button {
+    background-color: var(--cor-clarinha);
+    border: 3px solid var(--cor-clarinha) !important;
+    color: var(--cor-principal);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.grupo-inputs input {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-clarinha) !important;
+    color: var(--cor-clarinha);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+@media (max-width: 1024px) {
+    footer {        
+        justify-content: center;
+        gap: 4rem;
+        align-items: center;
+        padding-bottom: 4rem;
+    }
+
+    footer img {
+        width: 250px;
+        padding: 1.5rem;
+    }
+
+    .titulo-footer {
+        line-height: 2.5rem;
+    }
+}

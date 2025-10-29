@@ -1,6 +1,7 @@
 .link-card {
     overflow-x: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: .25rem;
     margin: 0 1rem;
@@ -50,11 +51,22 @@
     font-weight: 700;
 }
 
+.secao-titulo-subtitulo {
+    align-items: center;
+}
+
+.subtitulo-secao {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: start;
+}
+
 /*#region ***** Seção início *****/
 .div_inicio {
     background-color: var(--cor-secundaria);
     padding: 3rem !important;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
@@ -68,7 +80,8 @@
     align-items: start;   
 }
 
-.div_inicio img {
+.inicio-img {
+    width: 400px;
     border-bottom-right-radius: 5rem;
     border-top-left-radius: 5rem;  
     border-bottom-left-radius: 1.5rem;
@@ -95,10 +108,11 @@
     background-color: var(--cor-clarinha);
     padding: 2rem;
     display: flex;
+    flex-wrap: nowrap;
     gap: 2rem;
 }
 
-.proximo-lancamento img {
+.lancamento-img {
     width: 400px;
 }
 
@@ -138,6 +152,7 @@
 /*#region ***** Seção Feedback *****/
 .container-avaliacoes {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
@@ -164,5 +179,56 @@
 .card-avaliacao p {
     font-weight: 600;
     line-height: 1.5;
+}
+/*#endregion*/
+
+/*#region Responsividade */
+@media (max-width: 1024px) {
+    .div_inicio {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titulo-secao {
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 1rem;
+        margin-top: 0;
+    }
+
+    .subtitulo-secao {
+        margin: .5rem 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .inicio-img {
+        width: 300px;
+        box-shadow: 
+            rgb(34, 79, 52, 0.25) 0 5px
+            , rgb(2, 89, 57, 0.25) 0 10px
+            , rgb(11, 102, 35, 0.25) 0 15px
+            , rgb(20, 90, 50, 0.125) 0 20px
+            , rgb(53, 94, 59, 0.125) 0 25px;
+    }
+
+    .card-produto_img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .proximo-lancamento {
+        flex-wrap: wrap;
+    }
+
+    .secao, .proximo-lancamento, .proximo-lancamento-info, .secao-titulo-subtitulo {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .lancamento-img {
+        width: 300px;
+    }
 }
 /*#endregion*/

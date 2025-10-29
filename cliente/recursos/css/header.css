@@ -1,0 +1,150 @@
+.navbar {
+    background: var(--cor-secundaria);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 1rem;
+    position: relative;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+}
+
+.btn-menu-hamburguer {
+    display: none;
+    border: 2px solid var(--cor-principal);
+    border-radius: var(--borda-arredondada);
+    color: var(--cor-principal);
+    background-color: transparent;
+    gap: .5rem;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    transition: all .25s;
+}
+
+.btn-menu-hamburguer:active, .btn-menu-hamburguer:hover {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-principal);
+    color: white; 
+}
+
+.btns_barra_superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btns_barra_superior>a {
+    font-size: 1rem;
+    color: var(--cor-principal);
+}
+
+.btn-vertical {
+    color: black;
+    font-weight: 700;
+    margin: .5rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    text-decoration: none;
+    transition: all .25s;
+}
+
+.btn-vertical:hover {
+    transform: scale(1.05);
+    color: var(--cor-principal);
+}
+
+.btn-vertical:active {
+    transform: scale(.95);
+}
+
+.btn-contorno {
+    border: 2px solid var(--cor-principal);
+    border-radius: var(--borda-arredondada);
+    background-color: transparent;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-principal);
+    gap: .5rem;
+}
+
+.btn-contorno:hover {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-principal);
+    padding-top: 0.6rem;
+    color: white;
+}
+
+.btn-contorno:active {
+    background-color: var(--cor-principal) !important;
+    border: 2px solid var(--cor-secundaria);
+    color: var(--cor-secundaria) !important;
+}
+
+.btn-minha-conta {
+    border-radius: var(--borda-arredondada);
+    transition: all .3s ease-in-out;
+}
+
+.btn-minha-conta:hover {
+    transform: scale(1.1);
+}
+
+.btn-minha-conta img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*#region Responsividade */
+@media (max-width: 1024px) {
+    .btn-menu-hamburguer {
+        display: block;
+    }   
+
+    .btns_barra_superior {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cor-secundaria);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: .5rem;
+        padding: .75rem 1rem 1rem;
+        border-top: 1px solid rgba(0, 0, 0, .05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+        z-index: 10;
+    }
+
+    .btns_barra_superior.aberto {
+        display: flex;
+    }
+
+    .btn-vertical {
+        margin: 0;
+        padding: .75rem .75rem;
+        flex-direction: row !important;
+        justify-content: space-between;
+    }
+
+    .btn-contorno {
+        max-width: 50px;
+    }
+
+    .btn-minha-conta img {
+        width: 44px;
+        height: 44px;
+    }
+}
+/*#endregion*/

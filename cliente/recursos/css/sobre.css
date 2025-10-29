@@ -23,3 +23,11 @@
 .lista-valores > li {
     line-height: 2.5;
 }
+
+/*#region Responsividade */
+@media (max-width: 1024px) {
+    .main-centralizada {
+        width: auto;
+    }    
+}
+/*#endregion*/
