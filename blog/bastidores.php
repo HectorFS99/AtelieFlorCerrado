@@ -17,7 +17,7 @@
                     <p class="subtitulo-pagina">Um olhar nos bastidores do nosso trabalho</p>
 
                     <div class="bloco-conteudo-imagem">
-                        <img src="./recursos/imagens/bastidores/producao.jpg" alt="Mulher artesã tecendo crochê com fio natural" class="img-bastidores-grande">
+                        <img src="./recursos/imagens/bastidores.webp" alt="Mulher artesã tecendo crochê com fio natural" class="img-bastidores-grande">
                         </div>
 
                     <h2 class="subtitulo-secao">✨ A Arte de Fazer à Mão</h2>
@@ -49,7 +49,7 @@
                         </div>
                         
                         <div class="imagem-coluna">
-                            <img src="./recursos/imagens/bastidores/fibras.jpg" alt="Rolos e feixes de fibras naturais de juta e algodão" class="img-materiais">
+                            <img src="./recursos/imagens/linhas.jpg" alt="Rolos e feixes de fibras naturais de juta e algodão" class="img-materiais">
                         </div>
                         
                     </div>

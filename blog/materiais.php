@@ -18,7 +18,7 @@
                     <p class="subtitulo-pagina">A Beleza que Respeita a Natureza</p>
 
                     <div class="bloco-conteudo-imagem">
-                        <img src="./recursos/imagens/materiais/fibras_destaque.jpg" alt="Fios e fibras naturais de algodão e juta" class="img-bastidores-grande">
+                        <img src="./recursos/imagens/croche.webp" alt="Fios e fibras naturais de algodão e juta" class="img-bastidores-grande">
                         </div>
 
                     <p class="paragrafo-secao-intro">No **Ateliê Flor do Cerrado**, acreditamos que a verdadeira beleza é aquela que não custa o planeta. A nossa paixão pelo artesanato está profundamente ligada ao nosso compromisso com a sustentabilidade e a responsabilidade socioambiental. Esta página é um convite para você conhecer as fibras que escolhemos e o porquê de cada uma ser essencial na nossa produção.</p>
@@ -37,7 +37,7 @@
                             </ul>
                         </div>
                         <div class="detalhe-fibra-imagem">
-                            <img src="./recursos/imagens/materiais/juta_detalhe.jpg" alt="Fio de juta em detalhe">
+                            <img src="./recursos/imagens/juta.jpg" alt="Fio de juta em detalhe">
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@
                             </ul>
                         </div>
                         <div class="detalhe-fibra-imagem">
-                             <img src="./recursos/imagens/materiais/algodao_detalhe.jpg" alt="Fio de algodão em detalhe">
+                             <img src="./recursos/imagens/algodao.webp" alt="Fio de algodão em detalhe">
                         </div>
                     </div>
                 </section>
