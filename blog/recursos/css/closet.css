@@ -1,0 +1,323 @@
+body {
+    background-color: rgb(237, 230, 201);
+}
+
+
+#head {
+    position: absolute;
+    width: 60%;
+    height: 8%;
+    left: 10em;
+    top: 1em;
+    font-size: 25px;
+    font-family: "Raleway", serif;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.modelo {
+  position: absolute; 
+  top: 8em;           
+  left: 25em;
+  z-index: -10;       
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.modelo img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  margin-left: 0;
+  display: block;
+}
+
+#modelo1, #modelo2, #modelo3, #modelo4, #praia1, #praia2, #praia3, #praia4, #vestido1, #vestido2, #vestido3, #vestido4 {
+    display: none;
+    position: absolute;
+    top: 12em;
+    left: 25em;
+    z-index: 2;
+}
+
+.franela {
+    position: absolute;
+    top: 15em;
+    display: block;
+    width: 11em;
+    height: 10em;
+}
+
+#bolsa1 {
+    height: 9em;
+    width: 7em;
+    position: absolute;
+    top: 28%;
+    left: 28.5%;
+    display: block;
+    z-index: 1;
+}
+
+#bolsa2 {
+    height: 11em;
+    position: absolute;
+    top: 23%;
+    left: 36%;
+    display: block;
+    width: 9em;
+    z-index: 1;
+}
+
+#bolsa3 {
+    height: 9em;
+    position: absolute;
+    top: 29.5%;
+    left: 45%;
+    display: block;
+    width: 7em;
+    z-index: 1;
+}
+
+#bolsa4 {
+    height: 9em;
+    position: absolute;
+    top: 29%;
+    left: 53%;
+    display: block;
+    width: 7em;
+    z-index: 1;
+}
+
+#bolsa5 {
+    height: 9em;
+    position: absolute;
+    top: 29%;
+    left: 69%;
+    display: block;
+    width: 7em;
+    z-index: 1;
+}
+
+#bolsa6 {
+    height: 15em;
+    position: absolute;
+    top: 19.5%;
+    left: 75%;
+    display: block;
+    width: 11em;
+    z-index: 1;
+}
+
+#bolsa7 {
+    height: 7em;
+    position: absolute;
+    top: 31.5%;
+    left: 85%;
+    display: block;
+    width: 9em;
+    z-index: 1;
+}
+
+#bolsa8 {
+    height: 9em;
+    position: absolute;
+    top: 57%;
+    left: 29%;
+    display: block;
+    width: 7em;
+    z-index: 1;
+}
+
+#bolsa9 {
+    height: 10em;
+    position: absolute;
+    top: 52%;
+    left: 36%;
+    display: block;
+    width: 9em;
+    z-index: 1;
+}
+
+#bolsa10 {
+    height: 7em;
+    position: absolute;
+    top: 59.5%;
+    left: 46%;
+    display: block;
+    width: 5em;
+    z-index: 1;
+}
+
+#bolsa11 {
+    height: 9em;
+    position: absolute;
+    top: 57%;
+    left: 53%;
+    display: block;
+    width: 7em;
+    z-index: 1;
+}
+
+#bolsa12 {
+    height: 7em;
+    position: absolute;
+    top: 59%;
+    left: 68%;
+    display: block;
+    width: 9em;
+    z-index: 1;
+}
+
+#bolsa13 {
+    height: 11em;
+    position: absolute;
+    top: 51%;
+    left: 76%;
+    display: block;
+    width: 9em;
+    z-index: 1;
+}
+
+#bolsa14 {
+    height: 11em;
+    position: absolute;
+    top: 55%;
+    left: 85%;
+    display: block;
+    width: 9em;
+    z-index: 1;
+}
+
+#closet {
+    position: absolute;
+    width: 69%;
+    height: 58%;
+    background-image: 
+        url('../imagens/closet/closet.jpg');
+    z-index: -1;
+    top: 8em;
+    left: 25em;
+    border: 7px solid #a58864;
+}
+
+.opcoes-categoria {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.opcoes-categoria button {
+    background-color: #7db285;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.opcoes-categoria button:hover {
+    background-color: #82c57f;
+}
+
+.opcoes-modelo {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.opcoes-modelo img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.opcoes-modelo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #999;
+}
+
+.modelo-central {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.modelo-central img {
+    width: 300px;
+    border-radius: 15px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #8faf8b;
+    color: #4a3f35;
+    margin-top: 50px;
+    bottom: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9em;   
+}
+
+
+footer span {
+    font-weight: bold;
+}
+
+.categoria {
+  margin: 2%;
+  text-align: left;
+  left: 2%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.categoria label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+  display: block;
+}
+
+
+.categoria select {
+  width: 250px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 2px solid #b2cfab;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #202c1b;
+  transition: all 0.3s ease;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(119, 161, 125, 0.3);
+}
+
+.categoria select:hover {
+  border-color: #61936a;
+  box-shadow: 0 3px 8px rgba(119, 161, 125, 0.3);
+}
+
+.categoria select:focus {
+  border-color: #61936a;
+  box-shadow: 0 3px 8px rgba(119, 161, 125, 0.3);
+}
+
+@media (max-width: 480px) {
+  .categoria select {
+    width: 200px;
+    font-size: 0.9rem;
+  }
+}
