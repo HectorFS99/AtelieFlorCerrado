@@ -24,11 +24,14 @@
                 <p class="subtitulo">Preservando a Beleza e a História da Sua Peça</p>
                 <p class="data-artigo">Publicado em 20 de junho de 2024</p>
 
-                <img src="../recursos/imagens/modelos/bolsa-fibras-naturais.png"  
-                     alt="Bolsa artesanal feita de fibras naturais em fundo neutro" 
-                     class="imagem-artigo">
+                <img src="../recursos/imagens/artigos/cuidados.webp"  
+                     alt="Bolsas artesanais feita de fibras naturais e/ou linha de algodão" 
+                     class="imagem-artigo"
+                     width="600" height="400"
+                     style="display:block; margin:auto;">
 
                 <section class="fade-in">
+                    <p></p>
                     <p>Sua bolsa de fibras naturais (palha, vime, junco, etc.) é uma peça de arte funcional. Para que ela mantenha sua beleza, sua forma e a durabilidade que o trabalho artesanal garante, alguns cuidados são essenciais.</p>
                     <p>A seguir, veja 5 dicas práticas para garantir que sua bolsa dure por muitas estações:</p>
                 </section>
@@ -76,6 +79,27 @@
                     <p>Cuidando da sua bolsa com esses passos simples, você garante que ela continuará sendo o destaque dos seus looks por muitos anos.</p>
                 </section>
 
+                <section class="fade-in">
+                    <h2>5. Revitalização e Brilho</h2>
+                    <p>De tempos em tempos, é possível dar um "tapa" no visual para reavivar a peça.</p>
+
+                    <p><strong>Azeite (com moderação):</strong> Em alguns tipos de palha mais rígida (como o vime), você pode passar uma quantidade mínima de azeite de oliva ou óleo vegetal em um pano limpo para "nutrir" as fibras e devolver um pouco do brilho. Use com extrema cautela e apenas se souber que o material suporta (teste em uma área discreta).</p>
+
+                    <p>Cuidando da sua bolsa com esses passos simples, você garante que ela continuará sendo o destaque dos seus looks por muitos anos.</p>
+                </section>
+
+                <section class="fade-in video-dica">
+                    <h2>🎥 Vídeo: Cuidados com Bolsas de Fibras Naturais</h2>
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/K-NmFDS2WaI" 
+                        title="Cuidados com Bolsas de Fibras Naturais" 
+                        frameborder="0"
+                        style="display:block; margin:auto;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </section>
+    
                 <a href="/blog/home.php" class="voltar">← Voltar ao Blog</a>
             </div>
         </section>
