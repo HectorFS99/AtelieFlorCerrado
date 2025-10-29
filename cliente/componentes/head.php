@@ -34,6 +34,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
 <!-- Estilos e scripts -->
+<link rel="stylesheet" href="/cliente/recursos/css/reset.css">
+<link rel="stylesheet" href="/cliente/recursos/css/header.css">
 <link rel="stylesheet" href="/cliente/recursos/css/geral.css">
+<link rel="stylesheet" href="/cliente/recursos/css/footer.css">
 <script src="/cliente/recursos/javascript/geral.js"></script>
 <title>Flor do Cerrado</title>

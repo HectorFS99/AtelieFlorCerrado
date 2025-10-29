@@ -85,6 +85,7 @@
     <head>
         <?php include '/componentes/head.php'; ?>
         <link rel="stylesheet" href="/cliente/recursos/css/carrinho-pagamento.css">
+        <script src="/cliente/recursos/javascript/pagamento.js"></script>
     </head>
     <body>
         <header>
