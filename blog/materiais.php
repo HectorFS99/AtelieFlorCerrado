@@ -7,13 +7,14 @@
             <link rel="stylesheet" href="./recursos/css/pagina-inicial.css">
             <link rel="stylesheet" href="./recursos/css/geral.css">
             <link rel="stylesheet" href="./recursos/css/materiais.css">
+            <link rel="stylesheet" href="./recursos/css/bastidores.css">
         </head> 
         <body>
             <?php include '/componentes/header.php'; ?>
             <main>
                 <section id="section-materiais-sustentaveis" class="secao-pagina">
                     
-                    <h1 class="titulo-pagina">MATERIAIS SUSTENTÁVEIS</h1>
+                    <h2 class="titulo-secao">MATERIAIS SUSTENTÁVEIS</h2>
                     <p class="subtitulo-pagina">A Beleza que Respeita a Natureza</p>
 
                     <div class="bloco-conteudo-imagem">

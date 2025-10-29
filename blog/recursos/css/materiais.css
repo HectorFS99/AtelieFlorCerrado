@@ -26,13 +26,6 @@ body {
     text-align: center; 
 }
 
-.subtitulo-pagina {
-    font-size: 1.2em;
-    color: #888; /* Cinza suave */
-    margin-bottom: 40px;
-    text-align: center; /* Centraliza o subtítulo */
-}
-
 /* --- Estilos da Imagem de Destaque --- */
 
 .bloco-conteudo-imagem {

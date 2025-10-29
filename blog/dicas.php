@@ -6,6 +6,7 @@
 			<?php include '/componentes/head.php'; ?>
 			<link rel="stylesheet" href="./recursos/css/pagina-inicial.css">
 			<link rel="stylesheet" href="./recursos/css/geral.css">
+            <link rel="stylesheet" href="./recursos/css/dicas.css">
 		</head>	
 		<body>
 			<?php include '/componentes/header.php'; ?>
