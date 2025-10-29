@@ -1,10 +1,10 @@
-	<?php
-		header('Content-Type: text/html; charset=utf-8');
-	?>
+<?php
+	header('Content-Type: text/html; charset=utf-8');
+?>
 	<html lang="pt-br">
 		<head>
 			<?php include '/componentes/head.php'; ?>
-			<link rel="stylesheet" href="/cliente/recursos/css/pagina-inicial.css">
+			<link rel="stylesheet" href="/blog/recursos/css/pagina-inicial.css">
 		</head>	
 		<body>
 			<?php include '/componentes/header.php'; ?>
@@ -14,33 +14,53 @@
 					<div class="div_inicio">
 						<div class="div_inicio_infos">
 							<div class="">
-								<h1 class="titulo">Blog Flor do Cerrado</h1>
-								<h4 class="subtitulo">Sua bolsa artesanal feita com carinho, com um toque do Brasil.</h4>
+								<h1 class="titulo">Ateliê Flor do Cerrado</h1>
+								<h4 class="subtitulo">A loja número 1 em bolsas artesanais no Brasil e no Mundo.</h4>
 							</div>
-							<a href="sobre.php" class="btn btn-lg btn-gradiente">
-								NOS CONHEÇA!
+							<a href="../cliente/pagina-inicial.php" class="btn btn-lg btn-gradiente">
+								Conheça nossa loja
 							</a>
 						</div>
 						<img width="400px" src="./recursos/imagens/produtos/sophie.png" alt="Bolsa artesanal feita com palha">
 					</div>
 				</section>
 
-				<!-- Novidades -->
+				<!-- Últimas postagens -->
 				<section class="secao">
 					<div class="secao-titulo-subtitulo">
-						<h2 class="titulo-secao">Novidades</h2>
-						<h4 class="subtitulo-secao">
-							Descubra as criações mais recentes do nosso ateliê — peças exclusivas que unem tradição, elegância e sustentabilidade.
-						</h4>
+						<h2 class="titulo-secao">Últimas postagens</h2>
+						<div class="link-card">
+						<a href="./artigos/moda-sustentavel.php" class="card_conteudo">
+							<img src="./recursos/imagens/modelos/mulher-vermelho.png" class="card-produto_img" alt="..." />
+							<div class="card_conteudo_texto">
+								<h5>Moda sustentável</h5>
+								<p>Por que escolher peças artesanais?</p>
+							</div>
+						</a>
+						<a href="./artigos/estilo.php" class="card_conteudo">
+							<img src="./recursos/imagens/modelos/mulher-chapeu-palha.png" class="card-produto_img" alt="..." />
+							<div class="card_conteudo_texto">
+								<h5>Estilo</h5>
+								<p>Como combinar bolsas artesanais com diferentes estilos</p>
+							</div>
+						</a>
+						<a href="./artigos/cuidados.php" class="card_conteudo">
+							<img src="./recursos/imagens/modelos/mulher-jaqueta-couro.jpg" class="card-produto_img" alt="..." />
+							<div class="card_conteudo_texto">
+								<h5>Cuidados</h5>
+								<p>5 dicas para cuidar da sua bolsa de fibras naturais</p>
+							</div>
+						</a>
 					</div>
+					
 				</section>
 
-				<!-- Próximo Lançamento -->
+				<!-- Closet Virtual -->
 				<section class="secao proximo-lancamento">
 					<img src="./recursos/imagens/produtos/bianca.png" alt="">
 					<div class="proximo-lancamento-info">
 						<div class="secao-titulo-subtitulo" style="align-items: start;">
-							<h2 class="titulo-secao">Próximo Lançamento</h2>
+							<h2 class="titulo-secao">Closet Virtual</h2>
 							<h4 class="subtitulo-secao" style="text-align: start;">
 								Uma nova coleção está florescendo...<br>
 								Fique de olho: em breve, novas peças exclusivas chegarão ao ateliê.
