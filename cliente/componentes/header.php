@@ -63,7 +63,7 @@
             <a href="sobre.php" class="btn-vertical">
                 <span>SOBRE NÓS</span>
             </a>
-            <a href="blog.php" target="_blank" class="btn-vertical">
+            <a href="../blog/home.php" target="_blank" class="btn-vertical">
                 <span>BLOG</span>
             </a>
             <a href="carrinho.php" class="btn btn-contorno">
