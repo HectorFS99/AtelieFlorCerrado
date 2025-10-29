@@ -15,32 +15,27 @@ body {
     font-weight: 600;
 }
 
-.modelo {
-  position: absolute; 
-  top: 8em;           
-  left: 25em;
-  z-index: -10;       
+#modelo {
+  position: absolute;
+  top: 5%;
+  left: 2em;              
+  z-index: 0;             
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.modelo img {
+#modelo img {
   width: auto;
-  height: 100%;
-  max-width: 100%;
+  height: auto;           
+  max-width: 470px;       
+  max-height: 600px;      
   object-fit: contain;
   margin-left: 0;
   display: block;
 }
 
-#modelo1, #modelo2, #modelo3, #modelo4, #praia1, #praia2, #praia3, #praia4, #vestido1, #vestido2, #vestido3, #vestido4 {
-    display: none;
-    position: absolute;
-    top: 12em;
-    left: 25em;
-    z-index: 2;
-}
+
 
 .franela {
     position: absolute;

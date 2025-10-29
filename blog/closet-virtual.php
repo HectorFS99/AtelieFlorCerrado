@@ -16,37 +16,11 @@
             <p class="titulo-secao">Arraste as bolsas para vestir o modelo </p>
         </div>
 
-        <div class="categoria">
-            <label for="categoriaSelect">Selecione uma categoria:</label><br>
-            <select id="categoriaSelect" onchange="mostrarOpcoes()">
-            <option value="">-- Escolha uma --</option>
-            <option value="modelo">Modelos</option>
-            <option value="praia">Moda Praia</option>
-            <option value="vestido">Vestidos</option>
-            </select>
+        <div id="modelo"> 
+            <img src="./recursos/imagens/closet/modelo.png" 
+            alt="Modelo" 
+            style="width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;"> 
         </div>
-
-        <div class="categoria" id="opcaoCategoria" style="display:none;">
-            <label for="modeloSelect">Selecione o modelo:</label><br>
-            <select id="modeloSelect" onchange="mostrarModelo()">
-            <option value="">-- Escolha um modelo --</option>
-            </select>
-        </div>
-
-        <!-- MODELOS -->
-        <div id="modelo1" class="modelo"><img src="./recursos/imagens/closet/modelo.png" alt="Modelo 1"></div>
-        <div id="modelo2" class="modelo"><img src="./recursos/imagens/closet/modelo2.png"></div>
-        <div id="modelo3" class="modelo"><img src="./recursos/imagens/closet/modelo3.png"></div>
-        <div id="modelo4" class="modelo"><img src="./recursos/imagens/closet/modelo4.png"></div>
-        <div id="praia1" class="modelo"><img src="./recursos/imagens/closet/modeloModaPraia.png" alt="Moda Praia 1"></div>
-        <div id="praia2" class="modelo"><img src="./recursos/imagens/closet/modeloModaPraia2.png" alt="Moda Praia 2"></div>
-        <div id="praia3" class="modelo"><img src="./recursos/imagens/closet/modeloModaPraia3.png" alt="Moda Praia 3"></div>
-        <div id="praia4" class="modelo"><img src="./recursos/imagens/closet/modeloModaPraia4.png" alt="Moda Praia 4"></div>
-        <div id="vestido1" class="modelo"><img src="./recursos/imagens/closet/modeloVestido.png" alt="Vestido 1"></div>
-        <div id="vestido2" class="modelo"><img src="./recursos/imagens/closet/modeloVestido2.png"></div>
-        <div id="vestido3" class="modelo"><img src="./recursos/imagens/closet/modeloVestido3.png"></div>
-        <div id="vestido4" class="modelo"><img src="./recursos/imagens/closet/modeloVestido4.png"></div>
-
 
         <div class="franela" id="bolsa1">
             <img src="./recursos/imagens/closet/anamaria.png" alt="Bolsa Anamaria"
