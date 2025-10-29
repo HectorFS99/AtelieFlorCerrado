@@ -1,0 +1,186 @@
+/* Definições de Cores e Fontes (baseadas no protótipo "Flor do Cerrado") */
+:root {
+    --cor-fundo-claro: #F8F5EE; /* Bege bem claro */
+    --cor-texto-principal: #4C5A3E; /* Verde escuro para títulos grandes */
+    --cor-destaque: #6D8260; /* Verde oliva/musgo para destaque e botões */
+    --cor-texto-paragrafo: #333333; /* Cor mais escura para melhor leitura */
+    --cor-fundo-secao-destaque: #EFE8DA; /* Tom de bege sutilmente mais escuro para o bloco da dica (como no protótipo) */
+}
+
+/* Estilos Globais da Página de Conteúdo */
+body {
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-paragrafo);
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.secao-pagina {
+    padding: 60px 5% 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza a seção */
+}
+
+/* --- Título Principal da Página --- */
+
+.titulo-pagina {
+    font-family: 'Playfair Display', serif; 
+    font-size: 3em;
+    color: var(--cor-texto-principal);
+    margin-bottom: 5px;
+    font-weight: 500;
+    text-align: center; 
+}
+
+.subtitulo-pagina {
+    font-size: 1.2em;
+    color: #888; 
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+/* --- Estilo do Bloco de Destaque "Dicas de Artesanato" (Baseado no protótipo) --- */
+
+.bloco-destaque-dica {
+    background-color: var(--cor-fundo-secao-destaque);
+    padding: 40px;
+    border-radius: 15px; /* Bordas arredondadas suaves */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 60px;
+}
+
+.layout-dicas-colunas {
+    display: flex;
+    gap: 40px;
+    align-items: center; /* Centraliza verticalmente o texto e a imagem */
+}
+
+.dicas-texto {
+    flex: 1; 
+}
+
+.dicas-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Alinha a imagem à direita */
+}
+
+.dicas-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-bloco-dica {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--cor-texto-principal);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.paragrafo-dica {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+.btn-dica {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.btn-dica:hover {
+    background-color: #5d7450;
+}
+
+
+/* --- Estilos para a Lista de Posts (Se for usar) --- */
+.lista-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-post {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.card-post:hover {
+    transform: translateY(-5px);
+}
+
+.card-post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-post-info {
+    padding: 20px;
+}
+
+.card-post-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    color: var(--cor-texto-principal);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card-post-info p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #666;
+}
+
+.card-post-info a {
+    display: block;
+    color: var(--cor-destaque);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+/* --- Mídia Queries (Responsividade) --- */
+
+@media (max-width: 900px) {
+    .layout-dicas-colunas {
+        flex-direction: column; /* Empilha as colunas */
+    }
+
+    .dicas-imagem {
+        order: -1; /* Coloca a imagem no topo quando empilhado */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-pagina {
+        font-size: 2.5em;
+    }
+
+    .titulo-bloco-dica {
+        font-size: 2em;
+    }
+
+    .bloco-destaque-dica {
+        padding: 30px;
+    }
+}

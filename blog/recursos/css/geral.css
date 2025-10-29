@@ -59,7 +59,7 @@ input:-webkit-autofill:active {
     --cor-gradiente-2: #2a6441;
     --cor-gradiente-3: #1e7f45;
     --cor-clarinha: #C2EFD4;
-    --cor-cinza-claro: #e3e3e3;
+    --cor-cinza-claro: #E0E0E0;
     --borda-fininha: 1px solid var(--cor-cinza-claro);
     font-family: "Raleway", sans-serif;
     --borda-arredondada: .25rem;

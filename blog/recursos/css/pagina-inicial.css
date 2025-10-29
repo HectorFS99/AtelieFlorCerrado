@@ -1,3 +1,193 @@
+/* Variáveis de Cores (Reutilizando a paleta do Ateliê) */
+:root {
+    --cor-primaria: #8aae7f;       /* Verde-oliva suave */
+    --cor-secundaria: #b99e52;    /* Amarelo terroso/Mostarda */
+    --cor-texto-escuro: #4c5a45;  /* Verde escuro */
+    --cor-fundo-pagina: #fcf6e8;  /* Fundo da página: bege/creme muito suave (similar à imagem) */
+    --cor-botoes: #e0e0e0;        /* Fundo do botão (branco/cinza muito claro) */
+}
+
+/* Fundo da página e Estilo de Texto */
+body {
+    background-color: var(--cor-fundo-pagina);
+}
+
+/* Estilo do container principal (ajuste se a tag main já tiver estilos) */
+.main-content-videos {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Título Principal (TUTORIAIS EM VÍDEO) */
+.titulo-video-principal {
+    font-family: 'Georgia', 'Times New Roman', serif; /* Fonte serifada para títulos */
+    font-size: 2.5em;
+    text-align: center;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 5px;
+}
+
+/* Subtítulos (Aprenda com o Flor do Cerrado / Assista aos vídeos...) */
+.subtitulo-video {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    color: #6a6a6a; /* Cinza suave para o subtítulo */
+    margin-bottom: 10px;
+}
+
+.subtitulo-video-menor {
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    color: #6a6a6a;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+
+.container-videos {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .container-videos {
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+.card-video {
+    background-color: var(--cor-primaria); 
+    border-radius: 15px; 
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+}
+
+.card-video img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-bottom: 15px;
+}
+
+
+.card-video h4 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.1em;
+    color: var(--cor-texto-claro); 
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.btn-youtube {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--cor-botoes); 
+    color: var(--cor-texto-escuro); 
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-youtube:hover {
+    background-color: var(--cor-secundaria); 
+    color: var(--cor-texto-claro);
+}
+
+
+.secao.dicas-artesanato {
+    max-width: 900px; 
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.secao-titulo-subtitulo {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--cor-primaria); 
+}
+
+.titulo-secao {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--cor-texto-escuro);
+}
+
+.subtitulo-secao {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #666;
+}
+
+.conteudo-artesanato h3 {
+    font-size: 1.6em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: var(--cor-secundaria); 
+    border-left: 5px solid var(--cor-secundaria);
+    padding-left: 10px;
+}
+
+.conteudo-artesanato p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.conteudo-artesanato p strong {
+    color: var(--cor-texto-escuro); 
+}
+
+.conteudo-artesanato p em {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #888;
+    border-left: 3px dotted var(--cor-primaria);
+    padding-left: 10px;
+}
+
+.conteudo-artesanato ul {
+    list-style: none; 
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.conteudo-artesanato ul li {
+    background-color: #fafafa; 
+    border-left: 4px solid var(--cor-primaria);
+    padding: 8px 15px;
+    margin-bottom: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.conteudo-artesanato ul li:hover {
+    background-color: #f0f5ee; 
+}
+
+.conteudo-artesanato h3:last-of-type {
+    text-align: center;
+    border: none;
+    padding-left: 0;
+    font-size: 1.8em;
+    color: var(--cor-texto-escuro);
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
 .link-card {
     overflow-x: auto;
     display: flex;
@@ -50,7 +240,6 @@
     font-weight: 700;
 }
 
-/*#region ***** Seção início *****/
 .div_inicio {
     background-color: var(--cor-secundaria);
     padding: 3rem !important;
@@ -150,7 +339,7 @@
     justify-content: space-evenly;
     align-items: start;
     border-radius: var(--borda-arredondada);
-    background-color: white;
+    background-color:  white;
     box-shadow: var(--sombra-leve);
     padding: 1rem;
     width: 350px;

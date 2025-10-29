@@ -5,6 +5,7 @@
 		<head>
 			<?php include '/componentes/head.php'; ?>
 			<link rel="stylesheet" href="/blog/recursos/css/pagina-inicial.css">
+			<link rel="stylesheet" href="/blog/recursos/css/geral.css">
 		</head>	
 		<body>
 			<?php include '/componentes/header.php'; ?>
@@ -47,7 +48,7 @@
 						<a href="./artigos/cuidados.php" class="card_conteudo">
 							<img src="./recursos/imagens/artigos/cuidados-home.avif" class="card-produto_img" alt="Bolsas artesanais feita de fibras naturais e/ou linha de algodão" />
 							<div class="card_conteudo_texto">
-								<h5>Cuidados</h5>
+								<h5>Cuidados</h5>	
 								<p>5 dicas para cuidar da sua bolsa de fibras naturais</p>
 							</div>
 						</a>
@@ -57,68 +58,20 @@
 
 				<!-- Closet Virtual -->
 				<section class="secao proximo-lancamento">
-					<img src="./recursos/imagens/produtos/bianca.png" alt="">
+					<img src="./recursos/imagens/closet/closet-virtual.png" alt="">
 					<div class="proximo-lancamento-info">
 						<div class="secao-titulo-subtitulo" style="align-items: start;">
 							<h2 class="titulo-secao">Closet Virtual</h2>
 							<h4 class="subtitulo-secao" style="text-align: start;">
-								Uma nova coleção está florescendo...<br>
-								Fique de olho: em breve, novas peças exclusivas chegarão ao ateliê.
+								Cada bolsa do Ateliê Flor do Cerrado carrega uma história tecida à mão — feita com tempo, alma e propósito.<br>
+								<br>No nosso Closet Virtual, você vai poder encontrar nossas bolsas que unem beleza natural e design consciente, criadas para acompanhar o seu dia com leveza e significado.
 							</h4>
 						</div>
 						<div>
-							<div class="contador-lancamento">
-								<div class="caixa-contador">
-									<h3>06</h3>
-									<p>Dias</p>
-								</div>
-								<div class="caixa-contador">
-									<h3>18</h3>
-									<p>Horas</p>
-								</div>
-								<div class="caixa-contador">
-									<h3>48</h3>
-									<p>Min.</p>
-								</div>
-							</div>
-
-							<a href="listagem-geral-produtos.php" class="btn btn-lg btn-gradiente">
-								SAIBA MAIS
+							<a href="closet-virtual.php" class="btn btn-lg btn-gradiente">
+								SURPREENDA-SE
 							</a>
 						</div>
-					</div>
-				</section>
-
-				<!-- Dicas & Inspirações -->
-				<section class="secao">
-					<div class="secao-titulo-subtitulo">
-						<h2 class="titulo-secao">Dicas & Inspirações</h2>
-						<h4 class="subtitulo-secao">
-							Mais do que bolsas, o Ateliê Flor do Cerrado compartilha histórias, inspirações e cuidados para você viver a moda artesanal de forma consciente e autêntica.
-						</h4>
-					</div>
-					<div class="link-card">
-						<a href="#" class="card_conteudo">
-							<img src="./recursos/imagens/modelos/mulher-vermelho.png" class="card-produto_img" alt="..." />
-							<div class="card_conteudo_texto">
-								<h5>Outerwear</h5>
-								<p>Moda sustentável: por que escolher peças artesanais?</p>
-							</div>
-						</a>
-						<a href="#" class="card_conteudo">
-							<img src="./recursos/imagens/modelos/mulher-chapeu-palha.png" class="card-produto_img" alt="..." />
-							<div class="card_conteudo_texto">
-								<h5>Estilo</h5>
-								<p>Como combinar bolsas artesanais com diferentes estilos</p>
-							</div>
-						</a>
-						<a href="#" class="card_conteudo">
-							<img src="./recursos/imagens/modelos/mulher-jaqueta-couro.jpg" class="card-produto_img" alt="..." />
-							<div class="card_conteudo_texto">
-								<h5>Cuidados</h5>
-								<p>5 dicas para cuidar da sua bolsa de fibras naturais</p>
-							</div>
-						</a>
 					</div>
 				</section>
 
@@ -128,7 +81,7 @@
 						<h2 class="titulo-secao">Feedback dos nossos clientes</h2>
 						<h4 class="subtitulo-secao">
 							Veja o que os nossos clientes acharam! 
-							Confira os nossos produtos <a href="listagem-geral-produtos.php">aqui</a> e seja o próximo a avaliar!
+							Confira os nossos produtos <a href="../cliente/listagem-geral-produtos.php">aqui</a> e seja o próximo a avaliar!
 						</h4>
 					</div>
 					<div class="container-avaliacoes">
