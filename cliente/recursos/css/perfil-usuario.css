@@ -172,3 +172,34 @@ p, span, small, h1, h2, h3, h4, h5, ul, li, div {
 .titulo-info_dados {
     font-weight: 700;
 }
+
+/*#region Responsividade */
+@media (max-width: 1024px) {
+    .main-centralizada {
+        margin: 0;
+        max-width: fit-content;
+    }
+
+    .container-informacoes_componentes, .container-informacoes_cabecalho {
+        align-items: start;
+        justify-content: start;
+        gap: 1.5rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .container-informacoes_info {
+        max-width: 300px;
+    }
+
+    .container-informacoes_corpo {
+        flex-direction: column;
+        flex-wrap: wrap;
+    } 
+    
+    .container-pedidos_corpo {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+/*#endregion*/

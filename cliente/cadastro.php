@@ -14,7 +14,8 @@
 				<div class="form-auth-titulo">
 					<h3>Crie a sua conta!</h3>
 					<a class="btn-voltar-autenticacao" href="login.php">
-						<i class="fa-solid fa-arrow-left"></i> Voltar
+						<i class="fa-solid fa-arrow-left"></i> 
+						<span>Voltar</span>
 					</a>					
 				</div>		
 

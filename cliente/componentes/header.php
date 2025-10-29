@@ -95,8 +95,9 @@ if (isset($_SESSION['id_usuario'])) {
                 <img src="<?php echo $usuario['caminho_img_perfil']; ?>">
             </a>
         <?php } else { ?>
-            <a href="login.php" class="btn-vertical btn-contorno">
-                <span>LOGIN</span>
+            <a href="login.php" class="btn-vertical btn-contorno btn-login">
+                <i id="iconeUsuario" class="fa-solid fa-user"></i>
+                <span id="spanTextoLogin">LOGIN</span>
             </a>
         <?php } ?>
     </nav>

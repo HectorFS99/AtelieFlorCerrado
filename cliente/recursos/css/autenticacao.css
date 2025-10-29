@@ -161,3 +161,88 @@
 .btn-confirmar:hover {
     background-color: #d9d9d9;
 }
+
+/*#region Responsividade */
+@media (max-width: 1024px) {
+    .container-autenticacao {
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        background-color: #A0A684 !important;
+    }
+
+    .form-auth {
+        width: 100% !important;
+        box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    }
+
+    .form-auth-titulo h3 {
+        font-size: 1.75rem;
+    }
+
+    .form-cad {
+        overflow: scroll;
+    }
+
+    .btn-voltar-autenticacao {
+        border: 2px solid white;
+        font-size: 1.25rem;
+    }
+
+    .btn-voltar-autenticacao span {
+        display: none;
+    }
+
+    .link-autenticacao {
+        font-size: 1.125rem;
+    }
+
+    .btn-confirmar {
+        margin-bottom: 1rem;
+    }
+
+    .acoes-login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    .acoes-login a {
+        border: 1px solid white;
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .acoes-login a:active, .acoes-login a:hover {
+        text-decoration: none;
+    }
+
+    .texto-info-recuperacao {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    .componentes-auth {
+        flex-wrap: wrap;
+    }
+
+    /***** Campo flutuante *****/
+    .campo-flutuante input {
+        font-size: 1rem;
+    }
+
+    .campo-flutuante label {
+        font-size: 1rem;
+    }
+
+    .campo-flutuante input:focus+label,
+    .campo-flutuante input:not(:placeholder-shown)+label {
+        font-size: 1.25rem;
+    }
+    /*#endregion*/
+}
+/*#endregion*/
