@@ -1,4 +1,9 @@
 <footer>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://api.whatsapp.com/send?phone=5511959192165&text=Olá! Eu gostaria de conhecer o ateliê Flor do Cerrado! Poderia me ajudar?" class="btn-flutuante" target="_blank">
+        <i class="fa fa-whatsapp"></i>
+    </a>
     <div class="d-flex flex-column align-items-center gap-4">
         <img src="/cliente/recursos/imagens/logos/AtelieFlorDoCerrado.png" width="150px">
         <ul class="redes-sociais">

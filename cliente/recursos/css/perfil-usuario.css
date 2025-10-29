@@ -174,7 +174,7 @@ p, span, small, h1, h2, h3, h4, h5, ul, li, div {
 }
 
 /*#region Responsividade */
-@media (max-width: 10224px) {
+@media (max-width: 1024px) {
     .main-centralizada {
         margin: 0;
         max-width: fit-content;
