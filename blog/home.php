@@ -75,46 +75,13 @@
 					</div>
 				</section>
 
-				<!-- Dicas & Inspirações -->
-				<section class="secao">
-					<div class="secao-titulo-subtitulo">
-						<h2 class="titulo-secao">Dicas & Inspirações</h2>
-						<h4 class="subtitulo-secao">
-							Mais do que bolsas, o Ateliê Flor do Cerrado compartilha histórias, inspirações e cuidados para você viver a moda artesanal de forma consciente e autêntica.
-						</h4>
-					</div>
-					<div class="link-card">
-						<a href="#" class="card_conteudo">
-							<img src="./recursos/imagens/modelos/mulher-vermelho.png" class="card-produto_img" alt="..." />
-							<div class="card_conteudo_texto">
-								<h5>Outerwear</h5>
-								<p>Moda sustentável: por que escolher peças artesanais?</p>
-							</div>
-						</a>
-						<a href="#" class="card_conteudo">
-							<img src="./recursos/imagens/modelos/mulher-chapeu-palha.png" class="card-produto_img" alt="..." />
-							<div class="card_conteudo_texto">
-								<h5>Estilo</h5>
-								<p>Como combinar bolsas artesanais com diferentes estilos</p>
-							</div>
-						</a>
-						<a href="#" class="card_conteudo">
-							<img src="./recursos/imagens/modelos/mulher-jaqueta-couro.jpg" class="card-produto_img" alt="..." />
-							<div class="card_conteudo_texto">
-								<h5>Cuidados</h5>
-								<p>5 dicas para cuidar da sua bolsa de fibras naturais</p>
-							</div>
-						</a>
-					</div>
-				</section>
-
 				<!-- Feedbacks -->
 				<section class="secao custom-main">				
 					<div class="secao-titulo-subtitulo">
 						<h2 class="titulo-secao">Feedback dos nossos clientes</h2>
 						<h4 class="subtitulo-secao">
 							Veja o que os nossos clientes acharam! 
-							Confira os nossos produtos <a href="listagem-geral-produtos.php">aqui</a> e seja o próximo a avaliar!
+							Confira os nossos produtos <a href="../cliente/listagem-geral-produtos.php">aqui</a> e seja o próximo a avaliar!
 						</h4>
 					</div>
 					<div class="container-avaliacoes">

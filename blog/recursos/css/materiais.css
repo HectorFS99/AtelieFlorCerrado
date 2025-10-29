@@ -1,0 +1,224 @@
+:root {
+    --cor-fundo-claro: #F8F5EE; 
+    --cor-texto-principal: #4C5A3E; 
+    --cor-destaque: #6D8260; 
+    --cor-texto-paragrafo: #333333; 
+}
+
+body {
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-paragrafo);
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.secao-pagina {
+    padding: 60px 5% 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.titulo-pagina {
+    font-family: 'Playfair Display', serif; 
+    font-size: 3em;
+    color: var(--cor-texto-principal);
+    margin-bottom: 5px;
+    font-weight: 500;
+    text-align: center; 
+}
+
+.subtitulo-pagina {
+    font-size: 1.2em;
+    color: #888; /* Cinza suave */
+    margin-bottom: 40px;
+    text-align: center; /* Centraliza o subtítulo */
+}
+
+/* --- Estilos da Imagem de Destaque --- */
+
+.bloco-conteudo-imagem {
+    margin-bottom: 40px;
+}
+
+.img-bastidores-grande {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover; 
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.paragrafo-secao-intro {
+    line-height: 1.6;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Estilos das Subseções (Juta e Algodão) --- */
+
+.subtitulo-secao {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: var(--cor-texto-principal);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.paragrafo-secao {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.titulo-fibra {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: var(--cor-destaque); 
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(109, 130, 96, 0.2); 
+    padding-bottom: 5px;
+}
+
+.detalhe-fibra-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+.detalhe-fibra-container.reverse {
+    flex-direction: row-reverse; 
+}
+
+.detalhe-fibra-texto {
+    flex: 2; 
+}
+
+.detalhe-fibra-imagem {
+    flex: 1; 
+    padding-top: 10px;
+}
+
+.detalhe-fibra-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.lista-detalhe-fibra {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.lista-detalhe-fibra li {
+    margin-bottom: 8px;
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+    line-height: 1.4;
+}
+
+.lista-detalhe-fibra li::before {
+    content: "•";
+    color: var(--cor-destaque); 
+    font-weight: bold;
+    display: inline-block;
+    width: 1.5em;
+}
+
+/* --- SEÇÃO CADEIA PRODUTIVA (Fundo Bege) --- */
+
+.secao-bege {
+    background-color: rgba(240, 235, 225, 0.7); /* Fundo sutilmente mais escuro */
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.titulo-destaque {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--cor-texto-principal);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.lista-detalhes-verticais {
+    list-style: none;
+    padding-left: 0;
+    margin: 30px 0;
+}
+
+.lista-detalhes-verticais li {
+    background-color: #ffffff; /* Fundo branco para destacar os blocos de texto */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    line-height: 1.5;
+    /* Estilo para destacar o título da lista */
+    font-weight: 600; 
+}
+
+.lista-detalhes-verticais li:not(:first-child) {
+    font-weight: 400; /* Peso normal para o corpo do texto */
+}
+
+.titulo-alma {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    color: var(--cor-texto-principal);
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.lista-alma {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lista-alma li {
+    margin-bottom: 8px;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+.lista-alma li::before {
+    content: "•";
+    color: var(--cor-destaque);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+}
+
+
+/* --- Mídia Queries (Responsividade) --- */
+
+@media (max-width: 768px) {
+    .titulo-pagina {
+        font-size: 2.5em;
+    }
+
+    .subtitulo-secao {
+        font-size: 1.8em;
+    }
+
+    .detalhe-fibra-container,
+    .detalhe-fibra-container.reverse {
+        flex-direction: column; /* Empilha as colunas */
+    }
+
+    .detalhe-fibra-imagem {
+        order: -1; /* Coloca a imagem no topo quando empilhado */
+        margin-bottom: 20px;
+    }
+
+    .detalhe-fibra-container.reverse .detalhe-fibra-imagem {
+        order: 0; /* Volta a imagem para baixo no layout invertido */
+    }
+}
