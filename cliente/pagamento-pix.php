@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <?php include '/componentes/head.php'; ?>
+    <head>
+        <?php include '/componentes/head.php'; ?>
+        <link rel="stylesheet" href="/cliente/recursos/css/carrinho-pagamento.css">
+        <script src="/cliente/recursos/javascript/pagamento.js"></script>
+    </head>
     <body>
    	    <?php include '/componentes/header.php'; ?>     
         <main class="custom-main mb-4">
@@ -19,11 +23,11 @@
                 </div>
                 <div class="info-container">
                     <div class="pix-pagamento_titulo">
-                        <h5>
+                        <h5 class="text-white">
                             <i class="fa-brands fa-pix"></i> 
                             Pagamento via Pix                        
                         </h5>
-                        <h4><b>R$ 2.609,97</b></h4>
+                        <h4 class="text-white"><b>R$ 2.609,97</b></h4>
                     </div>
                     <div class="pix-pagamento_conteudo">
                         <div class="pix-pagamento_col">
@@ -58,7 +62,7 @@
             <div class="coluna-2 col-2_pagamento">
                 <div class="info-container">
                     <div class="col-secao-titulo">
-                        <h5><i class="fa-solid fa-truck-ramp-box"></i> Endereço de Entrega</h5>
+                        <h5 class="text-white"><i class="fa-solid fa-truck-ramp-box"></i> Endereço de Entrega</h5>
                     </div>
                     <div class="div-endereco_atual">
                         <i class="fa-solid fa-location-dot"></i>

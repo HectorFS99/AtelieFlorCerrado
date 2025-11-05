@@ -64,6 +64,12 @@
 					<i class="fa-solid fa-map-location-dot"></i>
 					<p>Endereços</p>
 				</button>
+				<?php if ($usuario['admin'] == 1) { ?>
+					<a class="btn menu-lateral_opcao rounded-bottom" href="../admin/paginas/index.php">
+						<i class="fa-solid fa-screwdriver-wrench"></i>
+						<p>Admin.</p>
+					</a>
+				<?php } ?>
 				<a class="btn menu-lateral_opcao rounded-bottom" href="#" onclick="window.location.href='./acoes/deslogar.php'; return false;">
 					<i class="fa-solid fa-person-walking-arrow-loop-left"></i>
 					<p>Sair</p>
@@ -113,7 +119,6 @@
 											, PRD.caminho_imagem
 											, PRD.nome
 											, PRD.preco_atual
-											, PRD.preco_anterior
 										FROM 
 											pedidos_produtos AS PP
 											INNER JOIN produtos AS PRD ON PRD.id_produto = PP.id_produto

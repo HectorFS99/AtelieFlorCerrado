@@ -1,33 +1,37 @@
 <?php
     session_start();
-    date_default_timezone_set('America/Sao_Paulo'); // Define o fuso horário para o Brasil
-    header('Content-Type: text/html; charset=utf-8');
 
-	include '../acoes/conectar-bd.php';
+    include '../acoes/conectar-bd.php'; // agora contém $con = new mysqli(...)
 
     if (!isset($_SESSION['id_usuario'])) {
-        echo 
-            "<script>
-                alert('Usuário não autenticado. Você será redirecionado para a página inicial.')
+        echo "<script>
+                alert('Usuário não autenticado. Você será redirecionado para a página inicial.');
                 window.location.href = '../../cliente/pagina-inicial.php';
-            </script>";        
+            </script>";
+
+        exit();
     }
 
-    $id_usuario = $_SESSION['id_usuario'];
+    $id_usuario = intval($_SESSION['id_usuario']);
 
-    $sql_usuario = mysql_query(
-        "SELECT 
+    $sql = $con -> prepare("
+        SELECT 
             nome_completo
             , telefone_celular
             , email
             , caminho_img_perfil
-        FROM
+        FROM 
             usuarios
         WHERE 
-            id_usuario = $id_usuario"
-    ) or die("Erro ao obter dados do usuário: " . mysql_error());
+            id_usuario = ?
+    ");
+    
+    $sql -> bind_param("i", $id_usuario);
+    $sql -> execute();
 
-    $usuario = mysql_fetch_assoc($sql_usuario);
+    $result = $sql -> get_result();
+    $usuario = $result -> fetch_assoc();
+
     if (!$usuario) {
         die("Usuário não encontrado.");
     }
@@ -35,13 +39,13 @@
 
 <header class="cabecalho">
     <div>
-        <h1>Painel Administrativo</h1>
+        <h1>O que você deseja fazer?</h1>
         <span id="data-atual"></span>
     </div>
     <div class="dropdown">
         <button class="botao btn-usuario" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="mx-2"><?php echo $usuario['nome_completo']; ?></span>
-            <img src="<?php echo $usuario['caminho_img_perfil']; ?>">
+            <img src="../<?php echo $usuario['caminho_img_perfil']; ?>">
         </button>
         <ul class="dropdown-menu">
             <li>
@@ -49,7 +53,7 @@
                     <span><?php echo $usuario['email']; ?></span>
                     <span><?php echo $usuario['telefone_celular']; ?></span>
                 </div>
-                <a class="dropdown-item" href="../pagina-inicial.php">
+                <a class="dropdown-item" href="../../cliente/pagina-inicial.php">
                     <i class="fa-solid fa-person-walking-arrow-right"></i>Sair
                 </a>
             </li>

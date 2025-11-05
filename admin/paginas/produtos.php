@@ -3,25 +3,28 @@
     <body>
         <?php 
             include '../componentes/header.php';
-             
-            $sql_produtos = mysql_query(
-            "SELECT 
-                `id_produto`,
-                `nome`,
-                `descricao`,
-                `preco_anterior`,
-                `preco_atual`,
-                `altura`,
-                `largura`,
-                `profundidade`,
-                `peso`,
-                `destaque`,
-                `oferta_relampago`,
-                `id_categoria`,
-                `caminho_imagem`,
-                `ativo`
-            FROM 
-                `produtos`;");
+
+            $sql = $con -> prepare("
+                SELECT 
+                    p.id_produto
+                    , p.nome
+                    , p.descricao
+                    , p.preco_atual
+                    , p.altura
+                    , p.largura
+                    , p.profundidade
+                    , p.peso
+                    , p.destaque
+                    , c.nome as categoria
+                    , p.caminho_imagem
+                    , p.ativo
+                FROM 
+                    produtos p 
+                    INNER JOIN categorias c on c.id_categoria = p.id_categoria
+            ");
+
+            $sql -> execute();
+            $resultado = $sql -> get_result();
         ?>
         <main class="conteudo-principal">
             <div class="titulo-opcoes">
@@ -29,7 +32,7 @@
                     <a href="index.php" class="btn-voltar"><i class="fa-solid fa-arrow-left"></i></a>
                     Produtos
                 </h3>
-                <button onclick="window.location.href='cadastro-produto.php'" class="botao btn-adicionar">
+                <button onclick="window.location.href='form-produto.php'" class="botao btn-adicionar">
                     <i class="fa-solid fa-square-plus"></i> Adicionar
                 </button>
             </div>
@@ -38,48 +41,46 @@
                     <!-- Cabeçalho da tabela -->
                     <thead>
                         <tr class="tabela-linha">
-                            <th>ID</th>
+                            <th width="5%">ID</th>
                             <th>Nome</th>
-                            <th>Preço anterior</th>
-                            <th>Preço atual</th>
-                            <th>Destaque?</th>
-                            <th>Oferta?</th>
-                            <th>Categoria ID</th>
-                            <th>Ativo?</th>
-                            <th>Ações</th>
+                            <th width="10%">Preço</th>
+                            <th width="5%">Destaque?</th>
+                            <th>Categoria</th>
+                            <th width="5%">Ativo?</th>
+                            <th width="5%">Ações</th>
                         </tr>
                     </thead>
                     <!-- Corpo da tabela -->
                     <tbody>
-                        <?php while ($linha = mysql_fetch_assoc($sql_produtos)) { ?> 
+                        <?php while ($linha = $resultado -> fetch_assoc()) { ?>
                             <tr class="tabela-linha">
                                 <td><?php echo $linha['id_produto']; ?></td>
                                 <td>
                                     <?php
-                                        // Limita o nome para 30 caracteres e adiciona "..." se for maior.
                                         $nome = $linha['nome'];
-                                        echo 
-                                            mb_strlen($nome) > 30 ? mb_substr($nome, 0, 30) . "..." : $nome;
+                                        echo mb_strlen($nome) > 30 ? mb_substr($nome, 0, 30) . "..." : $nome;
                                     ?>
                                 </td>
-                                <td>R$ <?php echo $linha['preco_anterior']; ?></td>
                                 <td>R$ <?php echo $linha['preco_atual']; ?></td>
                                 <td><?php echo $linha['destaque'] ? 'Sim' : 'Não'; ?></td>
-                                
-                                <td><?php echo $linha['oferta_relampago'] ? 'Sim' : 'Não'; ?></td>
-                                <td><?php echo $linha['id_categoria']; ?></td>
+                                <td><?php echo $linha['categoria']; ?></td>
                                 <td><?php echo $linha['ativo'] ? 'Sim' : 'Não'; ?></td>
                                 <td>
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <a class="btn-tabela btn-excluir" href="acoes_php/produto/excluir-produto.php?apagar=<?php echo $linha['id_produto']; ?>">
-                                            <i class="fa-solid fa-trash-can"></i>
+                                        <?php
+                                            $icone = $linha['ativo'] ? 'fa-ban' : 'fa-check';
+                                            $classe = $linha['ativo'] ? 'btn-tabela btn-excluir' : 'btn-tabela text-success';
+                                            $titulo = $linha['ativo'] ? 'Desativar' : 'Ativar';
+                                        ?>
+                                        <a title="<?php echo $titulo; ?>" class="<?php echo $classe; ?>" href="../acoes/produto/toggle-produto.php?id_produto=<?php echo $linha['id_produto']; ?>">
+                                            <i class="fa-solid <?php echo $icone; ?>"></i>
                                         </a>
-                                        <a class="btn-tabela btn-editar" href="edicao-produto.php?id_produto=<?php echo $linha['id_produto']; ?>">
+                                        <a title="Editar produto" class="btn-tabela btn-editar" href="form-produto.php?id_produto=<?php echo $linha['id_produto']; ?>">
                                             <i class="fa-solid fa-pen"></i>
                                         </a>
                                     </div>
                                 </td>
-                            </tr> 
+                            </tr>
                         <?php } ?>
                     </tbody>
                 </table>               

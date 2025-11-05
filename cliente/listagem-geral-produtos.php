@@ -7,10 +7,11 @@
 		"SELECT
 			`id_categoria`,
 			`nome`,
-			`descricao`,
-			`caminho_icone`
+			`descricao`
 		FROM
-			`categorias`"
+			`categorias`
+        WHERE
+            `ativo` = 1"
 	);
 
     $ordenacao = isset($_GET['filtrar']) ? $_GET['filtrar'] : '';
@@ -25,14 +26,12 @@
             `id_produto`,
             `nome`,
             `descricao`,
-            `preco_anterior`,
             `preco_atual`,
             `altura`,
             `largura`,
             `profundidade`,
             `peso`,
             `destaque`,
-            `oferta_relampago`,
             `id_categoria`,
             `caminho_imagem`,
             `ativo`        

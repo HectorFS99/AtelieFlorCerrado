@@ -5,7 +5,6 @@
             p.nome,
             p.caminho_imagem,
             p.preco_atual,
-            p.preco_anterior,
             c.quantidade AS total_quantidade
         FROM 
             carrinho AS c

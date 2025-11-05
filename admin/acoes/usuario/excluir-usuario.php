@@ -1,18 +1,38 @@
 <?php
-include '../../../conexao.php';
+    include '../conectar-bd.php';
 
-if (isset($_GET['apagar']) && is_numeric($_GET['apagar'])) {
-    $id_usuario = intval($_GET['apagar']);
+    if (!isset($_GET['id_usuario'])) {
+        echo
+            "<script>
+                alert('Usuário não informado.');
+                window.location.href = '../../paginas/usuarios.php';
+            </script>";
+            
+        exit();
+    }
 
-    mysql_query("DELETE FROM usuarios WHERE id_usuario = '$id_usuario'");
-    echo "
-        <script>
-        alert('Usuario deletado'); 
-        window.location.href = '/admin/usuarios.php'
-        </script>
-        ";
-} else {
-    echo "ID de usuário inválido.";
-}
+    $id_usuario = intval($_GET['id_usuario']);
 
+    $sql = $con -> prepare("DELETE FROM usuarios WHERE id_usuario = ?");
+    $sql -> bind_param(
+        "i"
+        , $id_usuario
+    );
+
+    if ($sql -> execute()) {
+        echo
+            "<script>
+                alert('Usuário excluído com sucesso.');
+                window.location.href = '../../paginas/usuarios.php';
+            </script>";
+    } else {
+        echo
+            "<script>
+                alert('Erro ao excluir usuário: " . $sql -> error . "');
+                window.location.href = '../../paginas/usuarios.php';
+            </script>";
+    }
+
+    $sql -> close();
+    $con -> close();
 ?>

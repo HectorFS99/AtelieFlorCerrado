@@ -3,7 +3,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    background: linear-gradient(90deg, rgba(0, 33, 52, 0.8), rgba(146, 61, 0, 0.8));
+    background: linear-gradient(90deg, #a1768e,  rgb(79, 116, 94));
     background-size: 200% 200%;
     animation: gradientAnimation 10s ease infinite;
     color: whitesmoke;
