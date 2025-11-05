@@ -1,43 +1,39 @@
-<?php
-    include '../conexao.php';
-
-    $sql_pedidos = mysql_query(
-        "SELECT 
-            ped.`id_pedido`
-            , ped.`dt_pedido`
-            , ped.`subtotal`
-            , ped.`frete`
-            , ped.`total`
-            , fpag.`nome` AS forma_pagamento
-            , cpag.`numero_cartao`
-            , pag.`parcelas`
-            , CONCAT(end.`logradouro`, ', ', end.`numero`, ' - ', end.`complemento`, ', ', end.`bairro`, ' - ', end.`cidade`, ', ', end.`uf`) AS endereco
-            , loj.`endereco_completo` AS endereco_loja
-            , stt.`nome` AS status_pedido
-            , ped.`dt_entrega`
-            , usr.`nome_completo`
-            , usr.`email`
-            , usr.`telefone_celular`
-        FROM
-            `pedidos` AS ped
-            INNER JOIN `pagamentos` AS pag ON pag.`id_pagamento` = ped.`id_pagamento`
-            INNER JOIN `formas_pagamento` AS fpag ON fpag.`id_forma_pagamento` = pag.`id_forma_pagamento`
-            LEFT JOIN `cartoes_pagamento` AS cpag ON cpag.`id_cartao_pagamento` = pag.`id_cartao_pagamento`
-            LEFT JOIN `enderecos` AS end ON end.`id_endereco` = ped.`id_endereco`
-            LEFT JOIN `lojas` AS loj ON loj.`id_loja` = ped.`id_loja`
-            INNER JOIN `status` AS stt ON stt.`id_status` = ped.`id_status`
-            INNER JOIN `usuarios` AS usr ON usr.`id_usuario` = ped.`id_usuario`
-        ORDER BY 
-            ped.`id_pedido` DESC;
-    ");
-?>
 <html lang="pt-br">
-    <head>
-        <?php include '/componentes/head.php'; ?>
-        <title>Pedidos</title>
-    </head>
+    <?php include '../componentes/head.php'; ?>
     <body>
-        <?php include '/componentes/header.php'; ?>
+        <?php 
+            include '../componentes/header.php';
+
+            $sql_pedidos = mysql_query(
+                "SELECT 
+                    ped.`id_pedido`
+                    , ped.`dt_pedido`
+                    , ped.`subtotal`
+                    , ped.`frete`
+                    , ped.`total`
+                    , fpag.`nome` AS forma_pagamento
+                    , cpag.`numero_cartao`
+                    , pag.`parcelas`
+                    , CONCAT(end.`logradouro`, ', ', end.`numero`, ' - ', end.`complemento`, ', ', end.`bairro`, ' - ', end.`cidade`, ', ', end.`uf`) AS endereco
+                    , loj.`endereco_completo` AS endereco_loja
+                    , stt.`nome` AS status_pedido
+                    , ped.`dt_entrega`
+                    , usr.`nome_completo`
+                    , usr.`email`
+                    , usr.`telefone_celular`
+                FROM
+                    `pedidos` AS ped
+                    INNER JOIN `pagamentos` AS pag ON pag.`id_pagamento` = ped.`id_pagamento`
+                    INNER JOIN `formas_pagamento` AS fpag ON fpag.`id_forma_pagamento` = pag.`id_forma_pagamento`
+                    LEFT JOIN `cartoes_pagamento` AS cpag ON cpag.`id_cartao_pagamento` = pag.`id_cartao_pagamento`
+                    LEFT JOIN `enderecos` AS end ON end.`id_endereco` = ped.`id_endereco`
+                    LEFT JOIN `lojas` AS loj ON loj.`id_loja` = ped.`id_loja`
+                    INNER JOIN `status` AS stt ON stt.`id_status` = ped.`id_status`
+                    INNER JOIN `usuarios` AS usr ON usr.`id_usuario` = ped.`id_usuario`
+                ORDER BY 
+                    ped.`id_pedido` DESC;
+            "); 
+        ?>
         <main class="conteudo-principal">
             <div class="titulo-opcoes">
                 <h3 class="titulo">

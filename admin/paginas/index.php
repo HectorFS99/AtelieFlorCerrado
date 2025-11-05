@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>        
-        <?php include '/componentes/head.php'; ?>
-        <link rel="stylesheet" href="recursos/css/index.css" />
-        <title>Painel Administrativo</title>
-    </head>
+    <?php include '../componentes/head.php'; ?>
     <body>
-	    <?php include '/componentes/header.php'; ?>
+	    <?php include '../componentes/header.php'; ?>
         <main class="conteudo-principal">
             <div class="container-opcoes">
                 <h3>Gerenciar</h3>

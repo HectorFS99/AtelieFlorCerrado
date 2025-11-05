@@ -1,8 +1,9 @@
 <?php
     session_start();
     date_default_timezone_set('America/Sao_Paulo'); // Define o fuso horário para o Brasil
+    header('Content-Type: text/html; charset=utf-8');
 
-	include './acoes/conectar-bd.php';
+	include '../acoes/conectar-bd.php';
 
     if (!isset($_SESSION['id_usuario'])) {
         echo 

@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <?php include '/componentes/head.php'; ?>
-        <title>Cadastrar Produtos</title>
-    </head>
+    <?php include '../componentes/head.php'; ?>
     <body>
-        <?php include '/componentes/header.php'; ?>
+        <?php include '../componentes/header.php'; ?>
         <main class="conteudo-principal">
             <div class="titulo-opcoes">
                 <h3 class="titulo">

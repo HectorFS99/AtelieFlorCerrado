@@ -1,37 +1,33 @@
-<?php
-    include '../conexao.php';
-
-    $sql_usuarios = mysql_query(
-        "SELECT 
-            `id_usuario`
-            , `nome_completo`
-            , `cpf`
-            , `rg`
-            , `dt_nascimento`
-            , `sexo`
-            , `telefone_celular`
-            , `email`
-            , `senha`
-            , `admin` 
-        FROM
-            `usuarios`");
-?>
 <html lang="pt-br">
-    <head>
-        <?php include '/componentes/head.php'; ?>
-        <title>Usuários</title>
-    </head>
+    <?php include '../componentes/head.php'; ?>
     <body>
-        <?php include '/componentes/header.php'; ?>
+        <?php 
+            include '../componentes/header.php'; 
+
+            $sql_usuarios = mysql_query(
+                "SELECT 
+                    `id_usuario`
+                    , `nome_completo`
+                    , `cpf`
+                    , `rg`
+                    , `dt_nascimento`
+                    , `sexo`
+                    , `telefone_celular`
+                    , `email`
+                    , `senha`
+                    , `admin` 
+                FROM
+                    `usuarios`");
+        ?>
         <main class="conteudo-principal">
             <div class="titulo-opcoes">
                 <h3 class="titulo">
                     <a href="index.php" class="btn-voltar"><i class="fa-solid fa-arrow-left"></i></a>
                     Usuários
                 </h3>
-                <button onclick="window.location.href='../cadastro.php'" class="botao btn-adicionar">
+                <!-- <button onclick="window.location.href='../cadastro.php'" class="botao btn-adicionar">
                     <i class="fa-solid fa-square-plus"></i> Adicionar
-                </button>
+                </button> -->
             </div>
             <div class="table-responsive">
                 <table id="tabela-usuarios" class="table table-striped">

@@ -1,32 +1,28 @@
-<?php
-    include '../conexao.php';
-
-    $sql_produtos = mysql_query(
-        "SELECT 
-            `id_produto`,
-            `nome`,
-            `descricao`,
-            `preco_anterior`,
-            `preco_atual`,
-            `altura`,
-            `largura`,
-            `profundidade`,
-            `peso`,
-            `destaque`,
-            `oferta_relampago`,
-            `id_categoria`,
-            `caminho_imagem`,
-            `ativo`
-        FROM 
-            `produtos`;");
-?>
 <html lang="pt-br">
-    <head>
-        <?php include '/componentes/head.php'; ?>
-        <title>Produtos</title>
-    </head>
+    <?php include '../componentes/head.php'; ?>        
     <body>
-        <?php include '/componentes/header.php'; ?>
+        <?php 
+            include '../componentes/header.php';
+             
+            $sql_produtos = mysql_query(
+            "SELECT 
+                `id_produto`,
+                `nome`,
+                `descricao`,
+                `preco_anterior`,
+                `preco_atual`,
+                `altura`,
+                `largura`,
+                `profundidade`,
+                `peso`,
+                `destaque`,
+                `oferta_relampago`,
+                `id_categoria`,
+                `caminho_imagem`,
+                `ativo`
+            FROM 
+                `produtos`;");
+        ?>
         <main class="conteudo-principal">
             <div class="titulo-opcoes">
                 <h3 class="titulo">

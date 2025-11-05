@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <?php include '/componentes/head.php'; ?>
-        <link rel="stylesheet" href="recursos/css/categorias.css" />
-        <title>Cadastrar Categoria</title>
-    </head>
+    <?php include '../componentes/head.php'; ?>
     <body>
-        <?php include '/componentes/header.php'; ?>
+        <?php include '../componentes/header.php'; ?>
         <main class="conteudo-principal">
             <div class="titulo-opcoes">
                 <h3 class="titulo">
-                    <a href="categorias.php" class="btn-voltar"><i class="fa-solid fa-arrow-left"></i></a>
+                    <a href="./paginas/listagem/categorias.php" class="btn-voltar"><i class="fa-solid fa-arrow-left"></i></a>
                     Adicionar Categoria
                 </h3>
             </div>

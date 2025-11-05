@@ -1,44 +1,39 @@
-<?php
-    include '/acoes_php/conectar-bd.php';
-    
-    $ID = 0;
-
-    if (isset($_GET['id_produto'])) {
-        $ID = $_GET['id_produto'];
-    
-    $sql_produtos = mysql_query(
-        "SELECT 
-            `id_produto`,
-            `nome`,
-            `descricao`,
-            `preco_anterior`,
-            `preco_atual`,
-            `altura`,
-            `largura`,
-            `profundidade`,
-            `peso`,
-            `destaque`,
-            `oferta_relampago`,
-            `id_categoria`,
-            `caminho_imagem`,
-            `ativo`
-        FROM 
-            `produtos`
-        WHERE
-            `id_produto` = $ID;");
-
-        $produto = mysql_fetch_assoc($sql_produtos);
-    }
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <?php include '/componentes/head.php'; ?>
-        <link rel="stylesheet" href="/recursos/css/geral.css" />
-        <title>Editar Produto</title>
-    </head>
+    <?php include '../componentes/head.php'; ?>
     <body>
-        <?php include '/componentes/header.php'; ?>
+        <?php 
+            include '../componentes/header.php'; 
+
+            $ID = 0;
+
+            if (isset($_GET['id_produto'])) {
+                $ID = $_GET['id_produto'];
+            
+            $sql_produtos = mysql_query(
+                "SELECT 
+                    `id_produto`,
+                    `nome`,
+                    `descricao`,
+                    `preco_anterior`,
+                    `preco_atual`,
+                    `altura`,
+                    `largura`,
+                    `profundidade`,
+                    `peso`,
+                    `destaque`,
+                    `oferta_relampago`,
+                    `id_categoria`,
+                    `caminho_imagem`,
+                    `ativo`
+                FROM 
+                    `produtos`
+                WHERE
+                    `id_produto` = $ID;");
+
+                $produto = mysql_fetch_assoc($sql_produtos);
+            }
+        ?>
         <hr class="divisor">
         <main class="conteudo-principal">
             <div class="titulo-opcoes">

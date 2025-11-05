@@ -1,23 +1,19 @@
-<?php
-   	header('Content-Type: text/html; charset=utf-8');
-    include '../conexao.php';
-
-    $sql_categoria = mysql_query(
-        "SELECT 
-            `id_categoria`,
-            `nome`,
-            `descricao`,
-            `caminho_icone`
-        FROM 
-            `categorias`;");
-?>
+<!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <?php include '/componentes/head.php'; ?>
-        <title>Categorias</title>
-    </head>
+    <?php include '../componentes/head.php'; ?>
     <body>
-        <?php include '/componentes/header.php'; ?>
+        <?php 
+            include '../componentes/header.php'; 
+            
+            $sql_categoria = mysql_query(
+            "SELECT 
+                `id_categoria`,
+                `nome`,
+                `descricao`,
+                `caminho_icone`
+            FROM 
+                `categorias`;");
+        ?>
         <main class="conteudo-principal">
             <div class="titulo-opcoes">
                 <h3 class="titulo">
