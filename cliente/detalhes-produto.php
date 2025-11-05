@@ -147,16 +147,24 @@
                         <div>
                             <h5>Dimensões</h5>
                             <ul>
-                                <li>Altura: <?php echo $produto['altura']; ?></li>
-                                <li>Profundidade: <?php echo $produto['profundidade']; ?></li>
-                                <li>Largura: <?php echo $produto['largura']; ?></li>
-                                <li>Peso: <?php echo $produto['peso']; ?></li>
+                                <li>Altura: <span id="labelAltura"><?php echo $produto['altura']; ?></span></li>
+                                <li>Profundidade: <span id="labelProfundidade"><?php echo $produto['profundidade']; ?></span></li>
+                                <li>Largura: <span id="labelLargura"><?php echo $produto['largura']; ?></span></li>
+                                <li>Peso: <span id="labelPeso"><?php echo $produto['peso']; ?></span></li>
                             </ul>
                         </div>
                         <div>
                             <h5>Descrição</h5>
                             <p><?php echo $produto['descricao']; ?></p>
                         </div>
+                        <div>
+                            <h5>Tamanhos disponíveis</h5>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-secondary" onclick="alterarDimensoesProduto('p');">Pequena</button>
+                                <button type="button" class="btn btn-danger" onclick="alterarDimensoesProduto('m');">Média</button>
+                                <button type="button" class="btn btn-success" onclick="alterarDimensoesProduto('g');">Grande</button>
+                            </div>
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -280,4 +288,43 @@
         </main>
         <?php include '/componentes/footer.php'; ?>
     </body>
+    <script>
+        function alterarDimensoesProduto(tamanho) {
+            const altura = document.getElementById('labelAltura');
+            const largura = document.getElementById('labelLargura');
+            const profundidade = document.getElementById('labelProfundidade');
+            const peso = document.getElementById('labelPeso');
+
+            let valAltura = parseFloat(altura.innerText);
+            let valLargura = parseFloat(largura.innerText);
+            let valProfundidade = parseFloat(profundidade.innerText);
+            let valPeso = parseFloat(peso.innerText);
+
+            // Armazena os valores originais (evita distorções nos valores)
+            if (!altura.dataset.original) {
+                altura.dataset.original = valAltura;
+                largura.dataset.original = valLargura;
+                profundidade.dataset.original = valProfundidade;
+                peso.dataset.original = valPeso;
+            }
+
+            // Recupera os valores originais
+            valAltura = parseFloat(altura.dataset.original);
+            valLargura = parseFloat(largura.dataset.original);
+            valProfundidade = parseFloat(profundidade.dataset.original);
+            valPeso = parseFloat(peso.dataset.original);
+
+            // Aplicar regras de ajuste
+            let multiplicador = 1;
+            if (tamanho === 'p') multiplicador = 0.9;
+            if (tamanho === 'm') multiplicador = 1;
+            if (tamanho === 'g') multiplicador = 1.1;
+
+            // Atualiza valores na tela
+            altura.innerText = (valAltura * multiplicador).toFixed(2);
+            largura.innerText = (valLargura * multiplicador).toFixed(2);
+            profundidade.innerText = (valProfundidade * multiplicador).toFixed(2);
+            peso.innerText = (valPeso * multiplicador).toFixed(2);
+        }
+    </script>
 </html>
