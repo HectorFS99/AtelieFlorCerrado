@@ -1,55 +1,58 @@
 <?php
+    include '../conectar-bd.php';
 
-include '../../../conexao.php';
+    if (!isset($_GET['id_usuario'])) {
+        echo
+            "<script>
+                alert('Usuário não informado.');
+                window.location.href = '../../paginas/usuarios.php';
+            </script>";
 
-if (isset($_GET['editar'])) {
-    $id_usuario = $_GET['editar'];
-    $sql = "SELECT * FROM usuarios WHERE id_usuario = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id_usuario);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    if ($result->num_rows > 0) {
-        $usuario = $result->fetch_assoc();
+        exit();
+    }
+
+    $id_usuario         = intval($_GET['id_usuario']);
+    $nome               = $_POST['txt_nome'];
+    $email              = $_POST['txt_email'];
+    $telefone           = $_POST['txt_telefone'];
+    $admin              = isset($_POST['cbo_admin']) ? 1 : 0;
+    $caminho_img_perfil = $_POST['txt_caminhoIM'];
+
+    $sql = $con -> prepare("
+        UPDATE usuarios SET
+            nome_completo = ?
+            , email = ?
+            , telefone_celular = ?
+            , admin = ?
+            , caminho_img_perfil = ?
+        WHERE 
+            id_usuario = ?
+    ");
+
+    $sql -> bind_param(
+        "sssisi"
+        , $nome
+        , $email
+        , $telefone
+        , $admin
+        , $caminho_img_perfil
+        , $id_usuario
+    );
+
+    if ($sql -> execute()) {
+        echo
+            "<script>
+                alert('Usuário atualizado com sucesso.');
+                window.location.href = '../../paginas/usuarios.php';
+            </script>";
     } else {
-        echo "Usuário não encontrado";
+        echo
+            "<script>
+                alert('Erro ao atualizar usuário: " . $sql -> error . "');
+                window.location.href = '../../paginas/usuarios.php';
+            </script>";
     }
-    if (isset($_POST['salvar'])) {
-        $nome_completo = $_POST['txt_nome'];
-        $dt_nascimento = $_POST['date'];
-        $cpf = $_POST['txt_cpf'];
-        $rg = $_POST['txt_rg'];
-        $telefone_celular = $_POST['txt_telefone'];
-        $email = $_POST['txt_email'];
-        $senha = $_POST['txt_senha'];
-        
-    
-        $sql_update = "UPDATE usuarios SET nome_completo=?, dt_nascimento=?, cpf=?, rg=?, telefone_celular=?, email=?, senha=? WHERE id_usuario=?";
-        $stmt_update = $conn->prepare($sql_update);
-        $stmt_update->bind_param("sssssssi", $nome, $dt_nascimento, $cpf, $rg, $telefone_celular, $email, $senha $id_usuario);
-        if ($stmt_update->execute()) {
-            header("Location: ../../usuarios.php?msg=Usuario editado com sucesso");
-        } else {
-            echo "Erro ao editar usuário: " . $conn->error;
-        }
-        $stmt_update->close();
-    }
-    $stmt->close();
-    $conn->close();
-}
+
+    $sql -> close();
+    $con -> close();
 ?>
-<html>
-    <head>
-        <title>Editar Usuário</title>
-    </head>
-    <body>
-        <form method="POST">
-            <input type="text" name="nome_completo" value="<?php echo $usuario['nome_completo']; ?>" required />
-            <input type="text" name="cpf" value="<?php echo $usuario['cpf']; ?>" required />
-            <!-- Outros campos de edição -->
-            <button type="submit" name="salvar">Salvar</button>
-        </form>
-    </body>
-</html>
- 
- 

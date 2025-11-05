@@ -1,9 +1,14 @@
 <?php
     $servidor = "localhost";
-    $usuario = "root";
-    $senha = "usbw";
-    $banco = "ecommerce";
+    $usuario  = "root";
+    $senha    = "usbw";
+    $banco    = "ecommerce";
 
-    $conecta_db = mysql_connect($servidor, $usuario, $senha) or die (mysql_error());
-    mysql_select_db($banco) or die ("Erro ao conectar ao banco de dados.");
+    $con = new mysqli($servidor, $usuario, $senha, $banco);
+    if ($con -> connect_error) {
+        die("Erro na conexão com o banco de dados: " . $con -> connect_error);
+    }
+
+    $con -> set_charset("utf8");
+    date_default_timezone_set('America/Sao_Paulo'); // Define o fuso horário para o Brasil
 ?>

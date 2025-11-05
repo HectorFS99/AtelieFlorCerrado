@@ -1,23 +1,27 @@
 <html lang="pt-br">
     <?php include '../componentes/head.php'; ?>
     <body>
-        <?php 
-            include '../componentes/header.php'; 
+        <?php
+            include '../componentes/header.php';
 
-            $sql_usuarios = mysql_query(
-                "SELECT 
-                    `id_usuario`
-                    , `nome_completo`
-                    , `cpf`
-                    , `rg`
-                    , `dt_nascimento`
-                    , `sexo`
-                    , `telefone_celular`
-                    , `email`
-                    , `senha`
-                    , `admin` 
-                FROM
-                    `usuarios`");
+            $sql = $con -> prepare("
+                SELECT 
+                    id_usuario
+                    , nome_completo
+                    , email
+                    , telefone_celular
+                    , cpf
+                    , rg
+                    , dt_nascimento
+                    , sexo
+                    , admin
+                    , caminho_img_perfil
+                FROM 
+                    usuarios
+            ");
+
+            $sql -> execute();
+            $resultado_usuarios = $sql -> get_result();
         ?>
         <main class="conteudo-principal">
             <div class="titulo-opcoes">
@@ -43,12 +47,12 @@
                             <th>Tel. Celular</th>
                             <th>E-mail</th>
                             <th>É admin.?</th>
-                            <th>Ações</th>
+                            <th width="5%">Ações</th>
                         </tr>
                     </thead>
                     <!-- Corpo da tabela -->
                     <tbody>
-                        <?php while ($linha = mysql_fetch_assoc($sql_usuarios)) { ?> 
+                        <?php while ($linha = $resultado_usuarios -> fetch_assoc()) { ?>
                             <tr class="tabela-linha">
                                 <td><?php echo $linha['id_usuario']; ?></td>
                                 <td>
@@ -79,7 +83,7 @@
                                 <td><?php echo $linha['admin'] ? 'Sim' : 'Não'; ?></td>
                                 <td>
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <a class="btn-tabela btn-excluir" href="acoes_php/usuario/excluir-usuario.php?apagar=<?php echo $linha['id_usuario']; ?>">
+                                        <a class="btn-tabela btn-excluir" href="../acoes/usuario/excluir-usuario.php?apagar=<?php echo $linha['id_usuario']; ?>">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </a>
                                     </div>

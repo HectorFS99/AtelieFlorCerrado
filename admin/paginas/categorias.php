@@ -3,74 +3,78 @@
     <?php include '../componentes/head.php'; ?>
     <body>
         <?php 
-            include '../componentes/header.php'; 
-            
-            $sql_categoria = mysql_query(
-            "SELECT 
-                `id_categoria`,
-                `nome`,
-                `descricao`,
-                `caminho_icone`
-            FROM 
-                `categorias`;");
+            include '../componentes/header.php';
+            include '../acoes/conectar-bd.php';
+
+            $sql = $con -> prepare("
+                SELECT 
+                    id_categoria
+                    , nome
+                    , descricao
+                    , ativo
+                FROM 
+                    categorias
+                ORDER BY 
+                    id_categoria DESC
+            ");
+
+            $sql -> execute();
+            $resultado = $sql -> get_result();
         ?>
+
         <main class="conteudo-principal">
             <div class="titulo-opcoes">
                 <h3 class="titulo">
                     <a href="index.php" class="btn-voltar"><i class="fa-solid fa-arrow-left"></i></a>
                     Categorias
                 </h3>
-                <button onclick="window.location.href= 'cadastro-categoria.php'" class="botao btn-adicionar">
+                <button onclick=\"window.location.href='form-categoria.php'\" class="botao btn-adicionar">
                     <i class="fa-solid fa-square-plus"></i> Adicionar
                 </button>
             </div>
+
             <div class="table-responsive">
-                <table id="tabela-categoria" class="table table-striped">
-                    <!-- Cabeçalho da tabela -->
+                <table id="tabela-categorias" class="table table-striped">
                     <thead>
                         <tr class="tabela-linha">
                             <th>ID</th>
                             <th>Nome</th>
                             <th>Descrição</th>
-                            <th>Ícone</th>
-                            <th>Ações</th>
+                            <th width="5%">Ações</th>
                         </tr>
                     </thead>
-                    <!-- Corpo da tabela -->
                     <tbody>
-                        <?php while ($linha = mysql_fetch_assoc($sql_categoria)) { ?> 
+                        <?php while ($linha = $resultado -> fetch_assoc()) { ?>
                             <tr class="tabela-linha">
                                 <td><?php echo $linha['id_categoria']; ?></td>
-                                <td>
-                                    <?php
-                                        // Limita o nome para 30 caracteres e adiciona "..." se for maior.
-                                        $nome = $linha['nome'];
-                                        echo 
-                                            mb_strlen($nome) > 30 ? mb_substr($nome, 0, 30) . "..." : $nome;
-                                    ?>
-                                </td>
+                                <td><?php echo $linha['nome']; ?></td>
                                 <td><?php echo $linha['descricao']; ?></td>
-                                <td> <?php echo $linha['caminho_icone']; ?></td>
                                 <td>
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <a class="btn-tabela btn-excluir" href="acoes_php/categoria/excluir-categoria.php?apagar=<?php echo $linha['id_categoria']; ?>">
-                                            <i class="fa-solid fa-trash-can"></i>
+                                        <?php
+                                            $icone = $linha['ativo'] ? 'fa-ban' : 'fa-check';
+                                            $classe = $linha['ativo'] ? 'btn-tabela btn-excluir' : 'btn-tabela text-success';
+                                            $titulo = $linha['ativo'] ? 'Desativar' : 'Ativar';
+                                        ?>
+                                        <a title="<?php echo $titulo; ?>" class="<?php echo $classe; ?>" href="../acoes/categoria/toggle-categoria.php?id_categoria=<?php echo $linha['id_categoria']; ?>">
+                                            <i class="fa-solid <?php echo $icone; ?>"></i>
                                         </a>
-                                        <a class="btn-tabela btn-editar" href="edicao-categoria.php?editar=<?php echo $linha['id_categoria']; ?>">
+                                        <a title="Editar produto" class="btn-tabela btn-editar" href="form-categoria.php?id_categoria=<?php echo $linha['id_categoria']; ?>">
                                             <i class="fa-solid fa-pen"></i>
                                         </a>
                                     </div>
                                 </td>
-                            </tr> 
+                            </tr>
                         <?php } ?>
                     </tbody>
-                </table>               
+                </table>
             </div>
         </main>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                transformarTabela('#tabela-categorias');
+            });
+        </script>
     </body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            transformarTabela('#tabela-categoria');
-        });
-    </script>
 </html>

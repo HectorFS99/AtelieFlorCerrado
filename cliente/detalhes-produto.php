@@ -15,7 +15,6 @@
                         `id_produto`,
                         `nome`,
                         `descricao`,
-                        `preco_anterior`,
                         `preco_atual`,
                         `altura`,
                         `largura`,
@@ -51,7 +50,6 @@
                         `descricao`,
                         `imagem`,
                         `verificado`
-
                     FROM
                         `avaliacoes`
                     WHERE

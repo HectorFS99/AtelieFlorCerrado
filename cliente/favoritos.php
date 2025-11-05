@@ -23,7 +23,6 @@
                     , p.nome
                     , p.caminho_imagem
                     , p.preco_atual
-                    , p.preco_anterior
                     , f.dt_inclusao
                 FROM 
                     favoritos AS f
