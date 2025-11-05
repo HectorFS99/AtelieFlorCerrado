@@ -1,112 +1,150 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="/cliente/recursos/css/galeria.css">
-    <!-- <script src="/cliente/recursos/javascript/galeria.js"></script> -->
-    <title>Galeria de Imagens</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+
+    <link rel="stylesheet" type="text/css" href="./recursos/css/galeria.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
 </head>
-    <body>
-        <!-- wrap the pictures in anchor link elements to make them click-able & focus-able -->
-        <main>
-            <a href="#">
-                <img src="recursos/imagens/produtos/amelia.png" 
-                    alt="Bolsa redonda de palha natural, com alça curta e detalhes em couro, sendo segurada ao ar livre por uma pessoa de branco." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/analu.png" 
-                    alt="Bolsa artesanal redonda trançada de palha com alças médias de couro marrom, apoiada em um tronco de madeira." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/bianca.png" 
-                    alt="Bolsa grande de palha trançada em padrão espinha de peixe, com duas alças e acabamento natural." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/carla.png" 
-                    alt="Bolsa artesanal em tom dourado com alça dupla trançada e tassels amarelos nas laterais, fotografada em meio às plantas." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/gabriela.png" 
-                    alt="Bolsa redonda de palha com bordado floral colorido ao centro, cercada por outras bolsas similares penduradas." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/isabel.png" 
-                    alt="Bolsa de palha com estrutura firme e tampa de couro caramelo, decorada com tassel duplo no fecho." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/luisa.png" 
-                    alt="Bolsa redonda de palha clara com alça longa de couro e fundo azul vibrante ao fundo." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/mariaAlice.png" 
-                    alt="Bolsa quadrada feita em palha trançada clara com alças brancas e tassel decorativo pendurado." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/rebecca.png" 
-                    alt="Bolsa pequena redonda de palha com alça de couro e fecho central, posicionada sobre uma mesa de fibras naturais." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/roberta.png" 
-                    alt="Bolsa redonda de palha com alça curta de esferas verdes e tassel de seda verde pendurado ao centro." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/sophie.png" 
-                    alt="Bolsa artesanal de palha dourada com alças curtas e tassels laterais amarelos, fotografada em meio às folhas verdes." />
-            </a>
-            <a href="#">
-                <img src="recursos/imagens/produtos/taina.png" 
-                    alt="Bolsa tipo mochila em palha com padrão geométrico em preto e bege, usada por uma pessoa vestindo camiseta branca." />
-            </a>
-        </main>
+<body>
 
+    <div class="gallery-image">
 
-        <div>
-            <button aria-label="Close overlay">
-                <svg viewBox="-50 -50 100 100" width="40" height="40">
-                <g fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round">
-                    <path transform="rotate(45)" d="M -40 0 h 80 m -40 -40 v 80" />
-                </g>
-                </svg>
-            </button>
-            <!-- be sure to update the src & alt attributes as an image is selected -->
-            <img src="" alt="" />
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/amelia.png" alt="Bolsa redonda de palha natural, com alça curta e detalhes em couro, sendo segurada ao ar livre por uma pessoa de branco." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Amelia</p>
+            <p class="opacity-low">Moda Praia</p>
+            </div>
+        </div> 
         </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/analu.png" alt="Bolsa artesanal redonda trançada de palha com alças médias de couro marrom, apoiada em um tronco de madeira." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Analu</p>
+            <p class="opacity-low">Moda Praia</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/bianca.png" alt="Bolsa grande de palha trançada em padrão espinha de peixe, com duas alças e acabamento natural." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Bianca</p>
+            <p class="opacity-low">Moda Praia</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/carla.png" alt="Bolsa artesanal em tom dourado com alça dupla trançada e tassels amarelos nas laterais, fotografada em meio às plantas." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Carla</p>
+            <p class="opacity-low">Moda Praia</p>
+            </div>
+        </div> 
+        </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/gabriela.png" alt="Bolsa redonda de palha com bordado floral colorido ao centro, cercada por outras bolsas similares penduradas." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Gabriela</p>
+            <p class="opacity-low">Bordado</p>
+            </div>
+        </div> 
+        </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/isabel.png" alt="Bolsa de palha com estrutura firme e tampa de couro caramelo, decorada com tassel duplo no fecho." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Isabel</p>
+            <p class="opacity-low">Couro</p>
+            </div>
+        </div> 
+        </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/luisa.png" alt="Bolsa redonda de palha clara com alça longa de couro e fundo azul vibrante ao fundo." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Luisa</p>
+            <p class="opacity-low">Moda Praia</p>
+            </div>
+        </div> 
+        </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/mariaAlice.png" alt="Bolsa quadrada feita em palha trançada clara com alças brancas e tassel decorativo pendurado." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Maria Alice</p>
+            <p class="opacity-low">Casual</p>
+            </div>
+        </div> 
+        </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/rebecca.png" alt="Bolsa pequena redonda de palha com alça de couro e fecho central, posicionada sobre uma mesa de fibras naturais." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Rebecca</p>
+            <p class="opacity-low">Casual</p>
+            </div>
+        </div> 
+        </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/roberta.png" alt="Bolsa redonda de palha com alça curta de esferas verdes e tassel de seda verde pendurado ao centro." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Roberta</p>
+            <p class="opacity-low">Elegante</p>
+            </div>
+        </div> 
+        </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/sophie.png" alt="Bolsa artesanal de palha dourada com alças curtas e tassels laterais amarelos, fotografada em meio às folhas verdes." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Sophie</p>
+            <p class="opacity-low">Elegante</p>
+            </div>
+        </div> 
+        </div>
+
+        <div class="img-box">
+        <img src="recursos/imagens/produtos/taina.png" alt="Bolsa tipo mochila em palha com padrão geométrico em preto e bege, usada por uma pessoa vestindo camiseta branca." />
+        <div class="transparent-box">
+            <div class="caption">
+            <p>Tainá</p>
+            <p class="opacity-low">Mochila</p>
+            </div>
+        </div> 
+        </div>
+
+    </div>
+
+    <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+    </div>
+
     
+    <script src="./recursos/javascript/galeria.js"></script>
 
-    </body>
-
-    <script>
-        // target the anchor links and div container
-        const links = document.querySelectorAll('a');
-        const overlay = document.querySelector('div');
-
-        // following a click event on the links show the overlay
-        function showOverlay() {
-        // use the src & alt attribute of the selected image in the overlay
-        const src = this.querySelector('img').getAttribute('src');
-        const alt = this.querySelector('img').getAttribute('alt');
-        overlay.querySelector('img').setAttribute('src', src);
-        overlay.querySelector('img').setAttribute('alt', alt);
-
-        overlay.classList.add('overlay');
-
-        // to remove the anchor links from reach set the tabindex attribute to a negative value
-        links.forEach(link => link.setAttribute('tabindex', -1));
-        }
-
-        links.forEach(link => link.addEventListener('click', showOverlay));
-
-        // following a click event on the overlay, consider if the click was registered on the button
-        // if so hide the overlay back
-        function hideOverlay(e) {
-        if (e.target.tagName === 'BUTTON') {
-            overlay.classList.remove('overlay');
-            // restore the default value of the anchor links
-            links.forEach(link => link.setAttribute('tabindex', 0));
-        }
-        }
-
-        overlay.addEventListener('click', hideOverlay);
-
-    </script>
-
+</body>
 </html>

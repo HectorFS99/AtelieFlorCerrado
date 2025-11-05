@@ -1,31 +1,48 @@
-// target the anchor links and div container
-const links = document.querySelectorAll('a');
-const overlay = document.querySelector('div');
+document.addEventListener("DOMContentLoaded", () => {
 
-// following a click event on the links show the overlay
-function showOverlay() {
-  // use the src & alt attribute of the selected image in the overlay
-  const src = this.querySelector('img').getAttribute('src');
-  const alt = this.querySelector('img').getAttribute('alt');
-  overlay.querySelector('img').setAttribute('src', src);
-  overlay.querySelector('img').setAttribute('alt', alt);
+    const galleryImages = document.querySelectorAll(".gallery-image .img-box img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
 
-  overlay.classList.add('overlay');
+    let currentIndex = 0;
 
-  // to remove the anchor links from reach set the tabindex attribute to a negative value
-  links.forEach(link => link.setAttribute('tabindex', -1));
-}
+    // Abre ao clicar em uma imagem
+    galleryImages.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            currentIndex = index;
+            showImage();
+            lightbox.style.display = "block";
+        });
+    });
 
-links.forEach(link => link.addEventListener('click', showOverlay));
+    function showImage() {
+        lightboxImg.src = galleryImages[currentIndex].getAttribute("src");
+    }
 
-// following a click event on the overlay, consider if the click was registered on the button
-// if so hide the overlay back
-function hideOverlay(e) {
-  if (e.target.tagName === 'BUTTON') {
-    overlay.classList.remove('overlay');
-    // restore the default value of the anchor links
-    links.forEach(link => link.setAttribute('tabindex', 0));
-  }
-}
+    nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        showImage();
+    });
 
-overlay.addEventListener('click', hideOverlay);
+    prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        showImage();
+    });
+
+    closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+    // Fechar ao clicar fora
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+
+});
