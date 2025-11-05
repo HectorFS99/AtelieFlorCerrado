@@ -1,86 +1,112 @@
-<?php
+<?php 
 	header('Content-Type: text/html; charset=utf-8');
 ?>
-	<html lang="pt-br">
-		<head>
-			<?php include '/componentes/head.php'; ?>
-			<link rel="stylesheet" href="./recursos/css/pagina-inicial.css">
-			<link rel="stylesheet" href="./recursos/css/geral.css">
-            <link rel="stylesheet" href="./recursos/css/dicas.css">
-		</head>	
-		<body>
-			<?php include '/componentes/header.php'; ?>
-			<main>
-	
-			<section class="secao dicas-artesanato">
-				<div class="secao-titulo-subtitulo">
-					<h2 class="titulo-secao">🎨 Dicas de Artesanato: Bolsas Artesanais com Estilo e Criatividade</h2>
-					<h4 class="subtitulo-secao">Descubra técnicas, materiais e ideias para criar bolsas únicas e cheias de personalidade.</h4>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<?php include '/componentes/head.php'; ?>
+
+	<link rel="stylesheet" href="./recursos/css/geral.css">
+	<link rel="stylesheet" href="./recursos/css/pagina-inicial.css">
+	<link rel="stylesheet" href="./recursos/css/dicas.css">
+	<link rel="stylesheet" href="./recursos/css/bastidores.css">
+</head>
+
+<body>
+	<?php include '/componentes/header.php'; ?>
+
+	<main>
+		<section id="section-bastidores" class="secao-pagina">
+
+			<h2 class="titulo-secao">Dicas de Artesanato</h2>
+			<p class="subtitulo-pagina">
+				Bolsas artesanais com estilo e personalidade.  
+				Descubra técnicas, materiais e ideias para criar peças únicas.
+			</p>
+
+			<div class="bloco-conteudo-imagem">
+				<img src="./recursos/imagens/dicas.jpg" 
+					 alt="Artesã tecendo crochê com fio natural"
+					 class="img-bastidores-grande">
+			</div>
+
+			<div class="conteudo-artesanato">
+				
+				<h3>1. Escolha dos materiais</h3>
+				<p>Uma bolsa artesanal de qualidade começa com bons materiais. Tecidos como lona, algodão cru, sarja ou jeans reciclado são excelentes opções.</p>
+				<p>Use forros estampados para dar personalidade e combine materiais naturais como palha, juta e couro ecológico.</p>
+				<p><strong>Dica:</strong> retalhos e roupas antigas geram ótimos resultados e são sustentáveis.</p>
+
+				<h3>2. Modelagem e corte</h3>
+				<p>Faça o molde em papel kraft ou cartolina antes de cortar o tecido. Ajuste tamanho, bolsos e alças antes do corte definitivo.</p>
+				<p>Utilize alfinetes ou fita para fixar as partes e garantir precisão.</p>
+				<p><strong>Extra:</strong> deixe 1cm de margem de costura ao redor do molde.</p>
+
+				<h3>3. Acabamentos</h3>
+				<p>Os detalhes valorizam a peça. Prefira costuras reforçadas nas alças, use viés colorido e aposte em zíperes, botões e rendas para personalizar.</p>
+
+				<h3>4. Sugestões de estilo</h3>
+				<ul>
+					<li><strong>Bolsas de praia:</strong> tecidos leves e alças de corda.</li>
+					<li><strong>Ecobags:</strong> práticas para o dia a dia.</li>
+					<li><strong>Mini bolsas:</strong> modernas e compactas.</li>
+					<li><strong>Bolsas bordadas:</strong> excelente para presentes.</li>
+				</ul>
+				<p>Personalizações como nome da cliente ou chaveiros artesanais agregam valor.</p>
+
+				<h3>5. Sustentabilidade</h3>
+				<p>Prefira materiais reaproveitados e produtos não tóxicos. Artesanato também é respeito à natureza e à cultura.</p>
+
+				<h3>6. Divulgue seu trabalho</h3>
+				<p>Compartilhe fotos nas redes sociais, participe de feiras e crie uma galeria virtual com boas imagens e descrições.</p>
+
+				<h3>Inspiração final</h3>
+				<p>Criar bolsas artesanais é unir técnica e criatividade. Experimente, teste novas ideias e permita que seu estilo se destaque nas suas peças.</p>
+			</div>
+
+			<div class="container-videos">
+				
+				<div class="card-video">
+					<img src="https://img.youtube.com/vi/F3SqCo2f6-A/hqdefault.jpg" 
+						 alt="Bolsa saco em crochê">
+					<h4>Bolsa Saco em Crochê</h4>
+					<a href="https://www.youtube.com/watch?v=F3SqCo2f6-A" 
+					   target="_blank" 
+					   class="btn-youtube">Assistir</a>
 				</div>
 
-				<div class="conteudo-artesanato">
-					<h3>🧵 1. Escolha dos Materiais</h3>
-					<p>O segredo de uma bolsa artesanal de qualidade começa pela <strong>escolha certa dos materiais</strong>.<br>
-					Prefira tecidos resistentes como lona, algodão cru, sarja ou jeans reciclado. Use forros coloridos ou estampados para dar um toque de personalidade, e combine materiais naturais, como juta, palha e couro ecológico, para um visual rústico e elegante.</p>
-					<p><em>Dica:</em> aproveite retalhos de tecido ou roupas antigas — além de econômico, é sustentável!</p>
-
-					<h3>✂️ 2. Modelagem e Corte</h3>
-					<p>Antes de começar a costurar, <strong>faça o molde da sua bolsa</strong> em papel kraft ou cartolina. Teste proporções, bolsos e alças antes de cortar o tecido definitivo. Utilize alfinetes ou fita adesiva para segurar as partes e garantir cortes precisos.</p>
-					<p><em>Dica extra:</em> adicione 1 cm de margem de costura ao redor do molde para evitar cortes justos demais.</p>
-
-					<h3>🪡 3. Acabamentos que Encantam</h3>
-					<p>O acabamento é o que transforma uma peça simples em algo especial. Faça costuras duplas nas alças, use viés colorido e aplique zíperes, botões e rendas para personalizar.</p>
-					<p><em>Inspire-se:</em> misture texturas — renda com jeans, couro sintético com algodão estampado, por exemplo.</p>
-
-					<h3>👜 4. Ideias de Estilo</h3>
-					<ul>
-						<li><strong>Bolsas de praia:</strong> tecidos leves, estampas florais e alças de corda.</li>
-						<li><strong>Ecobags:</strong> ideais para o dia a dia, com frases e ilustrações personalizadas.</li>
-						<li><strong>Mini bolsas:</strong> práticas e modernas.</li>
-						<li><strong>Bolsas bordadas:</strong> perfeitas para presentear.</li>
-					</ul>
-					<p><em>Dica de ouro:</em> personalize com o nome da cliente ou um chaveirinho artesanal — pequenos detalhes fazem toda a diferença!</p>
-
-					<h3>🌿 5. Sustentabilidade e Consciência</h3>
-					<p>Artesanato é também sobre respeito à natureza e à cultura. Reutilize tecidos, prefira linhas e colas não tóxicas e valorize o tempo dedicado a cada criação.</p>
-					<p><em>Lembre-se:</em> cada bolsa artesanal carrega uma história — a sua.</p>
-
-					<h3>💬 6. Compartilhe sua Arte!</h3>
-					<p>Mostre suas criações nas redes sociais, participe de feiras e monte uma vitrine virtual com fotos bonitas e descrições detalhadas. Isso valoriza o seu trabalho e inspira outras pessoas a começar também!</p>
-
-					<h3>💖 Inspiração Final</h3>
-					<p>Criar bolsas artesanais é muito mais do que costurar tecidos — é expressar amor, paciência e criatividade em cada ponto. Permita-se errar, experimentar e descobrir novos estilos. Com o tempo, suas peças terão uma identidade única — assim como você. ✨</p>
+				<div class="card-video">
+					<img src="https://img.youtube.com/vi/a_4nTKtNq3o/maxresdefault.jpg" 
+						 alt="Cesto de fio náutico">
+					<h4>Bolsa Chloe</h4>
+					<a href="https://www.youtube.com/shorts/a_4nTKtNq3o" 
+					   target="_blank" 
+					   class="btn-youtube">Buscar vídeo</a>
 				</div>
 
-                <div class="container-videos">
-                    
-                    <div class="card-video">
-                        <img src="https://img.youtube.com/vi/F3SqCo2f6-A/hqdefault.jpg" alt="Miniatura: Como Fazer uma Bolsa Saco de Crochê"> 
-                        <h4>Como Fazer uma Bolsa Saco em Crochê</h4>
-                        <a href="https://www.youtube.com/watch?v=F3SqCo2f6-A" target="_blank" class="btn-youtube">Assistir no YouTube</a>
-                    </div>
-                    <div class="card-video">
-                        <img src="https://img.youtube.com/vi/[VIDEO_ID_DO_CESTO]/maxresdefault.jpg" alt="Miniatura: Técnica de Sisal para Iniciantes">
-                        <h4>Cesto de Fio Náutico/Sisal para Iniciantes</h4>
-                        <a href="https://www.youtube.com/results?search_query=como+fazer+cesto+de+sisal+para+iniciantes+youtube" target="_blank" class="btn-youtube">Assistir no YouTube</a>
-                    </div>
+				<div class="card-video">
+					<img src="https://img.youtube.com/vi/oCmeeXAja08/maxresdefault.jpg" 
+						 alt="Chaveiro de crochê coração">
+					<h4>Chaveiro de Crochê</h4>
+					<a href="https://www.youtube.com/watch?v=oCmeeXAja08" 
+					   target="_blank" 
+					   class="btn-youtube">Assistir</a>
+				</div>
 
-                    <div class="card-video">
-                        <img src="https://img.youtube.com/vi/oCmeeXAja08/maxresdefault.jpg" alt="Miniatura: Passo a Passo Chaveiro de Crochê">
-                        <h4>Chaveiro de Coração em Crochê: Lindo Souvenir</h4>
-                        <a href="https://www.youtube.com/watch?v=oCmeeXAja08" target="_blank" class="btn-youtube">Assistir no YouTube</a>
-                    </div>
+				<div class="card-video">
+					<img src="https://img.youtube.com/vi/F33wxUdyrgA/maxresdefault.jpg" 
+						 alt="Gorro em crochê para iniciantes">
+					<h4>Bolsa de Crochê para Iniciantes</h4>
+					<a href="https://www.youtube.com/watch?v=F33wxUdyrgA&pp=ygUPYm9sc2EgZGUgY3JvY2hl0gcJCQMKAYcqIYzv" 
+					   target="_blank" 
+					   class="btn-youtube">Assistir</a>
+				</div>
 
-                    <div class="card-video">
-                        <img src="https://img.youtube.com/vi/tS5gpvRP_So/maxresdefault.jpg" alt="Miniatura: Como Fazer Gorro de Crochê">
-                        <h4>Gorro de Crochê Simples e Rápido para Iniciantes</h4>
-                        <a href="https://www.youtube.com/watch?v=tS5gpvRP_So" target="_blank" class="btn-youtube">Assistir no YouTube</a>
-                    </div>
-                    
-                </div>
+			</div>
 
-			</section>
-			</main>
-			<?php include '/componentes/footer.php'; ?>
-		</body>
-	</html>
+		</section>
+	</main>
+
+	<?php include '/componentes/footer.php'; ?>
+</body>
+</html>

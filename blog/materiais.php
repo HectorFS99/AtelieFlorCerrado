@@ -1,83 +1,118 @@
 <?php
-    header('Content-Type: text/html; charset=utf-8');
+	header('Content-Type: text/html; charset=utf-8');
 ?>
-    <html lang="pt-br">
-        <head>
-            <?php include '/componentes/head.php'; ?>
-            <link rel="stylesheet" href="./recursos/css/pagina-inicial.css">
-            <link rel="stylesheet" href="./recursos/css/geral.css">
-            <link rel="stylesheet" href="./recursos/css/materiais.css">
-            <link rel="stylesheet" href="./recursos/css/bastidores.css">
-        </head> 
-        <body>
-            <?php include '/componentes/header.php'; ?>
-            <main>
-                <section id="section-materiais-sustentaveis" class="secao-pagina">
-                    
-                    <h2 class="titulo-secao">MATERIAIS SUSTENTÁVEIS</h2>
-                    <p class="subtitulo-pagina">A Beleza que Respeita a Natureza</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<?php include '/componentes/head.php'; ?>
 
-                    <div class="bloco-conteudo-imagem">
-                        <img src="./recursos/imagens/croche.webp" alt="Fios e fibras naturais de algodão e juta" class="img-bastidores-grande">
-                        </div>
+	<link rel="stylesheet" href="./recursos/css/geral.css">
+	<link rel="stylesheet" href="./recursos/css/pagina-inicial.css">
+	<link rel="stylesheet" href="./recursos/css/materiais.css">
+	<link rel="stylesheet" href="./recursos/css/bastidores.css">
+</head>
 
-                    <p class="paragrafo-secao-intro">No **Ateliê Flor do Cerrado**, acreditamos que a verdadeira beleza é aquela que não custa o planeta. A nossa paixão pelo artesanato está profundamente ligada ao nosso compromisso com a sustentabilidade e a responsabilidade socioambiental. Esta página é um convite para você conhecer as fibras que escolhemos e o porquê de cada uma ser essencial na nossa produção.</p>
+<body>
+	<?php include '/componentes/header.php'; ?>
 
-                    <h2 class="subtitulo-secao">🌱 Fibras Naturais: O Coração da Nossa Produção</h2>
-                    <p class="paragrafo-secao">Priorizamos o uso de fibras naturais, renováveis e biodegradáveis. Ao fazermos isso, garantimos que nossas bolsas tenham um impacto ambiental significativamente menor do que as produzidas com materiais sintéticos ou de origem não responsável.</p>
+	<main>
 
-                    <h3 class="titulo-fibra">1. Juta: A Fibra do Baixo Impacto</h3>
-                    <div class="detalhe-fibra-container">
-                        <div class="detalhe-fibra-texto">
-                            <p>A juta é a nossa estrela rústica. É uma fibra natural 100% biodegradável e altamente sustentável, cultivada predominantemente na Amazônia, o que reforça nossa valorização pela flora brasileira.</p>
-                            <ul class="lista-detalhe-fibra">
-                                <li>**Biodegradável:** Ao final de sua vida útil, a juta se decompõe naturalmente, retornando ao solo sem deixar resíduos tóxicos.</li>
-                                <li>**Aliada do Meio Ambiente:** O seu cultivo é benéfico, pois as plantações de juta absorvem grandes quantidades de CO2 da atmosfera.</li>
-                                <li>**Textura e Durabilidade:** Além de ecológica, confere às nossas peças uma textura rústica inconfundível, força e uma durabilidade que acompanha o tempo.</li>
-                            </ul>
-                        </div>
-                        <div class="detalhe-fibra-imagem">
-                            <img src="./recursos/imagens/juta.jpg" alt="Fio de juta em detalhe">
-                        </div>
-                    </div>
+		<!-- Materiais Sustentáveis -->
+		<section id="section-materiais-sustentaveis" class="secao-pagina">
+			
+			<h2 class="titulo-secao">Materiais Sustentáveis</h2>
+			<p class="subtitulo-pagina">A beleza que respeita a natureza</p>
+
+			<div class="bloco-conteudo-imagem">
+				<img src="./recursos/imagens/croche.webp" 
+					 alt="Fios de algodão e juta utilizados no artesanato"
+					 class="img-bastidores-grande">
+			</div>
+
+			<p class="paragrafo-secao-intro">
+				No Ateliê Flor do Cerrado, acreditamos que a verdadeira beleza não precisa prejudicar o planeta. Cada material é escolhido com cuidado para unir qualidade, responsabilidade ambiental e valorização do artesanato brasileiro. Conheça as fibras que fazem parte da nossa produção e o porquê de cada escolha.
+			</p>
+
+			<h3 class="subtitulo-secao">Fibras naturais: o coração da nossa produção</h3>
+			<p class="paragrafo-secao">
+				Optamos por fibras renováveis e biodegradáveis, garantindo menor impacto ambiental e peças duráveis, com textura, identidade e alma artesanal.
+			</p>
+
+			<!-- Juta -->
+			<h3 class="titulo-fibra">1. Juta</h3>
+			<div class="detalhe-fibra-container">
+				
+				<div class="detalhe-fibra-texto">
+					<p>
+						A juta é uma das fibras mais sustentáveis do mundo. Biodegradável e de cultivo natural, ela possui textura marcante e resistência, sendo perfeita para peças atemporais e com personalidade.
+					</p>
+
+					<ul class="lista-detalhe-fibra">
+						<li><strong>100% biodegradável:</strong> retorna ao solo sem resíduos tóxicos.</li>
+						<li><strong>Aliada do meio ambiente:</strong> plantações absorvem grandes quantidades de CO₂.</li>
+						<li><strong>Durabilidade e textura:</strong> traz rusticidade e firmeza às criações.</li>
+					</ul>
+				</div>
+
+				<div class="detalhe-fibra-imagem">
+					<img src="./recursos/imagens/juta.jpg" alt="Detalhe de fios de juta natural">
+				</div>
+
+			</div>
+
+			<!-- Algodão -->
+			<h3 class="titulo-fibra">2. Algodão</h3>
+			<div class="detalhe-fibra-container reverse">
+
+				<div class="detalhe-fibra-texto">
+					<p>
+						Usamos algodão em tramas e forros, garantindo maciez e conforto, aliado a uma produção mais consciente e responsável.
+					</p>
+
+					<ul class="lista-detalhe-fibra">
+						<li><strong>Orgânico e reciclado:</strong> priorizamos fibras sem agrotóxicos e de reaproveitamento.</li>
+						<li><strong>Sem tingimento:</strong> cores naturais reduzem consumo de água e químicos.</li>
+						<li><strong>Responsabilidade social:</strong> fornecedores com boas práticas e certificações.</li>
+					</ul>
+				</div>
+
+				<div class="detalhe-fibra-imagem">
+					<img src="./recursos/imagens/algodao.webp" alt="Close em fios de algodão natural">
+				</div>
+
+			</div>
+		</section>
 
 
-                    <h3 class="titulo-fibra">2. Algodão: A Maciez Consciente</h3>
-                    <div class="detalhe-fibra-container reverse"> <div class="detalhe-fibra-texto">
-                            <p>Em complemento à juta, utilizamos o algodão em nossas tramas e nos forros internos, garantindo o toque macio e o conforto no uso.</p>
-                            <ul class="lista-detalhe-fibra">
-                                <li>**Algodão Orgânico e Reciclado:** Damos preferência ao **algodão orgânico**, cultivado sem o uso de agrotóxicos, e a fios de **algodão reciclado**, evitando descarte e tingimento excessivo.</li>
-                                <li>**Dispensa Tingimento:** Optar por fios que já nascem em cores naturais, ou que vêm de reciclagem, economiza uma quantidade imensa de água e produtos químicos.</li>
-                                <li>**Selo de Qualidade:** Buscamos fornecedores que possuam certificações de origem e práticas justas, honrando a cadeia produtiva do campo ao ateliê.</li>
-                            </ul>
-                        </div>
-                        <div class="detalhe-fibra-imagem">
-                             <img src="./recursos/imagens/algodao.webp" alt="Fio de algodão em detalhe">
-                        </div>
-                    </div>
-                </section>
-                
-                <section id="section-cadeia-produtiva" class="secao-pagina secao-bege">
-                    <h2 class="titulo-destaque">💚 Nossa Cadeia Produtiva</h2>
-                    <p class="paragrafo-secao-intro">A sustentabilidade no Ateliê Flor do Cerrado vai além da matéria-prima. É uma filosofia que se estende por todo o nosso processo:</p>
-                    
-                    <ul class="lista-detalhes-verticais">
-                        <li>**Comércio Justo:** Trabalhamos apenas com parceiros que valorizam o trabalho humano e oferecem condições éticas e seguras, apoiando o desenvolvimento local e a economia familiar.</li>
-                        <li>**Embalagens Ecológicas:** Nossas embalagens são pensadas para o menor impacto possível, utilizando materiais reciclados, recicláveis e biodegradáveis. Menos plástico, mais natureza.</li>
-                        <li>**Produção *Slow Fashion*:** Criamos peças duráveis e atemporais, indo na contramão do consumo descartável. Uma bolsa Flor do Cerrado é feita para durar e ser amada por muitos anos.</li>
-                    </ul>
+		<!-- Cadeia Produtiva -->
+		<section id="section-cadeia-produtiva" class="secao-pagina secao-bege">
 
-                    <h3 class="titulo-alma">O Seu Papel no Ciclo</h3>
-                    <p class="paragrafo-secao">Ao escolher uma peça do Ateliê Flor do Cerrado, você se torna parte ativa deste ciclo virtuoso. Você está:</p>
-                    
-                     <ul class="lista-alma">
-                        <li>**Valorizando** a arte e o tempo de um artesão.</li>
-                        <li>**Reduzindo** a pegada ecológica no planeta.</li>
-                        <li>**Investindo** em um produto que tem história, alma e um futuro sustentável.</li>
-                    </ul>
-                </section>
+			<h2 class="titulo-destaque">Nossa Cadeia Produtiva</h2>
+			<p class="paragrafo-secao-intro">
+				A sustentabilidade se reflete em todo o processo, do cultivo das fibras ao produto final.
+			</p>
+			
+			<ul class="lista-detalhes-verticais">
+				<li><strong>Comércio justo:</strong> priorizamos parceiros que valorizam o trabalho humano, a economia local e condições éticas.</li>
+				<li><strong>Embalagens ecológicas:</strong> utilizamos materiais reciclados e biodegradáveis, reduzindo ao máximo o plástico.</li>
+				<li><strong>Produção slow fashion:</strong> peças feitas com calma, qualidade e durabilidade, pensadas para acompanhar seu tempo, e não a pressa da moda descartável.</li>
+			</ul>
 
-            </main>
-            <?php include '/componentes/footer.php'; ?>
-        </body>
-    </html>
+			<h3 class="titulo-alma">O seu papel nesse ciclo</h3>
+			<p class="paragrafo-secao">
+				Ao escolher o Ateliê Flor do Cerrado, você apoia um modelo de produção consciente e valoriza o trabalho artesanal.
+			</p>
+
+			<ul class="lista-alma">
+				<li><strong>Valoriza</strong> o tempo e a arte manual.</li>
+				<li><strong>Reduz</strong> impactos no meio ambiente.</li>
+				<li><strong>Investe</strong> em uma peça com história e propósito.</li>
+			</ul>
+
+		</section>
+
+	</main>
+
+	<?php include '/componentes/footer.php'; ?>
+</body>
+</html>
